@@ -1,0 +1,322 @@
+---
+title: "dplyr"
+author: "seo"
+date: '2021 3 11 '
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+options(knitr.duplicate.label = "allow")
+```
+
+
+## dplyr
+
+* Tidyverse의 한 library로, dataframe 정리에 사용
+* main function
+  * select
+  * filter
+  * arrange
+  * mutate
+  * summarise
+  * group_by
+  
+* 사용할 데이터로, nycflights13 사용
+
+## 데이터 불러오기, library setting
+
+
+
+```{r flightdata}
+library(nycflights13)
+library(tidyverse)
+print(flights)
+
+```
+
+## 데이터 확인하기
+
+```{r flightdata1}
+print(summary(flights))
+```
+
+## Select
+
+특정 열을 선택해주는 함수
+
+용법 : select(dataframe, columns(벡터로 입력해도 되고, 하나의 값으로 입력가능하고, :이나 - 사용 가능))
+
+``` {r select}
+select(flights, year, month, day)
+
+select(flights, c(year, month, day))
+
+select(flights, year:day)
+
+select(flights, -year)
+
+```
+
+### 특정 문자열 찾아내기
+
+  * starts_with('문자') : '문자'로 시작하는 단어 모두 찾기
+  * ends_with('문자') : '문자'로 끝나는 단어 모두 찾기
+  * matches('문자') : '문자'를 포함하는 단어 모두 찾기
+  * contains('문자') : '문자'를 포함하는 단어 모두 찾기
+  
+``` {r finding string}
+
+select(flights, starts_with('dep'))
+select(flights, ends_with('delay'))
+select(flights, matches('time'))
+select(flights, contains('time'))
+
+```
+
+
+
+## Filter
+
+특정 행을 선택해주는 함수
+
+용법 : fliter(dataframe, 조건)
+
+``` {r filter}
+
+filter(flights, carrier=='US')
+filter(flights, month>=3, month<=5)
+filter(flights, month>=3 & month<=5)
+```
+
+
+## Arrange
+
+dataframe의 배열을 바꿔주는 함수
+
+용법 : arrange(dataframe, column1, column2, ... )
+
+해당하는 column 순서대로 오름차순 or 내림차순으로 정렬해줌(default : 오름차순)
+
+내림차순 하는 방법 : desc(columns)
+
+``` {r arrange}
+
+# year에 대해 오름차순으로 정렬
+
+arrange(flights, year)
+
+# year에 대해 오름차순으로 정렬하고, month에 대해 오름차순으로 정렬한 후, day에 대해 오름차순으로 정렬
+
+arrange(flights, year, month, day)
+
+# year에 대해 오름차순으로 정렬하고, month에 대해 내림차순으로 정렬한 후, day에 대해 오름차순으로 정렬
+
+arrange(flights, year, desc(month), day)
+
+```
+
+## Mutate
+
+dataframe의 열을 추가 or 바꿔주는 함수
+
+용법 : mutate(dataframe, column_name = 조건)
+
+만약 새로운 column_name을 사용하였다면, dataframe에 새로운 column이 추가 됨
+
+만약 기존에 있던 column_name을 사용하였다면, 원래 있던 column의 데이터가 변화됨.
+
+``` {r mutate}
+
+mutate(flights, new_time = hour+(minute/60))
+
+mutate(flights, hour = hour+(minute/60))
+```
+
+### transmute
+
+mutate할 열만 보여주는 함수
+
+``` {r transmute}
+
+transmute(flights, new_time = hour+(minute/60))
+
+transmute(flights, hour = hour+(minute/60))
+```
+
+
+## Summarise
+
+dataframe의 열의 특징을 요약해주는 함수
+
+용법 : summarise(dataframe, name = function results)
+
+``` {r summarise}
+
+summarise(flights, dep_delay=mean(dep_delay, na.rm=T), arr_delay=mean(arr_delay, na.rm=T))
+```
+
+
+## Group_by
+
+dataframe의 행들을 group화 시켜주는 함수
+
+용법 : group_by(dataframe, column)
+
+해당 column에 속하는 성분을 이용하여 grouping을 진행
+
+```{r group_by}
+
+group_by(flights, origin)
+
+group_by(flights, origin, tailnum)
+```
+
+위 작업만 진행시 데이터프레임의 큰 변화가 없음(group만 표시해줌)
+이 후 다른 작업 진행시 group을 인식한 상태로 작업 진행
+
+### grouping and summarise
+
+grouping 후 summarise 진행 시, group에 대해 summarise를 진행함
+
+``` {r group_summarise 1}
+
+a=group_by(flights, origin)
+
+summarise(a, delay=mean(dep_delay, na.rm=T))
+
+
+```
+
+``` {r group_summarise 2, echo=FALSE}
+
+daily=group_by(flights, year, month, day)
+
+per_day = summarise(daily, flights=n())
+
+per_day
+
+#가장 낮은 level인 day의 flight 계산
+
+per_month = summarise(per_day, flights=sum(flights))
+per_month
+
+# 그 다음 level인 month의 flight summarise
+
+per_year = summarise(per_month, flights=sum(flights))
+per_year
+```
+
+
+
+### summarise에 사용되는 여러 함수
+
+  * sum, mean, sd, var, ... : 기본적인 통계량 측정 함수(합, 평균, 표준편차, 분산)
+  * n() : count 함수
+  * n_distinct() : unique한 값 개수
+  * first(x), last(x), nth(x, n) : x vector에서의 첫번째, 마지막, nth value 
+  
+``` {r summarise function}
+
+a=group_by(flights, tailnum)
+summarise(a, dep_delay_mean=mean(dep_delay, na.rm=T), dep_delay_sd=sd(dep_delay, na.rm=T), count=n())
+```
+
+
+
+### Using pipeline
+
+
+  * pipeline (%>%)을 이용하여 coding을 간결하게 진행할 수 있음
+  * 작업 1 %>% 작업 2 - 작업 1의 결과에서 작업 2를 시작하게 됨
+  * 일일히 dataframe에 이름을 지정해주지 않고 바로 coding 가능해짐
+  
+
+``` {r pipeline example 1}
+
+# r group_summarise 1
+
+a=group_by(flights, origin)
+
+summarise(a, delay=mean(dep_delay, na.rm=T))
+
+# using pipeline
+
+flights %>% group_by(origin) %>% summarise(delay=mean(dep_delay, na.rm=T))
+
+# 같은 결과가 나오는 것을 알 수 있음
+```
+
+``` {r pipeline example 2}
+
+# r group_summarise 2 example
+daily=group_by(flights, year, month, day)
+
+per_day = summarise(daily, flights=n())
+
+per_day
+
+#가장 낮은 level인 day의 flight 계산
+
+per_month = summarise(per_day, flights=sum(flights))
+per_month
+
+# 그 다음 level인 month의 flight summarise
+
+per_year = summarise(per_month, flights=sum(flights))
+per_year
+
+# using pipeline
+
+flights %>% group_by(year, month, day) %>% summarise(flights=n())
+
+flights %>% group_by(year, month, day) %>% summarise(flights=n()) %>% summarise(flights = sum(flights))
+
+flights %>% group_by(year, month, day) %>% summarise(flights=n()) %>% summarise(flights = sum(flights)) %>%
+  summarise(flights = sum(flights))
+
+```
+
+
+``` {r pipeline example 3}
+
+a1 = group_by(flights, year, month, day)
+a2 = select(a1, arr_delay, dep_delay)
+a3 = summarise(a2, 
+               arr = mean(arr_delay, na.rm=T),
+               dep = mean(dep_delay, na.rm=T))
+a4 = filter(a3, arr > 30 | dep > 30)
+
+print(a4)
+
+# using pipeline
+
+flights %>% group_by(year, month, day) %>% select(arr_delay, dep_delay) %>%
+  summarise(arr=mean(arr_delay, na.rm=T), dep=mean(dep_delay, na.rm=T)) %>%
+  filter(arr > 30 | dep >30)
+```
+
+### Other pipeline - using magrittr
+
+  * %<>% : 최종 결과값을 처음에 지정한 dataframe에 저장할 것
+  * %$% : dataframe의 특정 열만 사용하고 싶을 때 사용
+  
+``` {r another pipeline}
+library(magrittr)
+
+# %>% vs %<>%
+
+x=1
+
+x %<>% multiply_by(0.5) %>% print
+
+x %>% multiply_by(0.5) %>% print
+
+print(x)
+
+# %$%
+
+flights %>% filter(dep_delay>0 & arr_delay>0) %$% cor(dep_delay, arr_delay) 
+
+```
+
