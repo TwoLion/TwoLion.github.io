@@ -144,9 +144,7 @@ $2x+4y=2$
 
 위 세 example을 그래프로 나타내면 다음과 같습니다. 
 
-![solutionset1](../images/2021-12-16-linearalgebra1/solutionset1.png)
-
-
+![solutionset1](../../images/2021-12-16-linearalgebra1/solutionset1.png)
 
 ### 5) Matrix notation
 
