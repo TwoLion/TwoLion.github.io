@@ -13,8 +13,9 @@ sidebar:
 
 
 
-
 두 번째 포스트에서는 저번 포스트에서 정의한 linear equation와 linear system을 푸는 방법에 대해 다루어 보겠습니다.
+
+
 
 
 
@@ -25,19 +26,19 @@ sidebar:
 linear system을 푸는 과정에서, linear equation에, 혹은 linear equation끼리 특정한 연산을 가하게 됩니다. 예를 들어  
 
 
-
-$x+y=1 $ \\
-$x+2y=3$
-
+$$
+x+y=1 \\
+x+2y=3
+$$
 
 
 의 linear system을 푸는 것을 생각해봅시다. 위 system을 만족하는 $x,  y$를 찾기 위해서, 2번식에서 1번식을 빼게 되면
 
 
-
-$(x+2y)-(x+y) = 3-1$ \\
-$\Rightarrow y=2$
-
+$$
+(x+2y)-(x+y)=3-1 \\
+\Rightarrow y=2
+$$
 
 
 을 얻게 되고, $x=-1$임을 알 수 있습니다. 
@@ -46,10 +47,14 @@ $\Rightarrow y=2$
 
 
 
-$2x+2y=2$ \\
-$x+2y=3$ 
+$$
+\begin{aligned}
+2x+2y&=2\\
+x+2y&=3 \\
+\Rightarrow x=-1
+\end{aligned}
+$$
 
-$\Rightarrow x=-1$
 
 
 
@@ -76,11 +81,10 @@ $\Rightarrow x=-1$
 Linear system을 풀 때 elementary row operation만으로 solution을 구할 수 있습니다. 앞서 든 예시를 다시 한번 보면서 적용해보겠습니다.
 
 
-
-$x+y=1$  : 1번 식 
-
-$x+2y=3$  : 2번 식
-
+$$
+x+y=1 \ : 1번 \ 식 \\
+x+2y=3 \ : 2번 \ 식
+$$
 
 
 여기서 2번식 대신에, 2번식에서 1번식을 뺀 새로운 식으로 대체하는 replacement를 적용하면
@@ -102,14 +106,15 @@ $$
 마지막으로 1번식에 새로운 2번식을 빼주는 replacement를 적용하면
 
 
-
 $$
-x=-1\\
-y=2
+\begin{aligned} 
+x &=-1 \\
+y &=2
+\end{aligned}
 $$
 
 
-으로 solution을 구할 수 있습니다.
+와 같이 solution을 구할 수 있습니다.
 
 
 
@@ -344,6 +349,8 @@ linear system을 augmented matrix, 또는 coefficient matrix로 만든 후, redu
 
 
 즉, Reduced echelon form을 구하면 solution 또한 바로 나올 수 있게 됩니다. 예시를 통해 적용해보겠습니다. 
+
+
 $$
 \begin{aligned}
 2x_3+4x_4+4x_5&=0\\
@@ -352,21 +359,30 @@ $$
 3x_1-6x_2+9x_4+9x_5&=0
 \end{aligned}
 $$
+
+
 위 linear system의 augmented matrix는 다음과 같습니다. 
+
+
 $$
 \begin{bmatrix}0&0&2&0&0&0\\2&-4&-2&2&2&0\\2&-4&0&9&6&0\\3&-6&0&9&9&0\\ \end{bmatrix}
 $$
 
 
+
 위 matrix를 row operation을 통하여 reduced echelon form으로 바꾸면
+
 
 
 $$
 \begin{bmatrix}1&-2&0&0&3&0\\0&0&1&0&2&0\\0&0&0&1&0&0\\0&0&0&0&0&0\\ \end{bmatrix}
 $$
+
+
 이 됩니다. 여기서 leading entry는 (1, 1), (2, 3), (3, 4) 성분이 되며, augmented matrix의 (1, 1), (2, 3), (3, 4) 위치가 pivot position이 되고, 1열, 3열, 4열에 해당하는 변수 $x_1, x_3, x_4$가 basic variable, $x_2, x_5$가 free variable이 됩니다. 
 
-Reduced echelon form을 다시 linear system으로 변경시키면\\
+Reduced echelon form을 다시 linear system으로 변경시키면
+
 
 
 $$
@@ -382,8 +398,8 @@ $$
 
 
 
-
 \\과 같이 나오게 됩니다. 이를 basic variable인 $x_1, x_3, x_4$로 나타내게 되면
+
 
 
 $$
@@ -394,6 +410,8 @@ x_4&=0\\
 x_2, x_5&: free \ varible 
 \end{aligned}
 $$
+
+
 이 됩니다. 즉, free variable인 $x_2, x_5$에는 아무 값을 넣더라도, $x_1, x_3, x_4$가 다음의 조건을 만족하면 성립합니다.
 
 
