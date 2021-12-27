@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "1.2 Solving a linear system"
+title:  "1.3 Vector Equation"
 categories: [Linear Algebra]
 tag: [Linear Algebra]
 toc: true
@@ -53,6 +53,7 @@ $$
 x+2y&=3 \\
 \Rightarrow x=-1
 \end{aligned}
+
 $$
 
 
