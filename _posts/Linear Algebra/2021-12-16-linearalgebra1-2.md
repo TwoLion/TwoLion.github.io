@@ -22,33 +22,38 @@ sidebar:
 
 
 
-linear system을 푸는 과정에서, linear equation에, 혹은 linear equation끼리 특정한 연산을 가하게 됩니다. 예를 들어
+linear system을 푸는 과정에서, linear equation에, 혹은 linear equation끼리 특정한 연산을 가하게 됩니다. 예를 들어  
 
-$$
-x+y=1  \ \ \  : 1번 \ 식 \\
-x+2y=3 \ \ \  : 2번 \ 식
-$$
+
+
+$x+y=1 $ \\
+$x+2y=3$
+
 
 
 의 linear system을 푸는 것을 생각해봅시다. 위 system을 만족하는 $x,  y$를 찾기 위해서, 2번식에서 1번식을 빼게 되면
 
-$$
-(x+2y)-(x+y) = 3-1 \\
-\Rightarrow y=2
-$$
+
+
+$(x+2y)-(x+y) = 3-1$ \\
+$\Rightarrow y=2$
+
+
+
 을 얻게 되고, $x=-1$임을 알 수 있습니다. 
 
-혹은, 1번식의 양변에 2를 곱한 후, 2번 식을 빼게 되면
-
-$$
-2x+2y=2 \\
-x+2y=3 \\
-
-\Rightarrow x=-1
-$$
+혹은, 1번식의 양변에 2를 곱한 후, 2번 식을 빼게 되면  
 
 
-을 구할 수 있습니다. (기본적인 연립일차방정식 풀이 방법 중 하나입니다.)
+
+$2x+2y=2$ \\
+$x+2y=3$ 
+
+$\Rightarrow x=-1$
+
+
+
+  을 구할 수 있습니다. (기본적인 연립일차방정식 풀이 방법 중 하나입니다.)
 
 위의 linear system을 풀 때, linear equation끼리 연산을 하여 변수를 하나만 남겨놓게 만들어 solution을 구했습니다.  linear equation끼리의 연산을 Row operation이라고 하고, linear system의 solution을 구할 때 사용하는 가장 기본적인 operation 3개를 **elementary row operation**이라고 합니다.
 
@@ -71,12 +76,16 @@ $$
 Linear system을 풀 때 elementary row operation만으로 solution을 구할 수 있습니다. 앞서 든 예시를 다시 한번 보면서 적용해보겠습니다.
 
 
-$$
- x+y=1  \ \ \  : 1번 \ 식 \\x+2y=3 \ \ \  : 2번 \ 식
-$$
+
+$x+y=1$  : 1번 식 
+
+$x+2y=3$  : 2번 식
+
 
 
 여기서 2번식 대신에, 2번식에서 1번식을 뺀 새로운 식으로 대체하는 replacement를 적용하면
+
+
 
 
 
@@ -87,15 +96,19 @@ $$
 
 
 
+
 과 같이 나오게 됩니다. 
 
 마지막으로 1번식에 새로운 2번식을 빼주는 replacement를 적용하면
+
 
 
 $$
 x=-1\\
 y=2
 $$
+
+
 으로 solution을 구할 수 있습니다.
 
 
@@ -105,29 +118,39 @@ $$
 
 
 1번식 전체에 2를 곱하여 대체하는 scaling을 적용하면
+
+
 $$
 \begin{aligned} 2x+2y&=2 \\\ x+2y&=3  \end{aligned}
 $$
 
 
+
 이 나옵니다. 이 후 1번식 대신 1번식에서 2번식을 뺀 새로운 식으로 대체하는 replacement를 적용하면
+
+
 $$
 \begin{aligned} x\qquad \,&=-1 \\\ x+2y&=3  \end{aligned}
 $$
 
 
+
 이 나오고, 2번식 대신 2번식에서 1번식을 뺀 새로운 식으로 대체하는 replacement를 적용하면
+
 
 $$
 \begin{aligned} x&=-1 \\\ 2y&=2  \end{aligned}
 $$
 
 
+
 마지막으로, 2번식 전체에 1/2를 곱하여 대체하는 scaling을 적용하여
+
 
 $$
 \begin{aligned} x&=-1 \\\ y&=1  \end{aligned}
 $$
+
 
 
 으로 solution을 구할 수 있습니다.
