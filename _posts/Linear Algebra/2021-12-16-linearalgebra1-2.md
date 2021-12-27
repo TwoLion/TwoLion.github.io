@@ -154,3 +154,254 @@ A rectangluar matrix is in row echelon form if it has the following three proper
 2. Each leading entry of a row is in a column to the right of the leading entry of the row above it
 3. All entries in a column below the leading entry are zeros.
 
+
+
+용어 정리 : leading entry란 각 행에서 처음으로 0이 아닌 값이 나오는 entry를 뜻합니다. 
+
+
+
+이를 정리하면 다음과 같습니다. 
+
+1. 0만 존재하는 행은 0이 아닌 값이 존재하는 행보다 무조건 아래에 위치해야 한다.
+2. 윗 행에 존재하는 leading entry의 위치는 아래 행에 존재하는 leading entry의 위치보다 왼쪽에 있어야 한다. 
+3. leading entry 아래에 있는 성분(entry)의 값은 모두 0이어야 한다. 
+
+
+
+다음의 예시를 보겠습니다. 
+
+
+$$
+
+\begin{bmatrix}1&2&3&3\\0&4&5&8\\0&0&9&3\\0&0&0&0\\ \end{bmatrix}
+
+$$
+
+
+1. 4번째 행은 0만 포함한 행이므로 0이 아닌 값을 포함한 행보다 아래에 위치해 있습니다.
+2. leading entry는 1, 4, 9인데, 1은 4보다 왼쪽에, 4는 9보다 왼쪽에 위치합니다.
+3. leading entry 1, 4, 9의 아랫 성분들은 모두 0입니다.
+
+위 matrix는 row echelon form의 3가지 조건을 만족합니다. 따라서, 위의 matrix form은 echelon form입니다. 
+
+echelon이라는 단어가 쓰이는 이유는 0이 아닌 entry 전체를 보면 사다리꼴 모양으로 생겨서 echelon이라는 단어를 사용하였습니다. 
+
+
+
+위 echelon form 조건에서, 다음의 두 가지 조건을 추가적으로 만족한다면, 그 matrix는 **reduced echelon form**이라고 합니다.
+
+
+
+4. The leading entry in each nonzero row is 1
+5. Each leading 1 is the only nonzero entry in its column
+
+
+
+정리하면,
+
+4. leading entry의 값이 1이어야 한다.
+5. leading entry를 포함하는 column에서 leading entry를 제외한 나머지 성분은 0이어야 한다.
+
+
+
+위에 나온 예시 matrix는 leading entry가 1이 아니고, leading entry를 포함한 열에 다른 0이 아닌 성분이 존재하기 때문에, reduced echelon form이 아닙니다. 
+
+
+$$
+\begin{bmatrix}1&0&0&0\\0&1&0&-1\\0&0&1&3\\0&0&0&0\\ \end{bmatrix}
+$$
+
+
+다음의 matrix의 경우, echelon form임과 동시에, leading entry 값이 1이고, leading entry를 포함한 열의 다른 성분이 모두 0이므로, reduced echelon form입니다.
+
+
+
+Linear system을 풀 때, linear system의 echelon form과 reduced echelon form을 구할 수 있다면, linear system의 solution을 바로 찾아낼 수 있습니다. 
+
+이와 관련된 정리가 아래의 정리입니다. 
+
+
+
+#### Theorem: Uniqueness of the Reduced Echelon Form
+
+Each matrix is row equivalent to one and only one reduced echelon matrix
+
+
+
+즉, 각각의 matrix는 오직 하나의 reduced echelon matrix와 row equivalent합니다. 
+
+(각각의 matrix와 row equivalent한 echelon matrix는 여러개 존재할 수 있지만, reduced echelon matrix는 하나만 존재합니다.)
+
+
+
+만약 $A$ matrix가 echelon matrix인 $U$와 row equivalent하면, $U$ 는 A의 echelon form이라고  합니다.
+
+만약 $A$ matrix가 reduced echelon matrix인 $U$와 row equivalent하면, $U$는 A의 reduced echelon form이라고 합니다. 
+
+
+
+#### (1) Pivot Position
+
+Echelon form과 연결되어 사용이 되는 pivot position과 pivot column에 대한 정의입니다. 
+
+
+
+A  pivot position in a matrix $A$ is the location in $A$ that corresponds to a leading 1 in the reduced echelon form of $A$
+
+A pivot column is a column of $A$ that contains a pivot positions
+
+
+
+즉, matrix $A$의 pivot position은 $A$의 reduced echelon form에서의 leading 1의 위치이고, pivot column은 pivot position을 가지는 column입니다. 
+
+
+
+pivot position을 이용하여 free variable과 basic variable을 정의할 수 있습니다. 
+
+
+
+#### (2) Free variables
+
+
+
+Basic variable : The variables corresponding to pivot columns in the matrix
+
+Free variable : The variables except the pivot columns in the matrix
+
+
+
+linear system을 augmented matrix, 또는 coefficient matrix로 만든 후, reduced echelon form을 만들었을 때, pivot column에 해당하는 variable이 free variable이고, pivot column에 해당하지 않는 variable이 basic variable입니다. 
+
+
+
+### 3) Row Reduction algorithm
+
+
+
+위에서 정의한 echelon form과 pivot position, free variable과 basic variable은 linear system을 augmented matrix를 이용하여 해결할 때 사용됩니다. 알고리즘은 다음과 같습니다. 
+
+
+
+1. Linear system을 augmented matrix로 바꾼다. 
+2. augmented matrix를 row operation을 통해 reduced echelon form으로 바꾼다. 
+3. reduced echelon form을 이용하여 각 variable 해당하는 solution을 찾는다.
+
+
+
+즉, Reduced echelon form을 구하면 solution 또한 바로 나올 수 있게 됩니다. 예시를 통해 적용해보겠습니다. 
+$$
+\begin{aligned}
+2x_3+4x_4+4x_5&=0\\
+2x_1-4x_2-2x_3+2x_4+2x_5&=0\\
+2x_1-4x_2+9x_4+6x_5&=0\\
+3x_1-6x_2+9x_4+9x_5&=0
+\end{aligned}
+$$
+위 linear system의 augmented matrix는 다음과 같습니다. 
+$$
+\begin{bmatrix}0&0&2&0&0&0\\2&-4&-2&2&2&0\\2&-4&0&9&6&0\\3&-6&0&9&9&0\\ \end{bmatrix}
+$$
+
+
+위 matrix를 row operation을 통하여 reduced echelon form으로 바꾸면
+
+
+$$
+\begin{bmatrix}1&-2&0&0&3&0\\0&0&1&0&2&0\\0&0&0&1&0&0\\0&0&0&0&0&0\\ \end{bmatrix}
+$$
+이 됩니다. 여기서 leading entry는 (1, 1), (2, 3), (3, 4) 성분이 되며, augmented matrix의 (1, 1), (2, 3), (3, 4) 위치가 pivot position이 되고, 1열, 3열, 4열에 해당하는 변수 $x_1, x_3, x_4$가 basic variable, $x_2, x_5$가 free variable이 됩니다. 
+
+Reduced echelon form을 다시 linear system으로 변경시키면\\
+
+
+$$
+\begin{aligned}
+
+x_1-2x_2+3x_5&=0\\
+x_3+2x_5&=0\\
+x_4&=0
+
+
+\end{aligned}
+$$
+
+
+
+
+\\과 같이 나오게 됩니다. 이를 basic variable인 $x_1, x_3, x_4$로 나타내게 되면
+
+
+$$
+\begin{aligned}
+x_1&=2x_2+3x_5\\
+x_3&=-2x_5\\
+x_4&=0\\
+x_2, x_5&: free \ varible 
+\end{aligned}
+$$
+이 됩니다. 즉, free variable인 $x_2, x_5$에는 아무 값을 넣더라도, $x_1, x_3, x_4$가 다음의 조건을 만족하면 성립합니다.
+
+
+
+Reduced echelon form을 구할 수 있으면 linear system의 solution을 구할 수 있고, pivot position과 pivot column을 통해서 basic variable과 free variable을 구분할 수 있습니다. basic varible에 대한 solution은 free variable에 대한 식으로 나타내어지고, free variable의 solution은 variable의 domain (위의 예시의 경우 실수)가 됩니다. 
+
+
+
+#### 4) Solution of Linear system
+
+
+
+Linear system의 solution type은 3가지로 구분이 됩니다. 
+
+
+
+1. solution이 없는 경우(inconsistent)
+2. solution이 하나만 있는 경우
+3. solution이 무수히 많은 경우
+
+
+
+위 3가지 경우를 augmented matrix의 (reduced) echelon form과 pivot column을 통해서 확인할 수 있습니다.
+
+
+
+#### Theorem : Existence and Uniquness theorem
+
+
+
+A linear system is consistent if and only if the rightmost column of the augmented matrix is not a pivot column.
+
+That is, if and only if an echelon form of the augmented matrix has no row of the form
+
+$[0 \ 0 \ 0 \ .... \ b]$, where $b\neq0$
+
+If a linear system is consistent, then the solution set contains either a unique solution, when there are no free varaibles, or infinitely many solutions, when there is at least one free variable.
+
+
+
+첫 번째로, linear system이 inconsistent한 경우를 보면, echelon form에서의 어떤 행이
+
+
+
+$[0 \ 0 \ 0 \ .... \ b]$, where $b \neq 0$
+
+
+
+와 같이 생기게 된다면, 위의 row를 방정식으로 나타내면
+
+
+
+$0=b$
+
+
+
+가 됩니다. 이는 성립할 수가 없기 때문에, 위 linear system을 만족시키는 solution은 존재하지 않습니다.
+
+
+
+두 번째로, linear system이 consistent한 경우, linear system에서 free variable이 존재하는 경우와 존재하지 않는 경우로 나눌 수 있습니다. Solution에서 free variable에 해당하는 부분은 특정한 조건이 없기 때문에, 실수 전체에 대해서 solution이 성립합니다. 따라서 free variable이 존재하는 경우는 solution이 무수히 많게 되고, free variable이 없는 경우는 solution이 하나만 존재하게 됩니다.
+
+
+
+
+지금까지 linear system의 solution을 구하는 방법에 대해서 알아보았습니다. 다음 포스팅에서는 linear system을 표현하는 다양한 방법에 대해서 알아보겠습니다.
