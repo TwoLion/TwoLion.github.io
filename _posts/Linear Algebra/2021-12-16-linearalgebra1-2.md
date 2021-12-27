@@ -24,27 +24,29 @@ sidebar:
 
 linear system을 푸는 과정에서, linear equation에, 혹은 linear equation끼리 특정한 연산을 가하게 됩니다. 예를 들어
 
+$$
+x+y=1  \ \ \  : 1번 \ 식 \\
+x+2y=3 \ \ \  : 2번 \ 식
+$$
 
-
-$x+y=1 $ - 1번 식
-
-$x+2y=3$ - 2번 식
 
 의 linear system을 푸는 것을 생각해봅시다. 위 system을 만족하는 $x,  y$를 찾기 위해서, 2번식에서 1번식을 빼게 되면
 
-$(x+2y)-(x+y) = 3-1$
-
-$\Rightarrow y=2$
-
+$$
+(x+2y)-(x+y) = 3-1 \\
+\Rightarrow y=2
+$$
 을 얻게 되고, $x=-1$임을 알 수 있습니다. 
 
 혹은, 1번식의 양변에 2를 곱한 후, 2번 식을 빼게 되면
 
-$2x+2y=2$
+$$
+2x+2y=2 \\
+x+2y=3 \\
 
-$x+2y=3$
+\Rightarrow x=-1
+$$
 
-$\Rightarrow x=-1$
 
 을 구할 수 있습니다. (기본적인 연립일차방정식 풀이 방법 중 하나입니다.)
 
@@ -68,26 +70,32 @@ $\Rightarrow x=-1$
 
 Linear system을 풀 때 elementary row operation만으로 solution을 구할 수 있습니다. 앞서 든 예시를 다시 한번 보면서 적용해보겠습니다.
 
-$x+y=1 $ - 1번 식
 
-$x+2y=3$ - 2번 식
-
+$$
+ x+y=1  \ \ \  : 1번 \ 식 \\x+2y=3 \ \ \  : 2번 \ 식
+$$
 
 
 여기서 2번식 대신에, 2번식에서 1번식을 뺀 새로운 식으로 대체하는 replacement를 적용하면
 
 
 
-$\begin{aligned} x+y&=1 \\\ y&=2  \end{aligned}$
+$$
+\begin{aligned} x+y&=1 \\\ y&=2  \end{aligned}
+$$
+
+
+
 
 과 같이 나오게 됩니다. 
 
 마지막으로 1번식에 새로운 2번식을 빼주는 replacement를 적용하면
 
-$x=-1$
 
-$y=1$
-
+$$
+x=-1\\
+y=2
+$$
 으로 solution을 구할 수 있습니다.
 
 
@@ -97,26 +105,40 @@ $y=1$
 
 
 1번식 전체에 2를 곱하여 대체하는 scaling을 적용하면
+$$
+\begin{aligned} 2x+2y&=2 \\\ x+2y&=3  \end{aligned}
+$$
 
-$\begin{aligned} 2x+2y&=2 \\\ x+2y&=3  \end{aligned}$
 
 이 나옵니다. 이 후 1번식 대신 1번식에서 2번식을 뺀 새로운 식으로 대체하는 replacement를 적용하면
+$$
+\begin{aligned} x\qquad \,&=-1 \\\ x+2y&=3  \end{aligned}
+$$
 
-$\begin{aligned} x\qquad \,&=-1 \\\ x+2y&=3  \end{aligned}$
 
 이 나오고, 2번식 대신 2번식에서 1번식을 뺀 새로운 식으로 대체하는 replacement를 적용하면
 
-$\begin{aligned} x&=-1 \\\ 2y&=2  \end{aligned}$
+$$
+\begin{aligned} x&=-1 \\\ 2y&=2  \end{aligned}
+$$
+
 
 마지막으로, 2번식 전체에 1/2를 곱하여 대체하는 scaling을 적용하여
 
-$\begin{aligned} x&=-1 \\\ y&=1  \end{aligned}$
+$$
+\begin{aligned} x&=-1 \\\ y&=1  \end{aligned}
+$$
+
 
 으로 solution을 구할 수 있습니다.
 
 
 
+
+
 #### (1) Row Equivalant
+
+
 
 
 
@@ -141,6 +163,8 @@ Row equivalent의 의미를 안다면,  다음의 명제를 얻을 수 있습니
 
 
 ### 2) Row Echelon Form
+
+
 
 
 
@@ -172,9 +196,7 @@ A rectangluar matrix is in row echelon form if it has the following three proper
 
 
 $$
-
 \begin{bmatrix}1&2&3&3\\0&4&5&8\\0&0&9&3\\0&0&0&0\\ \end{bmatrix}
-
 $$
 
 
@@ -222,6 +244,8 @@ Linear system을 풀 때, linear system의 echelon form과 reduced echelon form�
 
 
 
+
+
 #### Theorem: Uniqueness of the Reduced Echelon Form
 
 Each matrix is row equivalent to one and only one reduced echelon matrix
@@ -237,6 +261,8 @@ Each matrix is row equivalent to one and only one reduced echelon matrix
 만약 $A$ matrix가 echelon matrix인 $U$와 row equivalent하면, $U$ 는 A의 echelon form이라고  합니다.
 
 만약 $A$ matrix가 reduced echelon matrix인 $U$와 row equivalent하면, $U$는 A의 reduced echelon form이라고 합니다. 
+
+
 
 
 
@@ -260,7 +286,9 @@ pivot position을 이용하여 free variable과 basic variable을 정의할 수 
 
 
 
-#### (2) Free variables
+
+
+#### (2) Free variable
 
 
 
@@ -274,7 +302,11 @@ linear system을 augmented matrix, 또는 coefficient matrix로 만든 후, redu
 
 
 
+
+
 ### 3) Row Reduction algorithm
+
+
 
 
 
@@ -347,7 +379,11 @@ Reduced echelon form을 구할 수 있으면 linear system의 solution을 구할
 
 
 
+
+
 #### 4) Solution of Linear system
+
+
 
 
 
@@ -365,7 +401,11 @@ Linear system의 solution type은 3가지로 구분이 됩니다.
 
 
 
+
+
 #### Theorem : Existence and Uniquness theorem
+
+
 
 
 
@@ -400,6 +440,8 @@ $0=b$
 
 
 두 번째로, linear system이 consistent한 경우, linear system에서 free variable이 존재하는 경우와 존재하지 않는 경우로 나눌 수 있습니다. Solution에서 free variable에 해당하는 부분은 특정한 조건이 없기 때문에, 실수 전체에 대해서 solution이 성립합니다. 따라서 free variable이 존재하는 경우는 solution이 무수히 많게 되고, free variable이 없는 경우는 solution이 하나만 존재하게 됩니다.
+
+
 
 
 
