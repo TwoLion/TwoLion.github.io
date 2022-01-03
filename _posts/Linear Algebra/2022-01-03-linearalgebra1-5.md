@@ -36,7 +36,7 @@ Linear independence는 homogeneous linear system의 개념을 이용하여 정�
 
 
 
-##### Definition : Homogeneous Linear system
+**Definition : Homogeneous Linear system**
 
 
 
@@ -104,7 +104,7 @@ Linear independence는 다음과 같이 정의됩니다.
 
 
 
-##### Definition : Linear independence
+**Definition : Linear independence**
 
 
 
@@ -142,9 +142,7 @@ The indexed set is linear dependent if and only if it is not linearly independen
 
 
 
-
-
-##### example 1)
+*example 1)*
 
 
 $$
@@ -226,7 +224,7 @@ $$
 
 
 
-##### example 2)
+*example 2)*
 
 
 $$
@@ -256,6 +254,8 @@ $$
 
 
 #### (2) Special Case of linearly independence
+
+
 
 
 
@@ -355,7 +355,9 @@ $$
 
 
 
-##### Theorem : Characterization of Linearly Dependent Sets
+**Theorem : Characterization of Linearly Dependent Sets**
+
+
 
 
 
