@@ -18,6 +18,8 @@ sidebar:
 
 
 
+
+
 이번 포스트에서는 linear system을 표현하는 방법 중 하나인 matrix equation에 대해 알아보겠습니다.
 
 
