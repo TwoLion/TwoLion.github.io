@@ -230,7 +230,7 @@ $$
 $$
 A =\begin{bmatrix}0 &1 & 4 \\1 & 2 & -1 \\ 5 & 8 & 0 \end{bmatrix}
 $$
- 
+
 
 위 matrix를 이용한 matrix equation $A\boldsymbol{x}=\boldsymbol{0}$를 풀면
 
@@ -409,7 +409,7 @@ Zero vector를 포함한 집합은 linearly dependent합니다.
 
 
 
-지금까지 선형대수학에서 중요한 개념 중 하나인 linear independence에 대해 알아보았습니다. 다음 포스트에서는 행렬의 개념과 기본 연산에 대해 알아보겠습니다. 질문이나 오류 있으면 댓글로 남겨주세요! 감사합니다!
+지금까지 선형대수학에서 중요한 개념 중 하나인 linear independence에 대해 알아보았습니다. 다음 포스트에서는 matrix의 개념과 기본적인 matrix에 대해 알아보겠습니다. 질문이나 오류 있으면 댓글로 남겨주세요! 감사합니다!
 
 
 
