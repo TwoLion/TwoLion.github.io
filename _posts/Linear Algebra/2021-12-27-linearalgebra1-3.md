@@ -37,7 +37,11 @@ scalar는 크기만을 가지는 값을 뜻하고, vector는 크기와 방향을
 
 
 
-그림
+![vector](../../images/2021-12-27-linearalgebra1-3/vector.png)
+
+
+
+$\boldsymbol{v}$의 시점은 $A$, 종점은 $B$, $\boldsymbol{u}$의 시점은 $C$ 종점은 $D$입니다. 두 벡터의 위치는 달라도, 방향과 크기가 같기 때문에($\boldsymbol{u}$를 평행이동시키면 $\boldsymbol{v}$와 일치합니다.) 두 벡터는 같습니다. 
 
 
 
@@ -57,7 +61,13 @@ scalar는 크기만을 가지는 값을 뜻하고, vector는 크기와 방향을
 
 
 
-그림
+
+
+<img src="../../images/2021-12-27-linearalgebra1-3/vector-16412247945723.png" style="zoom:60%;" />
+
+
+
+(시점을 원점으로 고정시키는 순간 벡터와 점은 일대일 대응이 됩니다.(벡터와 종점이 대응됩니다.) 따라서 벡터를 좌표 순서쌍으로 나타낼 수 있습니다.)
 
 
 
