@@ -84,7 +84,7 @@ $$
 
 
 
-**Definition : Scalar Multiple **
+**Definition : Scalar Multiple**
 
 
 
@@ -212,7 +212,7 @@ matrix multiplicaion $AB$의 각각의 column을 보면, $A$ **column들의 line
 
 
 
-**(1) Row Column rule for computing **$AB$
+**(1) Row Column rule for computing** $AB$
 
 
 
