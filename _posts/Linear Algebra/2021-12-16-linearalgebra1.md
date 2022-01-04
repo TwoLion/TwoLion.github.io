@@ -14,9 +14,13 @@ sidebar:
 
 첫 번째 선형대수학 포스트에서는 linear equation과 system of linear equation, solution of linear system에 대해 다루어 보겠습니다.
 
+<br/>
+
 
 
 ### 1) Linear Equation
+
+<br/>
 
 
 
@@ -28,9 +32,13 @@ $
 
 여기서 $a_1, a_2, ..., a_n, b$는 상수(constant)이고, 모든 $a_i$는 0이 되면 안됩니다. 간단하게 일차방정식이라고 생각해주면 되겠습니다.
 
+<br/>
 
 
-example 1)
+
+*example*
+
+
 
 $x+2y=5$ (변수: $x, y$ )
 
@@ -38,9 +46,13 @@ $2x-y+3z=10$ (변수: $x, y, z$)
 
 $x_1+x_2+...x_n=1$ (변수: $x_1, ..., x_n$)
 
+<br/>
+
 
 
 ### 2) System of Linear Equation(Linear system)
+
+<br/>
 
 
 
@@ -60,9 +72,11 @@ $a_{21}x_1 + a_{22}x+...+a_{2_n}x_n=b_2$
 
 $a_{m1}x_1 + a_{m2}x+...+a_{m_n}x_n=b_m$
 
+<br/>
 
 
-example 2)
+
+*example*
 
 $2x_1 - x_2 + 5x_3 = 1$
 
@@ -70,9 +84,15 @@ $x_1 + 3x_3=0$
 
 (두번째 linear equation에서 $x_2$가 없는 것을 $0 \times x_2$로 해석할 수 있습니다. 따라서 두 linear equation은 다루는 variable이 같습니다.)
 
+<br/>
+
 
 
 ### 3) Solution of system
+
+<br/>
+
+
 
 위에서 정의한 linear equation, system of linear equation 모두 방정식입니다. 따라서 방정식에서는 해, solution이 있습니다. 
 
@@ -88,7 +108,13 @@ solution set을 이용하여 두 개 이상의 linear system을 비교할 수 �
 
 
 
-example 3)
+<br/>
+
+
+
+*example*
+
+
 
 $x+y = 1$
 
@@ -98,7 +124,15 @@ $x + 2y=0$
 
 
 
+<br/>
+
+
+
 ### 4) Solution 종류
+
+<br/>
+
+
 
 모든 Linear system의 solution의 유형은 다음과 같은 세 가지로 분류할 수 있습니다. 
 
@@ -110,9 +144,13 @@ $x + 2y=0$
 
 여기서 solution이 없는 linear system을 **inconsistent**하다라고 정의하고, 하나 또는 무수히 많은 solution을 가지는 linear system을 **consistent**라고 정의합니다. 
 
+<br/>
 
 
-example 4.1)
+
+*example*
+
+
 
 $x+y = 1$
 
@@ -120,9 +158,11 @@ $x + 2y=3$
 
 위 linear system의 solution은 $(-1, 2)$ 하나밖에 존재하지 않습니다. 따라서 위 linear system의 solution은 하나이고, consistent합니다.
 
+<br/>
 
 
-example 4.2)
+
+*example*
 
 $x+2y=1$
 
@@ -132,7 +172,11 @@ $2x+4y=3$
 
 
 
-example 4.3)
+<br/>
+
+
+
+*example*
 
 $x+2y=1$
 
@@ -146,7 +190,17 @@ $2x+4y=2$
 
 ![solutionset1](../../images/2021-12-16-linearalgebra1/solutionset1.png)
 
+
+
+<br/>
+
+
+
 ### 5) Matrix notation
+
+<br/>
+
+
 
 Linear system을 matrix를 이용하여 간단하게 표현할 수 있습니다. 
 

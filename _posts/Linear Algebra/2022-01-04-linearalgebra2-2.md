@@ -18,13 +18,19 @@ sidebar:
 
 이번 포스팅에서는 matrix를 이용한 연산 중, 덧셈, scalar multiple, 곱셈에 대해서 알아보겠습니다.
 
+<br/>
+
 
 
 ### 1) Matrix Equality
 
+<br/>
+
 
 
 Matrix를 연산하기 위해서는 먼저 두 matrix가 같다를 정의해야 합니다.
+
+<br/>
 
 
 
@@ -46,9 +52,13 @@ $A$의 행과 열의 수와 $B$의 행과 열의 수 같고, 같은 위치에 �
 
 
 
+<br/>
+
 
 
 ### 2) Sum of matrices, Scalar multiple
+
+<br/>
 
 
 
@@ -68,6 +78,8 @@ $A, B$가 $m \times n$ matrix인 경우, $A+B$는 $m \times n$ matrix이고, $A+
 
 따라서, 두 matrix의 합을 정의하기 위해서는 $A, B$의 matrix size(행과 열 개수)가 같아야 정의합니다. 만약 matrix size가 다르면, matrix의 합을 정의하지 않습니다.
 
+<br/>
+
 
 
 *example*
@@ -80,6 +92,8 @@ $$
 $$
 \begin{bmatrix}4&3&2\\1&2&3\end{bmatrix} + \begin{bmatrix}-2&1\\-3&-2\end{bmatrix} : \ not \ defined
 $$
+
+<br/>
 
 
 
@@ -97,6 +111,8 @@ $r$이 scalar값이고, $A$가 matrix인 경우, scalar multiple $rA$은 column�
 
 
 matrix sum과 scalar multiple을 동시에 적용하면 matrix의 일반적인 합, 차, scalar multiple을 계산할 수 있습니다.
+
+<br/>
 
 
 
@@ -117,6 +133,8 @@ $$
 
 
 으로 계산할 수 있습니다.
+
+<br/>
 
 
 
@@ -143,9 +161,13 @@ $A, B, C$가 같은 size의 matrix이고, $r, s$가 scalar 값일 때
 
 
 
+<br/>
+
 
 
 ### 3) Matrix multiplication
+
+<br/>
 
 
 
@@ -159,7 +181,7 @@ If $A$ is an $m \times n$ matrix, and if $B$ is an $n \times p$ matrix with colu
 $$
 AB = \begin{bmatrix}A\boldsymbol{b_1}&A\boldsymbol{b_2}&...&A\boldsymbol{b_p}\end{bmatrix}
 $$
- 
+
 
 위와 같이 $AB$의 column은 $A$와 $B$의 column의 곱으로 정의됩니다. 따라서, $AB$가 정의되기 위해서는 $A\boldsymbol{b_j}$가 정의되어야 하기 때문에, A의 column 개수와 $B$의 row 개수가 같아야지 두 matrix의 곱이 정의됩니다. 만약 $A$의 column 개수와 $B$의 row 개수가 다르다면, $AB$는 정의되지 않습니다. 또한  $A\boldsymbol{b_j}$의 성분 개수는 $m$, 즉  $A\boldsymbol{b_j} \in \mathbb{R}^m$ 이므로,  $AB$는 $m \times p$ matrix입니다.
 
@@ -209,6 +231,8 @@ matrix multiplicaion $AB$의 각각의 column을 보면, $A$ **column들의 line
 즉, $AB$의 column이 $A$의 column들의 linear comination으로 표현되기 때문에, $AB$가 정의되려면 $A$**의 column 개수와 **$B$**의 row 개수가 같아야만 정의됩니다.** 또한 $A\boldsymbol{b_j}$의 성분 개수가 $m$개이고, $j$가 $1$에서 $p$까지 존재하기 때문에 $AB$는 $m \times p$ matrix가 됩니다.
 
 
+
+<br/>
 
 
 
@@ -309,6 +333,8 @@ $$
 가 됩니다.
 
 
+
+<br/>
 
 
 

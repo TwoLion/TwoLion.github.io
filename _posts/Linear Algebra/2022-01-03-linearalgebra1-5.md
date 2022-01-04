@@ -26,13 +26,19 @@ sidebar:
 
 
 
+<br/>
+
 
 
 ### 1) Homogeneous Linear system
 
+<br/>
+
 
 
 Linear independence는 homogeneous linear system의 개념을 이용하여 정의합니다.
+
+<br/>
 
 
 
@@ -94,13 +100,19 @@ $$
 
 
 
+<br/>
+
 
 
 ### 2) Linear Independence
 
+<br/>
+
 
 
 Linear independence는 다음과 같이 정의됩니다.
+
+<br/>
 
 
 
@@ -139,6 +151,8 @@ The indexed set is linear dependent if and only if it is not linearly independen
 
 
 여기서, homogeneous linear system의 solution 타입은 solution이 하나만 있거나(trivial solution), solution이 무수히 많은 경우(nontrivial solution) 두 가지밖에 없기 때문에, linearly independent와 linearly dependent는 상반된 개념입니다. 즉, linearly independent하지 않으면 linearly dependent하고, linearly dependent하지 않으면, linearly independent합니다.
+
+<br/>
 
 
 
@@ -184,9 +198,13 @@ $$
 
 
 
+<br/>
+
 
 
 #### (1) Linear independence and Matrix column
+
+<br/>
 
 
 
@@ -222,6 +240,8 @@ $$
 
 
 
+<br/>
+
 
 
 *example 2)*
@@ -251,11 +271,15 @@ $$
 
 
 
+<br/>
+
 
 
 #### (2) Special Case of linearly independence
 
 
+
+<br/>
 
 
 
@@ -353,6 +377,8 @@ $$
 
 위 case를 일반적인 case로 확장한 정리가 다음 정리입니다.
 
+<br/>
+
 
 
 **Theorem : Characterization of Linearly Dependent Sets**
@@ -413,13 +439,19 @@ Zero vector를 포함한 집합은 linearly dependent합니다.
 
 
 
+<br/>
+
 
 
 ### Appendix : Proof of Theorem
 
+<br/>
+
 
 
 #### 1) Characterization of Linearly Dependent Sets
+
+<br/>
 
 
 
@@ -555,9 +587,13 @@ $$
 $$
 와 같이 $\boldsymbol{v_j}$이 $\boldsymbol{v_1}, \boldsymbol{v_2}, \cdots, \boldsymbol{v_{j-1}}$의 linear combination으로 표현 가능합니다.
 
+<br/>
+
 
 
 #### 2) Vector의 수와 vector의 성분의 수
+
+<br/>
 
 
 
@@ -603,9 +639,13 @@ $$
 
 
 
+<br/>
+
 
 
 #### 3) Zero vector를 포함한 집합
+
+<br/>
 
 
 

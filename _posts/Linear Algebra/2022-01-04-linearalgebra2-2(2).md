@@ -18,9 +18,13 @@ sidebar:
 
 이번 포스트에서는 matrix에서 정의되는 특별한 연산인 transpose와 trace에 대해 알아보겠습니다.
 
+<br/>
+
 
 
 ### 1) Transpose
+
+<br/>
 
 
 
@@ -60,6 +64,8 @@ $$
 
 
 
+<br/>
+
 
 
 **Properties of transpose of matrix**
@@ -83,6 +89,8 @@ Transpose와 관련된 특별한 matrix인 symmetric matrix에 대해 알아보�
 
 
 
+<br/>
+
 
 
 **Definition : Symmetric matrix**
@@ -103,11 +111,13 @@ A square matrix is called symmetric if $A^T=A$
 $$
 A=\begin{bmatrix}1 & 0 & 3 \\ 0 & 2 & 2 \\ 3 & 2& 1\end{bmatrix}
 $$
- 
+
 
 이 때, $A=A^T$이므로 symmetric matrix입니다.
 
 
+
+<br/>
 
 
 
@@ -135,9 +145,13 @@ $A, B$ are symmetric matrices with the same size ans $k$ is any scalar, than
 
 
 
+<br/>
+
 
 
 ### 2) Trace
+
+<br/>
 
 
 
@@ -176,6 +190,8 @@ $$
 입니다.
 
 
+
+<br/>
 
 
 

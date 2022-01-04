@@ -23,9 +23,13 @@ sidebar:
 
 
 
+<br/>
+
 
 
 ### 1) Vector and Scalar
+
+<br/>
 
 
 
@@ -43,9 +47,13 @@ scalar는 크기만을 가지는 값을 뜻하고, vector는 크기와 방향을
 
 $\boldsymbol{v}$의 시점은 $A$, 종점은 $B$, $\boldsymbol{u}$의 시점은 $C$ 종점은 $D$입니다. 두 벡터의 위치는 달라도, 방향과 크기가 같기 때문에($\boldsymbol{u}$를 평행이동시키면 $\boldsymbol{v}$와 일치합니다.) 두 벡터는 같습니다. 
 
+<br/>
+
 
 
 #### (1) 위치 벡터  
+
+<br/>
 
 
 
@@ -71,13 +79,17 @@ $\boldsymbol{v}$의 시점은 $A$, 종점은 $B$, $\boldsymbol{u}$의 시점은 
 
 
 
+<br/>
+
 
 
 #### (2)  Zero Vector, $\mathbb{R}^n$ 정의
 
+<br/>
 
 
-* definition
+
+* **Definition**
 
 
 
@@ -92,9 +104,11 @@ $$
 
 를 n-space라고 정의하고, $\mathbb{R}^n$으로 표시합니다. 
 
+<br/>
 
 
-* definition
+
+* **Definition**
 
 
 
@@ -106,9 +120,13 @@ $$
 
 
 
+<br/>
+
 
 
 #### (3) Notation
+
+<br/>
 
 
 
@@ -134,13 +152,17 @@ $$
 
 
 
+<br/>
+
 
 
 #### (4) Vector의 상등, 연산
 
+<br/>
 
 
-* Definition
+
+* **Definition**
 
 두 벡터 $\boldsymbol{v} = (v_1, v_2, ..., v_n)$와 $\boldsymbol{w}=(w_1, w_2, ..., w_n)$가 
 
@@ -152,9 +174,11 @@ $$
 
 의 조건을 만족하면, 두 벡터가 같다(equivalent)라고 정의하고, $\boldsymbol{v}=\boldsymbol{w}$로 표시합니다.
 
+<br/>
 
 
-* Definition
+
+* **Definition**
 
 $\mathbb{R}^n$에 있는 두 벡터  $\boldsymbol{v} = (v_1, v_2, ..., v_n)$와 $\boldsymbol{w}=(w_1, w_2, ..., w_n)$와 scalar $k$에 대해서
 
@@ -171,17 +195,23 @@ $\mathbb{R}^n$에 있는 두 벡터  $\boldsymbol{v} = (v_1, v_2, ..., v_n)$와 
 
 
 
+<br/>
+
 
 
 ### 2) Linear Combination
+
+<br/>
 
 
 
 위 내용까지가 기본적인 벡터에 대한 내용이었다면, 이제 linear system과 vector를 연결시키는 작업을 해보겠습니다. 이 작업을 하기 위해서, **linear combination**이라는 중요한 개념을 사용합니다. 
 
+<br/>
 
 
-* Definition: Linear combination of $\boldsymbol{v_1}, \boldsymbol{v_2}, \cdots, \boldsymbol{v_p} $
+
+* **Definition: Linear combination of** $\boldsymbol{v_1}, \boldsymbol{v_2}, \cdots, \boldsymbol{v_p} $
 
 
 
@@ -201,10 +231,11 @@ is called a linear combination of $\boldsymbol{v_1}, \boldsymbol{v_2}, \cdots, \
 
 위 정의를 정리하면,  $\boldsymbol{v_1}, \boldsymbol{v_2}, \cdots, \boldsymbol{v_p} $ 일차 결합으로 나타내어진 $\boldsymbol{y}$를 $\boldsymbol{v_1}, \boldsymbol{v_2}, \cdots, \boldsymbol{v_p} $ 의 **linear combination**이라고 합니다.
 
+<br/>
 
 
-- Example
 
+*Example*
 
 $$
 \boldsymbol{a_1}=\begin{bmatrix} 1 \\-2\\-5 \end{bmatrix}, \
@@ -225,9 +256,13 @@ $$
 
 
 
+<br/>
+
 
 
 ### 3) Vector Equation
+
+<br/>
 
 
 
@@ -324,17 +359,23 @@ $$
 
 
 
+<br/>
+
 
 
 ### 4) Spanning Set
+
+<br/>
 
 
 
 Linear combination을 이용한 특별한 집합인 spanning set에 대해서 알아보겠습니다. 
 
+<br/>
 
 
-* Definition: Spanning Set
+
+* **Definition: Spanning Set**
 
 
 
@@ -369,18 +410,23 @@ $$
 
 
 
+<br/>
+
 
 
 ### 5) Parametric vector form
+
+<br/>
 
 
 
 이 때까지 linear system을 vector equation으로 표현하는 방법과, linear combination과 spanning set에 대해서 알아보았습니다. 이번에는 linear system의 solution을 vector form으로 표현하는 방법에 대해서 알아보겠습니다. 
 
+<br/>
 
 
-* example
 
+*example*
 
 $$
 10x_1-3x_2-2x_3=0
@@ -427,9 +473,14 @@ $$
 
 
 
+<br/>
 
 
-* example
+
+*example*
+
+
+
 
 $$
 \begin{aligned}

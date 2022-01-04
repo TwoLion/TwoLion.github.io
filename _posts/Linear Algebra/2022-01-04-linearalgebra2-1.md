@@ -25,9 +25,13 @@ sidebar:
 
 
 
+<br/>
+
 
 
 ### 1) Matrix
+
+<br/>
 
 
 
@@ -79,6 +83,8 @@ $A$의 $(i, j)$ entry 중 $i=j$인 entry를 **diagonal entry**라고 하고, dia
 
 
 
+<br/>
+
 
 
 #### Basic Matrix
@@ -90,6 +96,8 @@ $A$의 $(i, j)$ entry 중 $i=j$인 entry를 **diagonal entry**라고 하고, dia
 
 
 모든 entry 값이 0인 matrix를 뜻합니다.
+
+<br/>
 
 
 
@@ -109,6 +117,8 @@ $$
 
 row의 수와 column의 수가 같은 matrix를 뜻합니다. ($n \times n$ matrix)
 
+<br/>
+
 
 
 *example* 
@@ -126,6 +136,8 @@ $$
 
 
 Square matrix에서 main diagonal 값이 모두 1이고, 이를 제외한 모든 entry 값이 0인 matrix를 뜻합니다.
+
+<br/>
 
 
 
@@ -146,6 +158,8 @@ $$
 Upper triangular matrix : Square matrix에서 main diagonal 아래에 위치한 entry 값이 0인 matrix를 뜻합니다.
 
 Lower triangular matrix : Square matrix에서 main diagonal 위에 위치한 entry 값이 0인 matrix를 뜻합니다.
+
+<br/>
 
 
 
@@ -174,6 +188,8 @@ Upper triangular matrix의 조건은 main diagonal 아래에 위치한 entry 값
 
 
 Square matrix에서 main diagonal의 값을 제외한 나머지 entry 값이 0인 matrix를 뜻합니다.
+
+<br/>
 
 
 

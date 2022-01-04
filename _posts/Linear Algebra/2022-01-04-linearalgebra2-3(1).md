@@ -28,13 +28,19 @@ sidebar:
 
 이번 포스트에서는 matrix의 inverse에 대해 알아보겠습니다.
 
+<br/>
+
 
 
 ### 1) Inverse of a matrix
 
+<br/>
+
 
 
 #### (1) Invertible matrix
+
+<br/>
 
 
 
@@ -96,6 +102,8 @@ Invertible matrix 정의에서 중요한 점은 3가지 입니다.
 
 
 
+<br/>
+
 
 
 **Definition : singular, nonsingular matrix**
@@ -113,6 +121,8 @@ invertible matrix와 관련된 matrix로 singular, nonsingular matrix가 있습�
 **Not Invertible한 matrix를 singular matrix**라 합니다. 
 
 
+
+<br/>
 
 
 
@@ -138,9 +148,13 @@ $$
 
 
 
+<br/>
+
 
 
 #### (2) Invertible matrix : $2\times2$ case
+
+<br/>
 
 
 
@@ -185,6 +199,8 @@ $$
 
 의 값에 따라 matrix가 invertible한지 아닌지 결정이 됩니다. ($ad-bc\neq0$이면 invertible, $ad-bc=0$이면 not invertible합니다.) 따라서 위의 식을 **determinant**라고 정의합니다. 
 
+<br/>
+
 
 
 *example*
@@ -207,9 +223,13 @@ $$
 
 
 
+<br/>
+
 
 
 ### (3) Properties of Invertible matrix
+
+<br/>
 
 
 
@@ -256,15 +276,21 @@ $$
 
 지금까지 invertible matrix와 inverse of matrix에 대해 알아보았습니다. 다음 포스트에서는 실제로 matrix의 inverse를 구하는 방법에 대해 알아보겠습니다. 질문이나 오류가 있으면 댓글로 남겨주세요! 감사합니다!
 
+<br/>
+
 
 
 ### Appendix : Proof of property
 
 
 
+<br/>
+
 
 
 #### (1) Uniqueness of the inverse
+
+<br/>
 
 
 
@@ -304,9 +330,13 @@ $$
 
 를 만족합니다.
 
+<br/>
+
 
 
 #### (2) Properties of invertible matrix
+
+<br/>
 
 
 
@@ -345,6 +375,8 @@ $$
 
 
 
+
+<br/>
 
 
 
@@ -404,6 +436,8 @@ $$
 위 증명은 두 개 이상의  invertible matrices 곱의 inverse를 구할 때 또한 사용할 수 있습니다.
 
 
+
+<br/>
 
 
 

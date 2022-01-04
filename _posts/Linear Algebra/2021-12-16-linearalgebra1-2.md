@@ -17,9 +17,13 @@ sidebar:
 
 
 
+<br/>
+
 
 
 ### 1) Elementary Row Operation
+
+<br/>
 
 
 
@@ -162,9 +166,13 @@ $$
 
 
 
+<br/>
+
 
 
 #### (1) Row Equivalant
+
+<br/>
 
 
 
@@ -188,9 +196,13 @@ Row equivalent의 의미를 안다면,  다음의 명제를 얻을 수 있습니
 
 
 
+<br/>
+
 
 
 ### 2) Row Echelon Form
+
+<br/>
 
 
 
@@ -272,6 +284,8 @@ Linear system을 풀 때, linear system의 echelon form과 reduced echelon form�
 
 
 
+<br/>
+
 
 
 #### Theorem: Uniqueness of the Reduced Echelon Form
@@ -292,9 +306,15 @@ Each matrix is row equivalent to one and only one reduced echelon matrix
 
 
 
+<br/>
+
 
 
 #### (1) Pivot Position
+
+<br/>
+
+
 
 Echelon form과 연결되어 사용이 되는 pivot position과 pivot column에 대한 정의입니다. 
 
@@ -314,9 +334,13 @@ pivot position을 이용하여 free variable과 basic variable을 정의할 수 
 
 
 
+<br/>
+
 
 
 #### (2) Free variable
+
+<br/>
 
 
 
@@ -330,11 +354,15 @@ linear system을 augmented matrix, 또는 coefficient matrix로 만든 후, redu
 
 
 
+<br/>
+
 
 
 ### 3) Row Reduction algorithm
 
 
+
+<br/>
 
 
 
@@ -398,7 +426,7 @@ $$
 
 
 
-\\과 같이 나오게 됩니다. 이를 basic variable인 $x_1, x_3, x_4$로 나타내게 되면
+과 같이 나오게 됩니다. 이를 basic variable인 $x_1, x_3, x_4$로 나타내게 되면
 
 
 
@@ -418,11 +446,15 @@ $$
 
 Reduced echelon form을 구할 수 있으면 linear system의 solution을 구할 수 있고, pivot position과 pivot column을 통해서 basic variable과 free variable을 구분할 수 있습니다. basic varible에 대한 solution은 free variable에 대한 식으로 나타내어지고, free variable의 solution은 variable의 domain (위의 예시의 경우 실수)가 됩니다. 
 
+<br/>
+
 
 
 
 
 #### 4) Solution of Linear system
+
+<br/>
 
 
 
@@ -441,6 +473,8 @@ Linear system의 solution type은 3가지로 구분이 됩니다.
 위 3가지 경우를 augmented matrix의 (reduced) echelon form과 pivot column을 통해서 확인할 수 있습니다.
 
 
+
+<br/>
 
 
 

@@ -22,9 +22,13 @@ sidebar:
 
 이번 포스트에서는 linear system을 표현하는 방법 중 하나인 matrix equation에 대해 알아보겠습니다.
 
+<br/>
+
 
 
 ### 1. Matrix Equation
+
+<br/>
 
 
 
@@ -36,7 +40,11 @@ Matrix equation를 정의하기 위해서, matrix와 vector의 곱에 대해서 
 
 
 
-* Definition
+<br/>
+
+
+
+* **Definition**
 
 If $A$ is an $m \times n$ matrix, with columns $\boldsymbol{a_1}, \boldsymbol{a_2}, ..., \boldsymbol{a_n}$, and if $\boldsymbol{x}$ is in $\mathbb{R}^n$, then the product of $A$ and $x$, denoted by $A\boldsymbol{x}$, is the linear combination of the columns of $A$ using the corresponding entries in $\boldsymbol{x}$ as weights
 
@@ -56,6 +64,8 @@ matrix와 vector의 곱은 matrix의 column의 linear combination으로 표현�
 
 따라서, $A\boldsymbol{x}$가 정의되기 위해서는 $A$의 column 개수와 $\boldsymbol{x}$의 성분 개수가 같아야 합니다. 
 
+<br/>
+
 
 
 example 1)
@@ -64,6 +74,8 @@ example 1)
 $$
 \begin{bmatrix}1& 2& -1 \\0 & 5 & -3\end{bmatrix} \begin{bmatrix}4 \\ 3\\ 7 \end{bmatrix} =4\begin{bmatrix}1\\0\end{bmatrix} + 3\begin{bmatrix}2\\5\end{bmatrix} + 7\begin{bmatrix}-1\\-3\end{bmatrix} = \begin{bmatrix}3\\-6\end{bmatrix}
 $$
+
+<br/>
 
 
 
@@ -78,7 +90,7 @@ $\boldsymbol{v_1}$, $\boldsymbol{v_2}$, $\boldsymbol{v_3}$ are in $\mathbb{R}^m$
 $$
 3\boldsymbol{v_1}-5\boldsymbol{v_2}+7\boldsymbol{v_3} = \begin{bmatrix}\boldsymbol{v_1} & \boldsymbol{v_2} & \boldsymbol{v_3}\end{bmatrix}\begin{bmatrix}3 \\ -5 \\ 7\end{bmatrix}
 $$
- 
+
 
 
 
@@ -86,17 +98,23 @@ $$
 
 
 
+<br/>
+
 
 
 #### 2) Matrix Equation
+
+<br/>
 
 
 
 Matrix equation은 다음과 같이 정의됩니다. 
 
+<br/>
 
 
-* Definition : Matrix Equation
+
+* **Definition : Matrix Equation**
 
 
 
@@ -121,7 +139,6 @@ $A\boldsymbol{x}$을 $A$의 column의 linear combination으로 표현하면 위�
 
 
 $$
-
 x_1\boldsymbol{a_1} + x_2\boldsymbol{a_2} + \cdots + x_n\boldsymbol{a_n} = \boldsymbol{b}
 $$
 

@@ -19,13 +19,17 @@ sidebar:
 
 이번 포스트에서는 일반적인 square matrix에 대해 inverse를 구하는 방법에 대해서 알아보겠습니다.
 
-
+<br/>
 
 ### 1) Elementary matrix
+
+<br/>
 
 
 
 Inverse를 구하는 과정에서 elementary matrix를 이용합니다.
+
+<br/>
 
 
 
@@ -43,10 +47,11 @@ Elementary matrix를 특정한 matrix에 곱하게 되면, matrix에 row operati
 
 다음의 예시 elementary를 살펴봅시다.
 
+<br/>
+
 
 
 *example*
-
 
 $$
 E_1=\begin{bmatrix}1 & 0 & 0 \\ 0 & 1 & 0 \\ -4 & 0 & 1\end{bmatrix}, \
@@ -96,9 +101,13 @@ $E_1, E_2, E_3$처럼, 곱하였을 때 **row operation과 같은 역할을 해�
 
 
 
+<br/>
+
 
 
 #### (1) Elementary matrix and invertible matrix
+
+<br/>
 
 
 
@@ -148,6 +157,8 @@ $$
 
 임을 알 수 있습니다. 이를 일반화한 정리가 다음 정리입니다.
 
+<br/>
+
 
 
 **Theorem**
@@ -164,17 +175,25 @@ An $n \times n $ matrix $A$ is invertible if and only if $A$ is row equivalent t
 
 이 정리를 이용하면, 임의의 square matrix $A$가 invertible matrix인지 아닌지, invertible하면 inverse가 무엇인지 바로 알 수 있습니다.
 
+<br/>
+
 
 
 ### 2) Algorithm for Finding $A^{-1}$
+
+<br/>
 
 
 
 위의 정리를 이용하여 $A^{-1}$를 찾는 방법에 대해 알아보겠습니다.
 
+<br/>
+
 
 
 #### (1) Algorithm for finding $A^{-1}$
+
+<br/>
 
 
 
@@ -250,10 +269,11 @@ $$
 
 로 만들어 $A$의 inverse를 구할 수 있습니다.
 
+<br/>
+
 
 
 *example*
-
 
 $$
 A=\begin{bmatrix}0 & 1 &2 \\ 1 & 0 & 3 \\ 4 & -3 & 8\end{bmatrix}
@@ -302,9 +322,13 @@ $$
 
 
 
+<br/>
+
 
 
 #### (2) Another view of matrix inversion
+
+<br/>
 
 
 
@@ -376,13 +400,19 @@ $$
 
 지금까지 $A^{-1}$를 구하기 위해 elementary matrix와 algorithm에 대해 알아보았습니다. 다음 포스트에서는 Invertible Matrix Theorem에 대해 알아보겠습니다. 질문이나 오류 있으면 댓글 남겨주세요! 감사합니다!
 
+<br/>
+
 
 
 #### Appendix : Proof of Theorem
 
+<br/>
+
 
 
 #### (1) Elementary matrix and invertible matrix
+
+<br/>
 
 
 
@@ -390,7 +420,11 @@ $$
 
 
 
+
+
 An $n \times n $ matrix $A$ is invertible if and only if $A$ is row equivalent to $I_n$, and in this case, any sequence of elementary row operations that reduces $A$ to $I_n$ also transforms $I_n$ into $A^{-1}$
+
+<br/>
 
 
 
@@ -503,6 +537,8 @@ $$
  임을 알 수 있습니다.
 
 
+
+<br/>
 
 
 
