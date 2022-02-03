@@ -196,9 +196,12 @@ $$
 ad-bc
 $$
 
+의 값에 따라 matrix가 invertible한지 아닌지 결정이 됩니다. ($ad-bc\neq0$이면 invertible, $ad-bc=0$이면 not invertible합니다.) 따라서 위의 식을 **determinant**라고 정의하고, 다음과 같이 표기합니다.
 
-의 값에 따라 matrix가 invertible한지 아닌지 결정이 됩니다. ($ad-bc\neq0$이면 invertible, $ad-bc=0$이면 not invertible합니다.) 따라서 위의 식을 **determinant**라고 정의합니다. 
 
+$$
+detA = \begin{vmatrix}a & b \\ c &d\end{vmatrix}
+$$
 <br/>
 
 

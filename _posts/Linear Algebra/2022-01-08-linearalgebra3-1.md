@@ -2,7 +2,7 @@
 layout: single
 title:  "3.1 Determinant"
 categories: [Linear Algebra]
-tag: [Linear Algebra, Determinant,]
+tag: [Linear Algebra, Determinant]
 toc: true
 author_profile: false #프로필 생략 여부
 use_math: true
@@ -12,15 +12,7 @@ sidebar:
 
 
 
-d
 
-d
-
-d
-
-d
-
-d
 
 
 
@@ -182,11 +174,9 @@ $$
 
 
 $$
-C_{11} = (-1)^{1+1} det(\begin{bmatrix}2 & 3 \\ 5 & 6 \end{bmatrix}) = 93 \\
-C_{12} = (-1)^{1+2} det(\begin{bmatrix}-4 & 6 \\ 7 & 9 \end{bmatrix}) = 78 \\
-C_{13} = (-1)^{1+3} det(\begin{bmatrix}-4 & 5 \\ 7 & -8 \end{bmatrix}) = -3 \\
-
-
+C_{11} = (-1)^{1+1} \begin{vmatrix}2 & 3 \\ 5 & 6 \end{vmatrix} = 93 \\
+C_{12} = (-1)^{1+2} \begin{vmatrix}-4 & 6 \\ 7 & 9 \end{vmatrix} = 78 \\
+C_{13} = (-1)^{1+3} \begin{vmatrix}-4 & 5 \\ 7 & -8 \end{vmatrix} = -3 \\
 $$
 
 
@@ -254,7 +244,7 @@ $A$의 determinant을 구하기 위해, 1행을 기준으로, 1열을 기준으�
 $$
 det(A)=1 \cdot C_{11} +2\cdot C_{12} +3 \cdot C_{13}
 $$
- 
+
 
 이고, 위에서 계산한 cofactor를 이용하면
 
@@ -276,8 +266,8 @@ $$
 
 
 $$
-C_{21}=(-1)^{2+1}det(\begin{bmatrix}2 & 3 \\ -8 & 9  \end{bmatrix}) = -42 \\
-C_{31} = (-1)^{3+1}det(\begin{bmatrix}2 & 3 \\ 5 &6\end{bmatrix})=-3
+C_{21}=(-1)^{2+1}\begin{vmatrix}2 & 3 \\ -8 & 9  \end{vmatrix} = -42 \\
+C_{31} = (-1)^{3+1}\begin{vmatrix}2 & 3 \\ 5 &6\end{vmatrix}=-3
 $$
 
 
@@ -293,3 +283,55 @@ $$
 
 
 
+
+
+<br/>
+
+
+
+*example*
+
+
+$$
+B = \begin{bmatrix}2 & 0 & 0 & 5 \\ 1 & 2& 4  & 1 \\ 3 & 0 & 0 & 3 \\ 8 &6 & 0 & 0 \end{bmatrix}
+$$
+
+
+
+$B$의 determinant를 구하기 위해 co-factor expansion을 적용할 때, 각각의 co-factor 계산과정에서 $3 \times 3$ matrix의 determinant를 구해주어야 합니다. 따라서 계산이 간단해질 수 있도록, co-factor를 0으로 만들어주는, 즉 entry 값이 0이 많은 column이나 row를 선택하여 determinant를 구해줍니다. $B$의 경우 세 번째 column이 0이 가장 많기 때문에 세 번째 column을 기준으로 co-factor expansion을 적용하면
+
+
+$$
+\begin{aligned}
+
+detB &= 0\times C_{13} + 4\times C_{23} + 0\times C_{33} + 0\times C_{43} \\
+&=4\times C_{23}
+\end{aligned}
+$$
+$C_{23}$은 다음과 같이 구해집니다.
+
+
+$$
+\begin{aligned}
+
+C_{23} &= (-1)^{5} \begin{vmatrix}2 & 0 & 5 \\ 3 & 0 & 3 \\ 8 & 6 & 0 \end{vmatrix} \\
+
+&=(-1)^5\{6\times (-1)^{(3+2)}\begin{vmatrix}2 & 5 \\ 3 & 3\end{vmatrix}\} = 6 \times (6-15)=-54
+
+\end{aligned}
+$$
+
+
+따라서 $B$의 determinant는
+
+
+$$
+detB = 4C_{23} = 4 \times (-54) = -216
+$$
+
+
+이 됩니다.
+
+
+
+지금까지 determinant에 대해 알아보았습니다. 다음 포스트에서는 determinant에 관한 성질과 정리에 대해서 알아보겠습니다. 질문이나 오류 있으면 댓글 남겨주세요! 감사합니다!
