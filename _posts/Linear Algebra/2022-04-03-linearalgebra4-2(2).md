@@ -67,8 +67,9 @@ $$
 T_A(\boldsymbol{x}) = A\boldsymbol{x} = 0
 $$
 
-
 을 만족시키는 $\boldsymbol x$의 집합니다. 따라서 
+
+
 $$
 \begin{bmatrix}1 & -1 & 0\\ 2 & 5  &0\\ 3 & 4 &0\end{bmatrix}
 $$
@@ -774,7 +775,7 @@ $[T]$가 invertible하면, $\mathbb R^n$에 속하는 모든 $\boldsymbol b$에 
 $$
 [T]\boldsymbol{x} = \boldsymbol b
 $$
- 
+
 
 가 consistent합니다. 따라서 
 
