@@ -1,8 +1,8 @@
 ---
 layout: single
 title:  "Kernel Smoothing Method"
-categories: [Linear Algebra]
-tag: [Linear Algebra, Matrix, Partitioned matrix]
+categories: [Statistical Learning]
+tag: [Kernel Smoothing Method, Local Regression]
 toc: true
 author_profile: false #프로필 생략 여부
 use_math: true
@@ -875,5 +875,5 @@ Therefore, we get
 
 
 $$
-e^{\beta_{j0}} \propto \Sigma_{i\in G_j}K_\lambda(x_0, x_i) 
+e^{\beta_{j0}} \propto \Sigma_{i\in G_j}K_\lambda(x_0, x_i)
 $$
