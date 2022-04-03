@@ -585,6 +585,7 @@ $H$에 속하는 $\boldsymbol{u}$와 scalar $k$에 대해서
 
 
 $$
+
 \begin{aligned}
 
 k\boldsymbol{u} &=k(c_1\boldsymbol{v_1}+c_2\boldsymbol{v_2}+\cdots+c_p\boldsymbol{v_p}) \\
