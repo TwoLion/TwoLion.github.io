@@ -517,7 +517,7 @@ Kernel이 $\mathbb R^n$의 subspace임을 확인하기 위해서는 4가지를 �
 
 
 
-1. $Ker(T) \sub \mathbb R^n$
+1. $Ker(T) \subset  \mathbb R^n$
 
    Kernel의 정의에 따라 $\mathbb R^n$의 subspace입니다. 
 
@@ -678,7 +678,7 @@ $T$의 range가 $\mathbb R^m$의 subspace임을 밝히기 위해서는 4가지�
 
 
 
-1. $ran(T) \sub \mathbb R^m$
+1. $ran(T) \subset \mathbb R^m$
 
    range의 정의에 의해 성립합니다.
 
