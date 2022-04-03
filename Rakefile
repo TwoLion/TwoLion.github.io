@@ -65,7 +65,7 @@ task :preview do
         puts "     Halting auto-regeneration."
         exit 0
       end
-
+    
       loop { sleep 1000 }
     end
   rescue ThreadError

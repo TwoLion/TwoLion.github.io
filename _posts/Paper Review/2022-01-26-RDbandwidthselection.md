@@ -614,7 +614,6 @@ N_{h_{1, -}} = \Sigma_{i=1}^N I\{c-h_1 \leq X_i < c\}, \ N_{h_{1, +}} = \Sigma_{
 \bar{Y}_{h_1, -} = \frac{1}{N_{h_{1, -}}}\Sigma_{c-h_1 \leq X_i < c} Y_i
 
 \bar{Y}_{h_1, +} = \frac{1}{N_{h_1, +}}\Sigma_{c\leq X_i \leq c+h_1}Y_i
-
 $$
 
 
