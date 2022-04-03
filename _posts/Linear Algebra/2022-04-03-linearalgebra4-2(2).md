@@ -75,7 +75,9 @@ $$
 $$
 
 
+
 다음의 augmented matrix를 가진 linear system을 푸는 문제로 바뀌고, 이를 풀게 되면
+
 
 
 $$
@@ -83,10 +85,15 @@ $$
 $$
 
 
+
 이 되어, 위 system의 solution은 zero vector밖에 존재하지 않아
+
+
 $$
 ker(T_A) = \{0\}
 $$
+
+
 가 됩니다. 
 
 
@@ -98,15 +105,21 @@ $$
 
 
 정의역과 공역이 $\mathbb R^n$인 Zero operator $T_0$의 kernel은
+
+
 $$
 ker(T_0) = \{\boldsymbol{x} \mid T_0(\boldsymbol{x}) = 0\boldsymbol{x} =0\}
 $$
 
 
+
 을 만족시키는 $\boldsymbol{x}$ 집합이므로, $\mathbb R^n$에 속하는 모든 벡터가 kernel에 속합니다. 따라서
+
+
 $$
 ker(T_0) = \mathbb R^n
 $$
+
 
 
 이 됩니다.
@@ -120,13 +133,20 @@ $$
 
 
 정의역과 공역이 $\mathbb R^n$인 identity operator $T_I$의 kernel은
+
+
 $$
 ker(T_I) = \{\boldsymbol{x} \mid T_I(\boldsymbol x) = I\boldsymbol{x} = 0\}
 $$
+
+
 이므로, zero vector만 성립됩니다. 따라서
+
+
 $$
 ker(T_I) = \{0\}
 $$
+
 
 
 가 됩니다.
@@ -180,15 +200,22 @@ The transformation $T : \mathbb R^n \rightarrow \mathbb R^m$ is one to one if $T
 
 
 one to one은 함수에서 정의되는 일대일 함수의 정의와 같습니다. 즉
+
+
 $$
 if \ \ T(\boldsymbol{x}) = \ T(\boldsymbol{y}) \Rightarrow \boldsymbol{x} = \boldsymbol{y} \ \ for \ \ all \ \ \boldsymbol{x, y} \in \mathbb R^n
 $$
+
+
 일 때, $T$는 one to one이라고 합니다.  위 정의의 대우인
+
 
 
 $$
 if \ \  \boldsymbol{x} \neq \boldsymbol{y} \Rightarrow T(\boldsymbol{x}) \neq \ T(\boldsymbol{y}) \ \ for \ \ all \ \ \boldsymbol{x, y} \in \mathbb R^n
 $$
+
+
 또한 많이 사용됩니다. 
 
 
@@ -253,9 +280,12 @@ If $T : \mathbb R^n \rightarrow \mathbb R^m$ is a transformation, then the range
 range는 함수에서 정의되는 치역과 같습니다. 즉,
 
 
+
 $$
 ran(T) = \{\boldsymbol{b} \mid \boldsymbol{b} = T(\boldsymbol{x}) \ \ for \ \ all \ \ \boldsymbol{x} \in \mathbb R^n\}
 $$
+
+
 kernel과 달리 range는 transfrom된 output 값들의 집합이기 때문에, 공역의 부분집합입니다.
 
 
@@ -263,12 +293,16 @@ kernel과 달리 range는 transfrom된 output 값들의 집합이기 때문에, 
 <br/>
 
 *example*
+
+
 $$
 A = \begin{bmatrix}1 & -1 \\ 2 & 5 \\ 3 & 4 \end{bmatrix}
 $$
 
 
+
 일 때, matrix transformation $T_A$의 range는
+
 
 
 $$
@@ -276,7 +310,9 @@ ran(T_A) = \{T_A(\boldsymbol{x}) \mid \boldsymbol{x} \in \mathbb R^2\}
 $$
 
 
+
 입니다. 이 때,
+
 
 
 $$
@@ -284,7 +320,9 @@ T_A(\boldsymbol{x}) = x_1\begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix} + x_2\begin{b
 $$
 
 
+
 가 되고, $\mathbb R^2$에 포함되는 모든 $\boldsymbol{x}$에 대해 위 output을 전부 모은 집합이니, 이는 $A$의 column의 linear combination을 모두 모은 집합입니다. 즉
+
 
 
 $$
@@ -299,9 +337,12 @@ $$
 
 
 정의역과 공역이 $\mathbb R^n$인 zero operator의 경우 
+
+
 $$
 ran(T_0) = \{T_0(\boldsymbol{x}) \mid \boldsymbol x \in \mathbb R^n\} = \{0\}
 $$
+
 
 
 output이 zero vector밖에 없기 때문에, range는 zero vector만을 가집니다.
@@ -315,9 +356,13 @@ output이 zero vector밖에 없기 때문에, range는 zero vector만을 가집�
 
 
 정의역과 공역이 $\mathbb R^n$인 identity operator $T_I$의 range는
+
+
 $$
 ran(T_I) = \{T_I(\boldsymbol{x}) \mid \boldsymbol x \in \mathbb R^n\} = \mathbb R^n
 $$
+
+
 $\mathbb R^n$ 에 속한 모든 vector $\boldsymbol{x}$에 대해 output은 자기 자신이고, 이를 모두 모은 집합이니, range는 $\mathbb R^n$이 됩니다.
 
 
@@ -483,15 +528,20 @@ The kernel of a linear transformation always contains the zero vector
 $T : \mathbb R^n \rightarrow \mathbb R^m$ 가 linear transformation일 때, $T$의 kernel은
 
 
+
 $$
 Ker(T) = \{\boldsymbol{x} \mid T(\boldsymbol x) = 0\}
 $$
+
+
 입니다. $T$가 linear transformation이므로
+
 
 
 $$
 T(0) = T(0  \ \boldsymbol{v}) = 0\cdot T(\boldsymbol{v})  = 0
 $$
+
 
 
 을 만족합니다. 따라서 zero vector는 linear transformation의 kernel에 반드시 포함됩니다.
@@ -564,9 +614,11 @@ $T$ is one to one $\Rightarrow Ker(T) = \{0\}$
 $T$가 one to one이면
 
 
+
 $$
 T(\boldsymbol{x}) = T(\boldsymbol{y}) \Rightarrow \boldsymbol{x} = \boldsymbol y
 $$
+
 
 
 을 만족합니다. 또한 $T$가 linear transformation이므로 $0$는 $T$의 kernel에 속합니다. 만약 $0$ 가 아닌 다른 벡터 $\boldsymbol{v}$가 $Ker(T)$에 속한다고 가정해봅시다.
@@ -574,17 +626,21 @@ $$
 그럼
 
 
+
 $$
 T(\boldsymbol{v}) = T(0) = 0
 $$
 
 
+
 이고, $T$가 one to one이므로
+
 
 
 $$
 \boldsymbol{v} = 0
 $$
+
 
 
 가 됩니다. 현재 $\boldsymbol{v}$는 $0$가 아니라고 가정하였기 때문에 모순이 발생하여, $ker(T)=\{0\}$입니다. 
@@ -598,23 +654,30 @@ $Ker(T) = \{0\} \Rightarrow $ $T$ is one to one
 $T$가 one to one임을 확인하기 위하여
 
 
+
 $$
 T(\boldsymbol{x}) = T(\boldsymbol{y})
 $$
 
 
+
 인 경우를 생각해봅시다. 이는 $T$가 linear transformation이므로
+
 
 
 $$
 T(\boldsymbol{x}) - T(\boldsymbol{y}) = T(\boldsymbol{x-y})=0
 $$
+
+
 가 성립합니다. 즉 $\boldsymbol{x-y} \in Ker(T)$이고, $Ker(T)$에 속한 vector는 $0$이므로
+
 
 
 $$
 \boldsymbol{x-y}=0 \Rightarrow \boldsymbol{x}=\boldsymbol{y}
 $$
+
 
 
 따라서 $T$는 one to one이 됩니다.
@@ -638,9 +701,12 @@ If $A$ is $m \times n$ matrix, then the corresponding linear transformation $T_A
 $T_A$가 one to one이면 $T_A$의 kernel은 zero vector만 존재합니다. 즉
 
 
+
 $$
 Ker(T_A) = \{\boldsymbol{x} \mid T_A(\boldsymbol{x}) = A\boldsymbol{x}=0\} = \{0\}
 $$
+
+
 을 만족시키는 $\boldsymbol{x}$가 $0$밖에 없기 때문에, linear system $A\boldsymbol{x} =0$ 은 trivial solution만을 가지게 됩니다. 
 
 
@@ -718,15 +784,20 @@ If $A$ is ans $m \times n$ matrix, then the corresponding linear treansformation
  $T_A : \mathbb R^n \rightarrow \mathbb R^m$ 가 onto이므로, $ran(T_A) = \mathbb R^m$입니다. range의 정의가
 
 
+
 $$
 ran(T_A) = \{T_A(\boldsymbol{x}) \mid \boldsymbol{x} \in \mathbb R^n\} = \mathbb R^m
 $$
+
+
 이므로, $\mathbb R^m$에 존재하는 임의의 vector $\boldsymbol b$에 대해 $T_A(\boldsymbol x) = A\boldsymbol x$를 만족하는 $\boldsymbol x$존재합니다. 즉
+
 
 
 $$
 A\boldsymbol x = \boldsymbol b
 $$
+
 
 
 는 모든 $\boldsymbol b$에 대해 solution을 가집니다. 즉 consistent합니다. 
@@ -762,9 +833,11 @@ If $T:\mathbb R^n \rightarrow \mathbb R^n$ is a linear operator on $\mathbb R^n$
 $T$가 one to one이면  $T$의 standard matrix $[T]$에 대해서
 
 
+
 $$
 [T]\boldsymbol x = 0
 $$
+
 
 
 이 반드시 trivial solution을 가집니다. 이는 invertible matrix theorem에 따라 $[T]$는 invertible합니다.
@@ -772,17 +845,21 @@ $$
 $[T]$가 invertible하면, $\mathbb R^n$에 속하는 모든 $\boldsymbol b$에 대해
 
 
+
 $$
 [T]\boldsymbol{x} = \boldsymbol b
 $$
 
 
+
 가 consistent합니다. 따라서 
+
 
 
 $$
 ran(T) = \mathbb R^n
 $$
+
 
 
 이므로 $T$는 onto입니다.
