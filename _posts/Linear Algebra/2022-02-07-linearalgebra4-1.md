@@ -561,8 +561,8 @@ $$
 \boldsymbol{w}=d_1\boldsymbol{v_1}+d_2\boldsymbol{v_2}+\cdots+d_p\boldsymbol{v_p}
 $$
 
-
 두 vector를 더하면
+
 
 
 $$
@@ -573,6 +573,8 @@ $$
 
 \end{aligned}
 $$
+
+
 가 되고 $H$에 속합니다. 따라서 $H$는 덧셈에 대해 닫혀있습니다.
 
 
@@ -584,16 +586,15 @@ $$
 $H$에 속하는 $\boldsymbol{u}$와 scalar $k$에 대해서
 
 
+
 $$
 
 \begin{aligned}
-
 k\boldsymbol{u} &=k(c_1\boldsymbol{v_1}+c_2\boldsymbol{v_2}+\cdots+c_p\boldsymbol{v_p}) \\
-
 &= kc_1\boldsymbol{v_1}+kc_2\boldsymbol{v_2}+\cdots+kc_p\boldsymbol{v_p} \in H
-
 \end{aligned}
 $$
+
 
 
 가 되고 마찬가지로 $H$에 속합니다. 따라서 $H$는 scalar multiplication에 대해 닫혀있습니다.
