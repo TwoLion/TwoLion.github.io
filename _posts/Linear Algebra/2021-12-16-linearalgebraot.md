@@ -4,9 +4,8 @@ title:  "선형대수학 정리 포스트 시작"
 categories: [Linear Algebra]
 tag: [Linear Algebra]
 toc: true
-author_profile: false #프로필 생략 여부
-sidebar:
-    nav: "docs"
+author_profile: true #프로필 생략 여부
+
 ---
 
 

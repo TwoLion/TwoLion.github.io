@@ -4,10 +4,9 @@ title:  "2.3 Inverse of Matrix (3)"
 categories: [Linear Algebra]
 tag: [Linear Algebra, Matrix, Inverse, IMT]
 toc: true
-author_profile: false #프로필 생략 여부
+author_profile: true#프로필 생략 여부
 use_math: true
-sidebar:
-    nav: "docs"
+
 ---
 
 

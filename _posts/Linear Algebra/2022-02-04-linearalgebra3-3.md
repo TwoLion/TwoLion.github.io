@@ -4,10 +4,9 @@ title:  "3.3 Cramer's Rule"
 categories: [Linear Algebra]
 tag: [Linear Algebra, Determinant, Cramer's rule]
 toc: true
-author_profile: false #프로필 생략 여부
+author_profile: true#프로필 생략 여부
 use_math: true
-sidebar:
-    nav: "docs"
+
 ---
 
 
@@ -46,7 +45,7 @@ for any $n \times n$ matrix $A$ and any $\boldsymbol{b}$ in $\mathbb R^n$, let $
 $$
 A_i(\boldsymbol{b})=\begin{bmatrix}\boldsymbol{a_1} & \boldsymbol{a_2} & ...& \boldsymbol{a_{i-1}} & \boldsymbol{b} & \boldsymbol{a_{i+1}} & ... & \boldsymbol{a_n}  \end{bmatrix}
 $$
- 
+
 
 즉  $A_i(\boldsymbol b)$ 는 matrix $A$의 $i$ 번째 column 대신 $\boldsymbol{b}$를 넣은 새로운 matrix입니다.
 

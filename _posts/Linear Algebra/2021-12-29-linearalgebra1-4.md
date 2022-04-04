@@ -4,10 +4,9 @@ title:  "1.4 Matrix Equation"
 categories: [Linear Algebra]
 tag: [Linear Algebra]
 toc: true
-author_profile: false #프로필 생략 여부
+author_profile: true #프로필 생략 여부
 use_math: true
-sidebar:
-    nav: "docs"
+
 ---
 
 
@@ -123,7 +122,6 @@ $A$ is $m \times n$ matrix, with columns $\boldsymbol{a_1}, \boldsymbol{a_2}, ..
 
 $$
 A\boldsymbol{x} = \boldsymbol{b}
-
 $$
 
 

@@ -4,10 +4,9 @@ title:  "2.4 Partitioned Matrix"
 categories: [Linear Algebra]
 tag: [Linear Algebra, Matrix, Partitioned matrix]
 toc: true
-author_profile: false #프로필 생략 여부
+author_profile: true#프로필 생략 여부
 use_math: true
-sidebar:
-    nav: "docs"
+
 ---
 
 

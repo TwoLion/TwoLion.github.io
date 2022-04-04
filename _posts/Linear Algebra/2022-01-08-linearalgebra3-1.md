@@ -4,10 +4,9 @@ title:  "3.1 Determinant"
 categories: [Linear Algebra]
 tag: [Linear Algebra, Determinant]
 toc: true
-author_profile: false #프로필 생략 여부
+author_profile: true#프로필 생략 여부
 use_math: true
-sidebar:
-    nav: "docs"
+
 ---
 
 

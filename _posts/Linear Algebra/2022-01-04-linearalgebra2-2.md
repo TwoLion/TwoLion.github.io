@@ -4,10 +4,9 @@ title:  "2.2 Matrix Operation (1)"
 categories: [Linear Algebra]
 tag: [Linear Algebra, Matrix, Matrix operation]
 toc: true
-author_profile: false #프로필 생략 여부
+author_profile: true #프로필 생략 여부
 use_math: true
-sidebar:
-    nav: "docs"
+
 ---
 
 

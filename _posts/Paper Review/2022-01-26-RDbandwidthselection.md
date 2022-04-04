@@ -1,10 +1,26 @@
+---
+layout: single
+title:  "Optimal Bandwidth Choice for the Regression discontinuity estimator"
+categories: [Paper Review]
+tag: [Causal Inference, Regression discontinuity design]
+toc: true
+author_profile: true #프로필 생략 여부
+use_math: true
+---
+
+
+
+
+
 
 
 ## Paper Review : Optimal Bandwidth Choice for the Regression discontinuity Estimator
 
 
 
-#### 1. Basic model
+
+
+## 1. Basic model
 
 <br/> 
 

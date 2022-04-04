@@ -4,10 +4,8 @@ title:  "4.2 Linear transformation (2)"
 categories: [Linear Algebra]
 tag: [Linear Algebra, Linear transformation, Kernel, Range]
 toc: true
-author_profile: false #프로필 생략 여부
+author_profile: true #프로필 생략 여부
 use_math: true
-sidebar:
-    nav: "docs"
 ---
 
 

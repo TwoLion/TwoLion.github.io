@@ -4,10 +4,9 @@ title:  "3.2 Properties of Determinant"
 categories: [Linear Algebra]
 tag: [Linear Algebra, Determinant]
 toc: true
-author_profile: false #프로필 생략 여부
+author_profile: true#프로필 생략 여부
 use_math: true
-sidebar:
-    nav: "docs"
+
 ---
 
 
@@ -447,7 +446,7 @@ proof of 2.
 $$
 detAB=detAdetB=0
 $$
- 
+
 
 을 만족합니다.
 

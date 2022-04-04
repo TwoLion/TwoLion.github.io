@@ -4,10 +4,9 @@ title:  "Kernel Smoothing Method"
 categories: [Statistical Learning]
 tag: [Kernel Smoothing Method, Local Regression]
 toc: true
-author_profile: false #프로필 생략 여부
+author_profile: true #프로필 생략 여부
 use_math: true
-sidebar:
-    nav: "docs"
+
 ---
 
 

@@ -4,10 +4,9 @@ title:  "4.1 Vector Space"
 categories: [Linear Algebra]
 tag: [Linear Algebra, Vector Space]
 toc: true
-author_profile: false #프로필 생략 여부
+author_profile: true#프로필 생략 여부
 use_math: true
-sidebar:
-    nav: "docs"
+
 ---
 
 
@@ -588,7 +587,6 @@ $H$에 속하는 $\boldsymbol{u}$와 scalar $k$에 대해서
 
 
 $$
-
 \begin{aligned}
 k\boldsymbol{u} &=k(c_1\boldsymbol{v_1}+c_2\boldsymbol{v_2}+\cdots+c_p\boldsymbol{v_p}) \\
 &= kc_1\boldsymbol{v_1}+kc_2\boldsymbol{v_2}+\cdots+kc_p\boldsymbol{v_p} \in H

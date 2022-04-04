@@ -4,10 +4,9 @@ title:  "4.2 Linear transformation (1)"
 categories: [Linear Algebra]
 tag: [Linear Algebra, Linear transformation]
 toc: true
-author_profile: false #프로필 생략 여부
+author_profile: true #프로필 생략 여부
 use_math: true
-sidebar:
-    nav: "docs"
+
 ---
 
 
@@ -145,7 +144,7 @@ $$
 T_A = \mathbb R^n \rightarrow \mathbb R^m \\
 T_A(\boldsymbol{x}) = A\boldsymbol{x}
 $$
- 
+
 
 is called the multiplication by $A$ or the transformation $A$
 
