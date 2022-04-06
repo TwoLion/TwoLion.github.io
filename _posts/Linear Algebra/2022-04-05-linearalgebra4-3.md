@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "4.2 Matrix and subspace"
+title:  "4.3 Matrix and subspace"
 categories: [Linear Algebra]
 tag: [Linear Algebra, Column space, Null space, Row space]
 toc: true
@@ -221,7 +221,7 @@ $$
 \begin{bmatrix} 2 & 4& -2 & 1 & 0 \\-2 & -5 & 7 & 3 & 0 \\3 & 7 & -8 & 6 & 0 \end{bmatrix} \sim  
 \begin{bmatrix} 1 & 0& 9 & 0 & 0 \\0 & 1 & -5 & 0 & 0 \\0 & 0 & 0 & 1 & 0 \end{bmatrix}
 $$
- 
+
 
 가 되어
 
