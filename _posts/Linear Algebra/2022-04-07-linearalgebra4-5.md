@@ -124,6 +124,8 @@ $$
 
 
 
+
+
 다음 linear system
 
 
