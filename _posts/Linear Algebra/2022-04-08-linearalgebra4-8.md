@@ -212,7 +212,6 @@ $$
 
 *example*
 
-
 $$
 \boldsymbol{b_1} = \begin{bmatrix} -9 \\ 1 \end{bmatrix}, \ \ \boldsymbol{b_2} = \begin{bmatrix} -5 \\ -1 \end{bmatrix}, \ \  \boldsymbol{c_1} = \begin{bmatrix} 1 \\ -4 \end{bmatrix}, \ \ \boldsymbol{c_2} = \begin{bmatrix} 3 \\ -5 \end{bmatrix}
 $$
@@ -225,8 +224,8 @@ $$
 B=\{\boldsymbol{b_1}, \boldsymbol{b_2}\}, \ \ C=\{\boldsymbol{c_1}, \boldsymbol{c_2}\}
 $$
 
-
 가 각각 $\mathbb R^2$의 basis입니다. 이 때 $P_{C\leftarrow B}$와 $P_{B\leftarrow C}$를 구해보도록 하겠습니다. 
+
 
 
 $$
@@ -234,20 +233,28 @@ P_{C\leftarrow B} = \begin{bmatrix}[\boldsymbol{b_1}]_C & [\boldsymbol{b_2}]_C \
 $$
 
 
+
 이므로,
+
+
 $$
-P_C[\boldsymbol{b_1}]_C = \boldsymbol{b_1} \\
-\begin{bmatrix}1 & 3 \\ -4 & -5\end{bmatrix}[\boldsymbol{b_1}]_C =\boldsymbol{b_1} \\
+P_C[\boldsymbol{b_1}]_C = \boldsymbol{b_1} \\ \\
+\begin{bmatrix}1 & 3 \\ -4 & -5\end{bmatrix}[\boldsymbol{b_1}]_C =\boldsymbol{b_1} \\ \\
 
 [\boldsymbol{b_1}]_C = P_C^{-1}\boldsymbol{b_1} = \frac{1}{-5+12}\begin{bmatrix}-5 & -3 \\ 4 & 1 \end{bmatrix}\begin{bmatrix}-9 \\ 1 \end{bmatrix} = \frac{1}{7}\begin{bmatrix}42 \\-35 \end{bmatrix} = \begin{bmatrix} 6 \\ -5 \end{bmatrix}
 $$
+
+
+
 
 $$
 [\boldsymbol{b_2}]_C = P_C^{-1}\boldsymbol{b_2} = \frac{1}{-5+12}\begin{bmatrix}-5 & -3 \\ 4 & 1 \end{bmatrix}\begin{bmatrix}-5 \\ -1 \end{bmatrix} = \frac{1}{7}\begin{bmatrix}28 \\-21 \end{bmatrix} = \begin{bmatrix} 4 \\ -3 \end{bmatrix}
 $$
 
 
+
 따라서
+
 
 
 $$
@@ -255,7 +262,9 @@ P_{C\leftarrow B} =\begin{bmatrix}6 & 4 \\ -5 & -3 \end{bmatrix}
 $$
 
 
+
 이 됩니다.
+
 
 
 $$
@@ -263,12 +272,15 @@ P_{B\leftarrow C} = P_{C\leftarrow B}^{-1}
 $$
 
 
+
 이므로
+
 
 
 $$
 P_{B\leftarrow C} = \frac{1}{2}\begin{bmatrix}-3 & -4 \\ 5 & 6 \end{bmatrix}
 $$
+
 
 
 이 됩니다.
