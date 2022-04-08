@@ -1,0 +1,2720 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-08T14:58:30+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Twolions’ note</title><subtitle>Twolions의 블로그입니다.</subtitle><author><name>Twolions</name><email>twa02189@g.skku.edu</email></author><entry><title type="html">4.7 Coordinate system</title><link href="http://localhost:4000/linear%20algebra/linearalgebra4-7/" rel="alternate" type="text/html" title="4.7 Coordinate system" /><published>2022-04-08T00:00:00+09:00</published><updated>2022-04-08T00:00:00+09:00</updated><id>http://localhost:4000/linear%20algebra/linearalgebra4-7</id><content type="html" xml:base="http://localhost:4000/linear%20algebra/linearalgebra4-7/"><![CDATA[<p>이번 포스트에서는 Coordinate system에 대해서 알아보겠습니다.</p>
+
+<p><br /></p>
+
+<h3 id="1-coordinate-system">1) Coordinate System</h3>
+
+<p><br /></p>
+
+<p>Coordinate system은 우리가 좌표평면이나 좌표공간에서 점을 표시할 때 쓰는 순서쌍과 관련이 있습니다. 이전 basis 포스트에서 좌표평면, 좌표공간에서의 $x, y, z$축이 basis에 속하는 벡터의 방향을 나타내는 것을 확인했었습니다. 좌표평면/공간 위의 점을 $x,  y, z$ 축을 이용하여 순서쌍으로 나타내는 것이구요. coordinate system은 basis를 이용하여 벡터를 순서쌍(후에 coordinate vector로 정의합니다.)으로 나타내는 방법에 대한 내용입니다.</p>
+
+<p>Coordinate system을 정의하기 위해서는 다음의 정리가 필요합니다.</p>
+
+<p><br /></p>
+
+<p><strong>Theorem : The uniqueness representtion theorem</strong></p>
+
+<p>Let $B={\boldsymbol{b_1}, \boldsymbol{b_2}, …, \boldsymbol{b_n}}$ be a basis for a vector space $V$. Then for each $\boldsymbol{x}$ in $V$, there exists a unique set of scalars $c_1, …, c_n$ such that</p>
+
+\[\boldsymbol{x} = c_1\boldsymbol{b_1} + ... + c_n\boldsymbol{b_n}\]
+
+<p>위 정리가 의미하는 것은 다음 두 가지입니다.</p>
+
+<ol>
+  <li><strong>$V$의 모든 vector는 basis 원소의 linear combination으로 표현 가능합니다.</strong></li>
+  <li><strong>Linear combination으로 표현할 때, unique하게 표현됩니다.</strong></li>
+</ol>
+
+<p><br /></p>
+
+<p><strong>Definition : Coordinate</strong></p>
+
+<p>Suppose $B={\boldsymbol{b_1}, \boldsymbol{b_2}, …, \boldsymbol{b_n}}$ is a basis for $V$ and $\boldsymbol{x}$ is in $V$. The coordinates of $\boldsymbol{x}$ relative to the basis $B$(or the $B$-coordinate of $\boldsymbol{x}$) are the weights $c_1, …, c_n$ such that $\boldsymbol{x} = c_1\boldsymbol{b_1} + … + c_n\boldsymbol{b_n}$</p>
+
+<p>If $c_1, …, c_n$ are the $B$-coordinate of $\boldsymbol{x}$, then the vector in $\mathbb R^n$</p>
+
+\[\left[\boldsymbol{x}\right]_B = \begin{bmatrix}c_1 \\ c_2 \\ \vdots \\ c_n\end{bmatrix}\]
+
+<p>is the coordinate vector of $\boldsymbol{x}$, or the $B$-coordinate vector of $\boldsymbol{x}$</p>
+
+<p>The mapping $\boldsymbol{x} \rightarrow [\boldsymbol{x}]_B$ is the coordinate mapping (determined by $B$)</p>
+
+<p>$\boldsymbol{x}$를 basis에 속한 벡터들의  linear combination으로 표현하였을 때, 각각의 basis에 속하는 벡터 $\boldsymbol{b_1} , … , \boldsymbol{b_n}$의 계수들을 $B$-coordinate of $\boldsymbol{x}$라고 합니다. 이 $B$-coordinate를 벡터로 나타낸 값이 $B$-coordinate vector of $\boldsymbol{x}$이고, $[\boldsymbol{x}]_B$라고 합니다.</p>
+
+<p>마지막으로, $\boldsymbol{x}$에서 $\boldsymbol{x}$의 $B$-coordinate vector $[\boldsymbol{x}]_B$로 보내는 mapping을 Coordinate mapping이라고 합니다.</p>
+
+<p>$\boldsymbol{x}$ 를 basis에 속한 벡터와 $[\boldsymbol{x}]_B$ 로 나타내면</p>
+
+\[\begin{aligned}
+
+\boldsymbol x &amp;= c_1\boldsymbol{b}_1 + \cdots + c_n \boldsymbol{b}_n \\
+&amp;= \begin{bmatrix}\boldsymbol{b_1} &amp; ... &amp; \boldsymbol{b_n} \end{bmatrix}\begin{bmatrix}c_1 \\ \vdots \\ c_n\end{bmatrix} \\
+&amp; = \begin{bmatrix}\boldsymbol{b_1} &amp; ... &amp; \boldsymbol{b_n} \end{bmatrix}[\boldsymbol{x}]_B
+
+\end{aligned}\]
+
+<p>가 됩니다.</p>
+
+<p><br /></p>
+
+<p><em>example</em></p>
+
+<p>Consider a standard basis $\epsilon={\boldsymbol{e_1}, \boldsymbol{e_2}}$, and a basis $B_2={\boldsymbol{b_1}, \boldsymbol{b_2}}$ for $\mathbb R^2$, where $\boldsymbol{e_1}=\begin{bmatrix}1 \ 0\end{bmatrix}$, $\boldsymbol{e_2}=\begin{bmatrix}0 \ 1\end{bmatrix}$, $\boldsymbol{b_1}=\begin{bmatrix}1 \ 0\end{bmatrix}$, $\boldsymbol{b_1}=\begin{bmatrix}1 \ 2\end{bmatrix}$</p>
+
+<p>$\mathbb R^2$에 존재하는 벡터 $\boldsymbol{x}$의 $B_2$-coordinate vector가 $[\boldsymbol{x}]_{B_2}=\begin{bmatrix}-2 \ 3\end{bmatrix}$입니다. 이 말은</p>
+
+\[\boldsymbol{x} = -2\boldsymbol b_1 + 3\boldsymbol b_2\]
+
+<p>를 뜻하고, 이를 계산하면</p>
+
+\[\boldsymbol{x}= -2\begin{bmatrix}1 \\ 0\end{bmatrix} + 3 \begin{bmatrix}1 \\ 2\end{bmatrix} = \begin{bmatrix}1 \\ 6\end{bmatrix}\]
+
+<p>이 됩니다. 이 때 $\begin{bmatrix}1 \ 6\end{bmatrix}$은</p>
+
+<p>\(\begin{bmatrix}1 \\ 6\end{bmatrix} = 1\boldsymbol{e_1} + 6\boldsymbol{e_2}\)
+가 되어, $\boldsymbol{x}_{\epsilon}$을 뜻합니다.</p>
+
+<p>이를 좌표평면을 통해 시각적으로 표현하면 다음과 같습니다.</p>
+
+<p><img src="../../images/2022-04-08-linearalgebra4-7/geogebra-export-16493956169682.png" alt="geogebra-export" /></p>
+
+<p>다음 좌표평면에서 기본 $x, y$축(가로축, 세로축)이 $\epsilon$ basis 축을 나타낸 것입니다.(검은색 축) 한편, 빨간색 축은 $B_2$ basis를 축으로 나타낸 것입니다. (가로축이 $\boldsymbol{b_1}$, 대각선 축이 $\boldsymbol{b_2}$) $\boldsymbol{x}$는 좌표평면 상 빨간색 점이고, 이를 $\epsilon$ basis로 나타낼수도, $B_2$ basis로 나타낼 수 있습니다.</p>
+
+<p>$\boldsymbol{x}$를 $\epsilon$ basis로 나타낸 것이</p>
+
+\[\begin{bmatrix}1 \\ 6\end{bmatrix} = 1\boldsymbol{e_1} + 6\boldsymbol{e_2}\]
+
+<p>입니다. 검은색 벡터(화살표)로 표시하였습니다.</p>
+
+<p>그리고 $\boldsymbol{x}$를 $B_2$ basis로 나타낸 것이</p>
+
+\[\begin{bmatrix}1 \\ 6\end{bmatrix} = -2\boldsymbol{b_1} + 3\boldsymbol{b_2}\]
+
+<p>입니다. 파란색 벡터(화살표로 표시하였습니다.)</p>
+
+<p>이 때, $[\boldsymbol{x}]_{B_2}$ 이 뜻하는 바는 다음과 같습니다. 만약 우리가 좌표평면을 $\epsilon$을 이용하여 표시하는 것이 아닌 (x축, y축) $B_2$를 이용하여 표현한다고 생각해봅시다.(빨간색 축)  $\boldsymbol{x}$를 빨간색 축을 기반으로 하여 나타낸 순서쌍이</p>
+
+\[[\boldsymbol{x}]_{B_2} = \begin{bmatrix} -2 \\  3 \end{bmatrix}\]
+
+<p>이 됩니다. ($\boldsymbol{b_1}$ 방향과 크기로 -2, $\boldsymbol{b_2}$ 방향과 크기로 3의 값을 가지는 점이 $\boldsymbol{x}$입니다.)</p>
+
+<p>즉, <strong>$B$-Coordinate vector는 $B$를 이용하여 vector space의 벡터를 표현할 때의 순서쌍(좌표)을 의미합니다.</strong></p>
+
+<p><br /></p>
+
+<p><em>example</em></p>
+
+<p>$\epsilon_1$ basis의 coordinate vector를 생각해봅시다.</p>
+
+\[\begin{aligned}
+
+\boldsymbol{x} &amp;= 1\boldsymbol{e_1} + 6\boldsymbol{e_2} \\
+&amp;= \begin{bmatrix} \boldsymbol{e_1} &amp; \boldsymbol{e_2} \end{bmatrix} \begin{bmatrix}1 \\ 6\end{bmatrix}  \\
+&amp;= I_2\begin{bmatrix}1 \\ 6\end{bmatrix}
+
+\end{aligned}\]
+
+<p>다음과 같이 표현할 수 있기 때문에</p>
+
+\[[\boldsymbol{x}]_{\epsilon} = \begin{bmatrix}1 \\ 6 \end{bmatrix} = \boldsymbol{x}\]
+
+<p>인 것을 알 수 있습니다.</p>
+
+<p>이는 $\mathbb R^n$에서도 똑같이 적용됩니다.</p>
+
+<p>$\mathbb R^n$에서의 standard basis $\epsilon = {\boldsymbol{e_1}, …, \boldsymbol{e_n}}$에 대해서 $\boldsymbol x$의 $\epsilon$-coordinate vector는</p>
+
+\[\begin{aligned}
+
+\boldsymbol{x} &amp;= x_1\boldsymbol{e_1} + ... + x_n\boldsymbol{e_n} \\
+&amp;=\begin{bmatrix}\boldsymbol{e_1} &amp; ... &amp; \boldsymbol{e_n} \end{bmatrix}\begin{bmatrix}x_1 \\ \vdots \\ x_n\end{bmatrix} \\
+&amp;= I_n[\boldsymbol x]_\epsilon \\
+&amp;=[\boldsymbol x]_\epsilon
+\end{aligned}\]
+
+<p>즉</p>
+
+\[[\boldsymbol x]_\epsilon = \boldsymbol{x}\]
+
+<p>인 것을 알 수 있습니다.</p>
+
+<p><br /></p>
+
+<h3 id="2-coordinate-mapping">2) Coordinate mapping</h3>
+
+<p><br /></p>
+
+<h4 id="1-coordinates-in-mathbb-rn">(1) Coordinates in $\mathbb R^n$</h4>
+
+<p><br /></p>
+
+<p>Vector space의 basis $B$를 알면, 특정 $\boldsymbol x$의 $B$-coordinate vector는 쉽게 구할 수 있습니다.</p>
+
+<p>$B = {\boldsymbol{b_1}, …, \boldsymbol{b_n}}$이 어떤 $\mathbb R^n$의 basis라고 가정해봅시다. $[\boldsymbol x]_B$를 구하기 위해서는</p>
+
+\[\begin{aligned}
+
+\boldsymbol{x} &amp;= c_1\boldsymbol{b_1} + \cdots + c_n\boldsymbol{b_n} \\
+
+ &amp;= \begin{bmatrix}\boldsymbol{b_1} &amp; ... &amp; \boldsymbol{b_n} \end{bmatrix} [\boldsymbol x]_B
+
+\end{aligned}\]
+
+<p>위 식을 만족해야 합니다. 이 때 matrix $\begin{bmatrix}\boldsymbol{b_1} &amp; … &amp; \boldsymbol{b_n} \end{bmatrix} = P_B$라고 하면</p>
+
+\[P_B[\boldsymbol x]_B = \boldsymbol{x}\]
+
+<p>의 solution을 구하면 됩니다. 이 때, $P$의 column이 $\mathbb R^n$의 basis이므로 linearly independent하므로, $P$는 invertible합니다. 따라서</p>
+
+\[[\boldsymbol x]_B = P_B^{-1}\boldsymbol x\]
+
+<p>임을 알 수 있습니다.</p>
+
+<p><br /></p>
+
+<h4 id="2-coordinate-mapping-1">(2) Coordinate mapping</h4>
+
+<p><br /></p>
+
+<p>$\mathbb R^n$에 속하는 vector $\boldsymbol{x}$의 $B$-coordinate vector는 다음의 식을 통해 구할 수 있었습니다.</p>
+
+\[P_B[\boldsymbol x]_B = \boldsymbol{x} \\\]
+
+<p>$P$가 invertible하므로</p>
+
+\[[\boldsymbol x]_B = P_B^{-1}\boldsymbol x\]
+
+<p>임을 알 수 있습니다.</p>
+
+<p>첫 번째 식을 살펴봅시다. $\boldsymbol{x}$의 $B$-coordinate vector에 $P_B$ matrix를 곱해서 $\boldsymbol{x}$를 얻을 수 있었습니다. 그런데, $\boldsymbol{x} = [\boldsymbol{x}]_\epsilon$, 즉 standard basis의 coordinate vector가 $\boldsymbol x$인 것을 이용하면, 첫 번째 식은 <strong>$B$-coordinate vector를 standard basis coordinate vector로 바꿔주는 matrix transformation으로 생각할 수 있습니다.</strong></p>
+
+\[T_{[\epsilon]} : [\boldsymbol{x}]_B \rightarrow \boldsymbol{x} \\
+T_{[\epsilon]}([\boldsymbol{x}]_B) = P_B[\boldsymbol{x}]_B =\boldsymbol{x}\]
+
+<p>한편, 두 번째 식은 $\boldsymbol{x}$에 $P_B^{-1}$를 곱해서 $[\boldsymbol{x}]_B$를 얻는 식입니다. 즉, <strong>standard basis coordinate vector를 $B$-coordinate vector로 바꿔주는 matrix trasformation으로 생각할 수 있습니다.</strong></p>
+
+\[T_{[B]} : \boldsymbol{x} \rightarrow [\boldsymbol{x}]_B \\
+T_{[B]}(\boldsymbol{x}) = P_B^{-1}\boldsymbol{x} =[\boldsymbol{x}]_B\]
+
+<p>즉, <strong>coordinate vector를 만드는 mapping은 linear operator이고, one to one입니다.</strong></p>
+
+<p>여기서 정의된</p>
+
+\[P_B = \begin{bmatrix} \boldsymbol{b_1} &amp; ... &amp; \boldsymbol{b_n} \end{bmatrix}\]
+
+<p>을 **change of coordinates matrix form $B$ to the standard basis in $\mathbb R^n$ **이라 정의합니다.</p>
+
+<p><br /></p>
+
+<p><strong>Theorem</strong></p>
+
+<p>Let $B={\boldsymbol{b_1}, …, \boldsymbol{b_n}}$ be basis for a vector space $V$. Then the coordinate mapping $\boldsymbol{x} \rightarrow [\boldsymbol{x}]_B$ is a one-to-one linear transformation from $V$ onto $\mathbb R^n$.</p>
+
+<p>위 정리는 $\mathbb R^n$의 subspace 뿐만 아니라 일반적인 vector space $V$에 대한 coordinate mapping이 linear transformation이면서 one-to-one이 된다는 것을 뜻합니다. 일반적인 vector space $V$에 대해 coordinate mapping을 하기 때문에 정의역은 $V$, 공역은 $\mathbb R^n$인 것을 알 수 있습니다. 만약 vector space $V$가 직관적으로 알기 쉽지 않는 경우, basis를 알고 있다면 coordinate mapping을 통해 보다 친숙한 $\mathbb R^n$ vector space에서 해석할 수 있습니다. 따라서 coordinate mapping은 <strong>일반적인 vector space에 속한 벡터를 $\mathbb R^n$으로 바꾸어주는 mapping입니다.</strong> (증명은 appendix 참고)</p>
+
+<p>위 정리를 이용하면 하나의 벡터 뿐만 아니라 여러 벡터들의 linear combination에 대해서도 coordinate mapping이 가능합니다. coordinate mapping이 linear transformation이기 때문입니다.</p>
+
+<p>$\boldsymbol{u_1}, …, \boldsymbol{u_p} \in V$, $c_1, …, c_p \in \mathbb R$ 에 대해서</p>
+
+\[[c_1\boldsymbol{u_1}+\cdots +c_p\boldsymbol{u_p}]_B = c_1[\boldsymbol{u_1}]_B+\cdots +c_p[\boldsymbol{u_p}]_B\]
+
+<p>가 성립합니다.</p>
+
+<p>지금까지 coordinate system에 대해 알아보았습니다. 다음 포스트에서는 change of basis에 대해서 알아보겠습니다. 질문이나 오류 있으면 댓글로 남겨주세요! 감사합니다!</p>
+
+<p><br /></p>
+
+<h3 id="appendix--proof-of-theorem">Appendix : Proof of theorem</h3>
+
+<p><br /></p>
+
+<p><strong>Theorem</strong></p>
+
+<p>Let $B={\boldsymbol{b_1}, …, \boldsymbol{b_n}}$ be basis for a vector space $V$. Then the coordinate mapping $\boldsymbol{x} \rightarrow [\boldsymbol{x}]_B$ is a one-to-one linear transformation from $V$ onto $\mathbb R^n$.</p>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>Proof</strong></li>
+</ul>
+
+<p>위 정리에 밝혀야할 것은</p>
+
+<ol>
+  <li>Coordinate mapping is linear transformation</li>
+  <li>Coordinate mapping is one to one</li>
+  <li>Coordinate mapping is onto</li>
+</ol>
+
+<p>세 가지입니다.</p>
+
+<p><br /></p>
+
+<ul>
+  <li>Proof of 1</li>
+</ul>
+
+\[B =\{\boldsymbol{b_1}, ..., \boldsymbol{b_n}\}\]
+
+<p>를 $V$의 basis라 하고, coordinate mapping $T_B$를</p>
+
+\[T_B : V \rightarrow \mathbb R^n \\
+T_B(\boldsymbol{x}) = [\boldsymbol{x}]_B\]
+
+<p>다음과 같이 정의합니다. $T_B$가 linear transformation인 것을 밝히기 위해 vector addition, scalar multiple 조건을 만족하는지 확인하면 됩니다.</p>
+
+\[\boldsymbol{v, u} \in V \\
+\boldsymbol{v} = c_1\boldsymbol{b_1} + \cdots + c_n\boldsymbol{b_n} \\
+\boldsymbol{u} = d_1\boldsymbol{b_1} + \cdots + d_n\boldsymbol{b_n}\]
+
+<p>이 되고,</p>
+
+\[[\boldsymbol{v}]_B =\begin{bmatrix}c_1 \\ \vdots \\ c_n \end{bmatrix}, \ \ [\boldsymbol {u}]_B =\begin{bmatrix}d_1 \\ \vdots \\ d_n \end{bmatrix}\]
+
+<p>임을 알 수 있습니다. 이 때</p>
+
+\[\boldsymbol{v} + \boldsymbol{u} = (c_1+d_1)\boldsymbol{b_1} + \cdots + (c_n +d_n)\boldsymbol{b_n}\]
+
+<p>이 되어</p>
+
+\[T_B(\boldsymbol{v+u})=[\boldsymbol{v}+\boldsymbol{u}]_B =\begin{bmatrix}c_1+d_1 \\ \vdots \\ c_n+d_n \end{bmatrix} =\begin{bmatrix}c_1 \\ \vdots \\ c_n \end{bmatrix} +\begin{bmatrix}d_1 \\ \vdots \\ d_n \end{bmatrix} = [\boldsymbol{v}]_B + [\boldsymbol{u}]_B = T_B(\boldsymbol{v})+T_B(\boldsymbol{u})\]
+
+<p>따라서 addition 조건을 만족합니다. 다음으로 $\boldsymbol{v}$와 scalar $k$에 대해서</p>
+
+\[k\boldsymbol{v} = kc_1\boldsymbol{b_1} + \cdots + kc_n\boldsymbol{b_n}\]
+
+<p>이므로</p>
+
+\[T_B(k\boldsymbol{v})=[k\boldsymbol{v}]_B =\begin{bmatrix}kc_1 \\ \vdots \\ kc_n \end{bmatrix} = k \begin{bmatrix}c_1 \\ \vdots \\ c_n \end{bmatrix} = k[\boldsymbol{v}]_B = kT_B(\boldsymbol{v})\]
+
+<p>을 만족하므로, $T_B$는 linear transformation입니다.</p>
+
+<p><br /></p>
+
+<ul>
+  <li>Proof of 2</li>
+</ul>
+
+<p>$T_B$가 linear transformation이므로, $T_B$가 one to one임을 밝히는 것은 $Ker(T_B)={0}$임을 밝히는 것과 같습니다. $T_B$의 kernel은</p>
+
+\[Ker(T_B) = \{\boldsymbol{x} \in V \mid T_B(\boldsymbol{x}) = 0\}\]
+
+<p>이를 확인하기 위해</p>
+
+\[T_B(\boldsymbol{x}) = [\boldsymbol{x}]_B=0\]
+
+<p>을 만족하는 $\boldsymbol{x}$는</p>
+
+\[\boldsymbol{x} = 0\cdot\boldsymbol{b_1} + \cdots + 0\cdot \boldsymbol{b_n} = 0\]
+
+<p>즉 zero vector밖에 존재하지 않습니다. 따라서</p>
+
+\[Ker(T_B) = \{0\}\]
+
+<p>을 만족하기 때문에 $T_B$는 one to one 입니다.</p>
+
+<p>(one to one의 정의를 통해서도 증명할 수 있습니다.)</p>
+
+<p><br /></p>
+
+<ul>
+  <li>Proof of 3</li>
+</ul>
+
+<p>$\mathbb R^n$에 있는 임의의 vector $\boldsymbol{a}$에 대해서</p>
+
+\[T_B(\boldsymbol{x}) =\boldsymbol{a}\]
+
+<p>를 만족하는 $\boldsymbol{x}$가 $V$에 적어도 하나 존재해야 함을 밝혀야 합니다. $\boldsymbol{a}$를</p>
+
+\[\boldsymbol{a} = \begin{bmatrix}a_1 \\ \vdots \\ a_n \end{bmatrix}\]
+
+<p>이라 한다면,</p>
+
+\[\boldsymbol{x} = a_1 \boldsymbol{b_1} + \cdots + a_n\boldsymbol{b_n}\]
+
+<p>인 $\boldsymbol{x}$에 대해서</p>
+
+\[T_B(\boldsymbol{x}) =[\boldsymbol{x}]_B = \boldsymbol{a}\]
+
+<p>를 만족합니다. 따라서 임의의 $\boldsymbol a \in \mathbb R^n$에 대해서</p>
+
+\[T_B(\boldsymbol x) =\boldsymbol{a}\]
+
+<p>를 만족하는 $\boldsymbol{x}$가 반드시 존재하므로, $T_B$는 onto입니다.</p>]]></content><author><name>Twolions</name><email>twa02189@g.skku.edu</email></author><category term="Linear Algebra" /><category term="Linear Algebra" /><category term="Coordinate system" /><summary type="html"><![CDATA[이번 포스트에서는 Coordinate system에 대해서 알아보겠습니다.]]></summary></entry><entry><title type="html">4.5 Dimension</title><link href="http://localhost:4000/linear%20algebra/linearalgebra4-5/" rel="alternate" type="text/html" title="4.5 Dimension" /><published>2022-04-07T00:00:00+09:00</published><updated>2022-04-07T00:00:00+09:00</updated><id>http://localhost:4000/linear%20algebra/linearalgebra4-5</id><content type="html" xml:base="http://localhost:4000/linear%20algebra/linearalgebra4-5/"><![CDATA[<p>이번 포스트에서는 vector space의 dimension에 대해 알아보겠습니다.</p>
+
+<p><br /></p>
+
+<h3 id="1-dimension">1) Dimension</h3>
+
+<p><br /></p>
+
+<p><strong>Definition : Dimension</strong></p>
+
+<p>If $V$ is spanned by a finite set, then $V$ is said to be finite-dimensional, and the dimension of $V$, written as $\dim V$ is the number of vectors in a basis for $V$</p>
+
+<p>The dimension of the zero vector space ${0}$  is defined to be zero.</p>
+
+<p>If $V$ is not spanned by a finite set, then $V$ is said to be infinite-dimensional.</p>
+
+<p>Vector space의 dimension은 basis의 벡터의 개수로 정의됩니다.</p>
+
+<p>Zero vector로만 이루어진 vector space의 경우 basis가 없기 때문에(linearly dependent하기 때문입니다.) dimension을 0으로 따로 정의합니다.</p>
+
+<p>또한 basis가 무한히 많은 vector space는 infinite-dimensional하다고 정의합니다.</p>
+
+<p>하나의 vector space의 basis는 여러개 존재할 수 있지만, dimension은 같은 값으로 고정됩니다.</p>
+
+<p><br /></p>
+
+<p><em>example</em></p>
+
+<p>$\dim \mathbb R^n$</p>
+
+<p>basis for $\mathbb R^n$ : ${\boldsymbol{e_1}, \boldsymbol{e_2}, …, \boldsymbol{e_n}}$</p>
+
+<p>basis에 속한 벡터의 개수가 $n$개이므로, dimension은 n입니다.</p>
+
+<p>우리가 일반적으로 좌표평면의 경우 2차원, 좌표 공간의 경우 3차원이라고 하는 이유 또한 basis와 dimension 정의로부터 알 수 있습니다.</p>
+
+<p><br /></p>
+
+<p><em>example</em></p>
+
+\[H = \{\begin{bmatrix}a-3b+6c \\ 5a+4d \\ b-2c-d \\ 5d \end{bmatrix}\mid a, b, c, d \in \mathbb R \}\]
+
+<p>$H$는 다음과 같이 표현될 수 있습니다.</p>
+
+\[H = \{a\begin{bmatrix}1 \\ 5 \\ 0 \\ 0 \end{bmatrix} + b\begin{bmatrix}-3 \\ 0 \\ 1 \\ 0 \end{bmatrix} 
++ c\begin{bmatrix}6 \\ 0 \\ -2 \\ 0 \end{bmatrix} + d\begin{bmatrix}0 \\ 4 \\ -1 \\ 5 \end{bmatrix}\mid a, b, c, d \in \mathbb R \}\]
+
+<p>따라서</p>
+
+\[H = Span\{\boldsymbol{v_1}, \boldsymbol{v_2}, \boldsymbol{v_3}, \boldsymbol{v_4}\} \\
+
+\boldsymbol{v_1} =\begin{bmatrix}1 \\ 5 \\ 0 \\ 0 \end{bmatrix}, \boldsymbol{v_2}=\begin{bmatrix}-3 \\ 0 \\ 1 \\ 0 \end{bmatrix}, 
+\boldsymbol{v_3}=\begin{bmatrix}6 \\ 0 \\ -2 \\ 0 \end{bmatrix}, \boldsymbol{v_4}=\begin{bmatrix}0 \\ 4 \\ -1 \\ 5 \end{bmatrix}\\]
+
+<p>입니다. $H$의 dimension을 구하기 위해서는 $H$의 basis를 구해야 합니다. basis의 조건 중 span 조건은 만족했으니, linear independence 조건만 만족하면 됩니다. 하지만, $\boldsymbol{v_3} = -2\boldsymbol{v_2} $이기 때문에, 4개의 벡터는 linearly dependent합니다. 따라서, $\boldsymbol{v_2}, \boldsymbol{v_3}$ 중 하나를 제거한다면,</p>
+
+<p>\(B = \{\boldsymbol{v_1}, \boldsymbol{v_2}, \boldsymbol{v_4}\}\)
+$B$는 linearly independent하게 되어 $H$의 basis가 됩니다. 따라서</p>
+
+\[\dim H=3\]
+
+<p>이 됩니다.</p>
+
+<p><br /></p>
+
+<p><em>example</em></p>
+
+<p>다음 linear system</p>
+
+\[\begin{aligned}
+
+2x_1 +4x_2 -2x_3+x_4&amp;=0 \\
+-2x_1-5x_2+7x_3+3x_4&amp;=0 \\
+3x_1+7x_2 -8x_3+6x_4&amp;=0
+
+
+
+\end{aligned}\]
+
+<p>의 solution space를 생각해봅시다. 다음 system의 coefficient matrix를</p>
+
+\[A = \begin{bmatrix} 2 &amp; 4 &amp; -2 &amp; 1 \\-2 &amp; -5 &amp; 7 &amp;3 \\ 3 &amp; 7 &amp; -8 &amp; 6 \end{bmatrix}\]
+
+<p>이 되고, 위 linear system의 solution space는 $A$의 null space가 됩니다. 따라서 $NulA$를 구해보면</p>
+
+\[\begin{bmatrix} 2 &amp; 4 &amp; -2 &amp; 1 &amp; 0\\-2 &amp; -5 &amp; 7 &amp;3 &amp;0\\ 3 &amp; 7 &amp; -8 &amp; 6&amp;0 \end{bmatrix} \sim \begin{bmatrix} 1 &amp; 0 &amp; 9 &amp; 0 &amp; 0\\0 &amp; 1 &amp; -5 &amp;0 &amp;0\\ 0 &amp; 0 &amp; 0 &amp; 1&amp;0 \end{bmatrix}\]
+
+<p>가 되어</p>
+
+\[\boldsymbol{x} = x_3\begin{bmatrix} -9 \\ 5 \\ 1 \\0\end{bmatrix},\ \ x_3 :  free\]
+
+<p>가 됩니다. 즉, basis는
+\(B = \{\begin{bmatrix} -9 \\ 5 \\ 1 \\0\end{bmatrix} \}\)</p>
+
+<p>가 되어, dimension은 1이 됩니다.</p>
+
+<p><br /></p>
+
+<h3 id="2-property-of-basis">2) Property of basis</h3>
+
+<p><br /></p>
+
+<p><strong>Theorem</strong></p>
+
+<p>If $V$ is a non-zero subspace of $\mathbb R^n$, then there exists a basis for $V$ that has at most $n$ vectors, i.e. $\dim V \leq n$</p>
+
+<p>$\mathbb R^n$의 non-zero subspace는 반드시 basis가 존재하고, dimension은 $n$보다 작습니다. 이를 일반화한 정리는 다음 정리 입니다.</p>
+
+<p><br /></p>
+
+<p><strong>Theorem</strong></p>
+
+<p>If $V$ and $W$ are subspaces of $\mathbb R^n$, and if $V$ is a subspace of $W$, then</p>
+
+\[0\leq \dim V \leq \dim W \leq n\]
+
+<p>$V=W$ if and only if $\dim V =\dim W$</p>
+
+<p>어떤 vector space의 subspace는 dimension이 자신을 포함하는 vector space보다 작거나 같습니다. 같은 경우, 두 vector space는 같은 space가 됩니다.</p>
+
+<p><br /></p>
+
+<p><strong>Theorem</strong></p>
+
+<p>Let $S$ be a nonempty set of vectos in a vector space $V$, and let $S’$ be a set that results by adding additional vectors in $V$ to $S$</p>
+
+<ul>
+  <li>If the additional vectors are in $SpanS$, then $SpanS’ = SpanS$</li>
+  <li>If $SpanS’=SpanS$, then the additional vectors are in $SpanS$</li>
+  <li>If $SpanS$ and $SpanS’$ have the same dimension, then the additional vectors are in $SpanS$ and $SpanS’=SpanS$</li>
+</ul>
+
+<p>Span의 성질에 대해 다룬 정리입니다. span의 정의와 linear independence를 적용하면 쉽게 확인할 수 있습니다.</p>
+
+<p><br /></p>
+
+<p><strong>Theorem</strong></p>
+
+<p>Le $V$ be a p-dimensional vector space, $p\geq 1$</p>
+
+<p>Any linear independent set of exactly p elements in $V$ automatically a basis for $V$</p>
+
+<p>Any set of exactly p elements that spans $V$ is automatically a basis for $V$</p>
+
+<p>dimension을 알고 있다면, dimension의 수만큼의 벡터가 basis 조건 중 하나만 만족해도(span or linear independence) 그 집합은 basis가 됩니다.</p>
+
+<p>정리에 대한 증명은 appendix를 통해 확인하면 되겠습니다.</p>
+
+<p><br /></p>
+
+<h3 id="3-finding-dimension-of-nula-and-cola">3) Finding dimension of $NulA$ and $ColA$</h3>
+
+<p><br /></p>
+
+<p>Null space와 column space와의 dimension은 특수한 관계가 존재합니다. 다음의 예를 통해 알아보도록 하겠습니다.</p>
+
+<p><br /></p>
+
+<p><em>example</em></p>
+
+\[A = \begin{bmatrix}2 &amp; 4 &amp; -2 &amp; 1 \\ -2 &amp; -5 &amp; 7 &amp; 3 \\ 3 &amp; 7 &amp; -8 &amp; 6 \end{bmatrix}\]
+
+<p>먼저 $NulA$의 dimension을 구해보겠습니다. $NulA$를 구하기 위해 $A\boldsymbol{x}=0$을 풀면</p>
+
+\[\begin{bmatrix}2 &amp; 4 &amp; -2 &amp; 1 &amp; 0 \\ -2 &amp; -5 &amp; 7 &amp; 3 &amp; 0 \\ 3 &amp; 7 &amp; -8 &amp; 6&amp;0 \end{bmatrix} \sim 
+\begin{bmatrix}1 &amp; 0 &amp; 9 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; -5 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1&amp;0 \end{bmatrix}\]
+
+<p>이 되어</p>
+
+<p>\(\boldsymbol{x} = x_3\begin{bmatrix}-9 \\ 5 \\ 1 \\ 0 \end{bmatrix}, \ \ x_3 \ \ is \ \ free\)
+입니다. 따라서 null space의 basis는</p>
+
+\[B=\{ \begin{bmatrix}-9 \\ 5 \\ 1 \\ 0 \end{bmatrix} \}\]
+
+<p>가 되고,</p>
+
+\[\dim NulA = 1\]
+
+<p>이 됩니다.</p>
+
+<p>다음은 $ColA$의 dimension을 구해보겠습니다. $ColA$는</p>
+
+\[ColA=Span\{\begin{bmatrix}2 \\ -2 \\ 3 \end{bmatrix}\, \begin{bmatrix}4 \\ -5 \\ 7 \end{bmatrix}, \begin{bmatrix}-2 \\ 7 \\ -8 \end{bmatrix}, \begin{bmatrix}1 \\ 3 \\ 6 \end{bmatrix}\}\]
+
+<p>입니다. basis를 확인하기 위해서는 4개의 vector가 linearly independent한지 확인하면 됩니다. Null space를 구할 때 알았지만, $A$의 세 번째 column을 제외한 나머지 column들이 pivot column이므로, 3번 째 column을 제외하면, column들이 linearly independent한 것을 알 수 있습니다. 따라서,</p>
+
+\[B=\{\begin{bmatrix}2 \\ -2 \\ 3 \end{bmatrix}\, \begin{bmatrix}4 \\ -5 \\ 7 \end{bmatrix}, \begin{bmatrix}1 \\ 3 \\ 6 \end{bmatrix}\}\]
+
+<p>가 되고, 따라서</p>
+
+\[\dim ColA = 3\]
+
+<p>가 됩니다.</p>
+
+<p>여기서 중요한 점은</p>
+
+\[dim NulA + dim ColA = 4\]
+
+<p>가 되는데, <strong>이는 $A$  matrix의 column의 개수가 됩니다.</strong></p>
+
+<p>이에 대한 자세한 내용은 다음 포스트에서 다루도록 하겠습니다.</p>
+
+<p>지금까지 dimension에 대해서 알아보았습니다. 다음 포스트에서는 rank에 대해서 알아보도록 하겠습니다. 질문이나 오류 있으시면 댓글 남겨주세요! 감사합니다!</p>
+
+<p><br /></p>
+
+<h3 id="appendix--proof-of-theorem">Appendix : Proof of Theorem</h3>
+
+<p><br /></p>
+
+<p><strong>Theorem</strong></p>
+
+<p>If $V$ is a non-zero subspace of $\mathbb R^n$, then there exists a basis for $V$ that has at most $n$ vectors, i.e. $\dim V \leq n$</p>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>Proof</strong></li>
+</ul>
+
+<p>$V \subset \mathbb R^n$</p>
+
+<p>let $\boldsymbol{v_1} \in V$, $\boldsymbol{v_1} \neq 0$</p>
+
+<p>만약 $Span{\boldsymbol{v_1}} = V $ 이면, ${\boldsymbol{v_1}}$ 은 $V$의 basis가 됩니다.</p>
+
+<p>만약 $Span{\boldsymbol{v_1}} \neq V$이면, span이 안된다는 뜻이므로, $\boldsymbol{v_1}$과 linearly independent한 어떤 벡터 $\boldsymbol{v_2}$가 $V$에 존재합니다. 따라서, 두 벡터를 포함한 집합을 이용하여 span을 해볼 수 있습니다.</p>
+
+<p>$Span{\boldsymbol{v_1, v_2}} = V$이면, ${\boldsymbol{v_1, v_2}}$는 $V$의 basis가 됩니다.</p>
+
+<p>$Span{\boldsymbol{v_1, v_2}} \neq V$이면, $\boldsymbol{v_1, v_2}$과 linearly independent한 어떤 벡터 $\boldsymbol{v_3}$가 $V$에 존재합니다. 따라서, 세 벡터를 포함한 집합을 이용하여 span 해볼 수 있습니다.</p>
+
+<p>위와 같은 방법을 계속 진행하다</p>
+
+<p>$Span{\boldsymbol{v_1, v_2, …, v_n}} \neq V$ 경우가 발생한다고 가정해봅시다. 그러면, ${\boldsymbol{v_1, v_2, …, v_n}}$와 linearly independent한 $\boldsymbol{v_{n+1}}$이 $V$에 존재한다는 것을 뜻합니다. 하지만, $\mathbb R^n$의 dimension이 $n$이기 때문에, ${\boldsymbol{v_1}, …, \boldsymbol{v_{n+1}}}$은 linearly dependent합니다. 따라서, $Span{\boldsymbol{v_1, v_2, …, v_n}} \neq V$인 경우는 발생하지 않습니다.</p>
+
+<p>따라서</p>
+
+\[\dim V \leq n\]
+
+<p>입니다.</p>
+
+<p><br /></p>
+
+<p><strong>Theorem</strong></p>
+
+<p>If $V$ and $W$ are subspaces of $\mathbb R^n$, and if $V$ is a subspace of $W$, then</p>
+
+\[0\leq \dim V \leq \dim W \leq n\]
+
+<p>$V=W$ if and only if $\dim V =\dim W$</p>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>Proof</strong></li>
+</ul>
+
+\[0\leq \dim V \leq \dim W \leq n\]
+
+<p>이 부분은 앞선 정리의 증명과 동일합니다. $V \subset W \subset \mathbb R^n$이기 때문에, $W \subset \mathbb R^n$일 때의 dimension 관계 밝히는 방법을 똑같이 적용하면 알 수 있습니다.</p>
+
+<p>두 번째로 밝혀야 하는 부분은</p>
+
+\[V=W \iff \dim V=\dim W\]
+
+<p>입니다.</p>
+
+<p>$V=W$ 이면, trivial하게 $\dim V = \dim W$입니다.</p>
+
+<p>반대로, $\dim V = \dim W$이고, $V\subset W$인 상황을 생각해봅시다.</p>
+
+\[\dim V = \dim W=k\]
+
+<p>이라고 하고,</p>
+
+\[S=\{\boldsymbol{v_1}, \boldsymbol{v_2}, ..., \boldsymbol{v_k}\}\]
+
+<p>를 $V$의 basis라고 하면, S는 반드시 $W$의 basis가 되어야 합니다. 왜냐하면 $V \subset W$이고, $W$의 dimension이 $k$이며, $S$는 linearly independent하기 때문이죠. 따라서,</p>
+
+\[V=W\]
+
+<p>를 만족합니다.</p>
+
+<p><br /></p>
+
+<p><strong>Theorem</strong></p>
+
+<p>Let $S$ be a nonempty set of vectos in a vector space $V$, and let $S’$ be a set that results by adding additional vectors in $V$ to $S$</p>
+
+<ol>
+  <li>
+    <p>If the additional vectors are in $SpanS$, then $SpanS’ = SpanS$</p>
+  </li>
+  <li>
+    <p>If $SpanS’=SpanS$, then the additional vectors are in $SpanS$</p>
+  </li>
+  <li>
+    <p>If $SpanS$ and $SpanS’$ have the same dimension, then the additional vectors are in $SpanS$ and $SpanS’=SpanS$</p>
+  </li>
+</ol>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>Proof</strong></li>
+</ul>
+
+<p>Proof of 1.</p>
+
+<p>추가된 벡터가 $SpanS$에 있다는 것은 추가된 벡터는 $S$에 속한 벡터의 linear combination으로 표현이 가능하다는 것을 뜻합니다. 따라서</p>
+
+\[Span S = Span S'\]
+
+<p>을 만족합니다. $SpanS$는 $S$에 속한 벡터들의 linear combination 모두 모아놓은 집합을 뜻하기 때문입니다.</p>
+
+<p>Proof of 2</p>
+
+<p>마찬가지로, $SpanS’=SpanS$이면, 추가된 벡터가 $S$에 속한 벡터들의 linear combination으로 표현된다는 것을 뜻합니다. (만약 표현되지 않으면 두 span이 같을 수 없습니다.) 따라서 추가된 벡터는 $SpanS$에 속하는 것을 알 수 있습니다.</p>
+
+<p>Proof of 3</p>
+
+<p>$SpanS$와 $SpanS’$를 보면, $S$에 벡터 하나를 추가하여 $S’$를 만들었기 때문에</p>
+
+\[S \subseteq S'\]
+
+<p>입니다. 따라서,</p>
+
+\[\dim SpanS \leq \dim SpanS'\]
+
+<p>인데, dimension이 같은 경우 두 vector space가 동일합니다. 따라서,</p>
+
+\[SpanS =SpanS'\]
+
+<p>임과 동시에, 추가된 벡터가 $SpanS$에 포함되는 것을 알 수 있습니다.</p>
+
+<p><br /></p>
+
+<p><strong>Theorem</strong></p>
+
+<p>Le $V$ be a p-dimensional vector space, $p\geq 1$</p>
+
+<p>Any linear independent set of exactly p elements in $V$ automatically a basis for $V$</p>
+
+<p>Any set of exactly p elements that spans $V$ is automatically a basis for $V$</p>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>Proof</strong></li>
+</ul>
+
+<p>$\dim V =p$입니다. 여기서, linearly independent한 벡터의 수가 $p$개인 집합 $S$를 생각해봅시다.</p>
+
+<p>만약 $S$가 basis가 되지 않는다면, Span 조건을 만족하지 않기 때문에, $S$에서 $V$에 있는 적절한 벡터를 추가한 $S’$가 basis가 되도록 만들 수 있습니다.</p>
+
+<p>하지만, 이 때 $S’$에 속한 벡터의 개수가 $p$보다 커지기 때문에, 모순이 발생합니다.</p>
+
+<p>따라서 $S$는 basis가 됩니다.</p>
+
+<p>두 번째로 $SpanS=V$를 만족하는 벡터의 개수가 $p$개인 집합 $S$를 생각해봅시다.</p>
+
+<p>만약 $S$가 basis가 되지 않는다면, linear independence 조건을 만족하지 않기 때문에, $S$에 속해 있는 벡터 중 적절한 벡터를 제거한 집합 $S’$가  $V$의 basis가 되도록 만들 수 있습니다.</p>
+
+<p>하지만, 이 때 $S’$에 속한 벡터의 개수가 $p$보다 작아지기 때문에, 모순이 발생합니다.</p>
+
+<p>따라서 $S$는 basis가 됩니다.</p>]]></content><author><name>Twolions</name><email>twa02189@g.skku.edu</email></author><category term="Linear Algebra" /><category term="Linear Algebra" /><category term="Dimension" /><summary type="html"><![CDATA[이번 포스트에서는 vector space의 dimension에 대해 알아보겠습니다.]]></summary></entry><entry><title type="html">4.6 Rank, Nullity</title><link href="http://localhost:4000/linear%20algebra/linearalgebra4-6/" rel="alternate" type="text/html" title="4.6 Rank, Nullity" /><published>2022-04-07T00:00:00+09:00</published><updated>2022-04-07T00:00:00+09:00</updated><id>http://localhost:4000/linear%20algebra/linearalgebra4-6</id><content type="html" xml:base="http://localhost:4000/linear%20algebra/linearalgebra4-6/"><![CDATA[<p>이번 포스트에서는 Rank와 nullity에 대해서 알아보도록 하겠습니다.</p>
+
+<p><br /></p>
+
+<h3 id="1-rank-nullity">1) Rank, Nullity</h3>
+
+<p><br /></p>
+
+<p><strong>Definition: Rank</strong></p>
+
+<p>The rank of $A$ is the dimension of the column space of $A$</p>
+
+<p>Matrix $A$의 rank는 $ColA$의 dimension입니다.</p>
+
+<p>$RowA$는 $ColA^T$이므로, $RowA$의 dimension은 $A^T$의 rank와 같습니다.</p>
+
+<p><br /></p>
+
+<p><strong>Definition: Nullity</strong></p>
+
+<p>The nullity of $A$ is the dimension of the null space of $A$</p>
+
+<p>Matrix $A$의 nullity는 $NulA$의 dimension입니다.</p>
+
+<p><br /></p>
+
+<p><em>example</em></p>
+
+\[A = \begin{bmatrix}2 &amp; 4 &amp; -2 &amp; 1 \\ -2 &amp; -5 &amp; 7 &amp; 3 \\ 3 &amp; 7 &amp; -8 &amp; 6 \end{bmatrix}\]
+
+<p>이전 포스트에서 $ColA$의 dimension은 3, $NulA$의 dimension은 1인 것을 계산을 통해 구했습니다. 따라서</p>
+
+\[rankA=3, \ \ nullityA=1\]
+
+<p>입니다.</p>
+
+<p><br /></p>
+
+<h3 id="2-rank-theorem">2) Rank Theorem</h3>
+
+<p><br /></p>
+
+<p>Rank Theorem은 matrix $A$로 정의되는 vector space인 $RowA, ColA, NulA$의 dimension 간의 관계를 설명해줍니다.</p>
+
+<p><br /></p>
+
+<p><strong>Theorem : Rank Theorem</strong></p>
+
+<p>The dimensions of the column space and row space of an $m \times n$ matrix $A$ are equal. This common dimension, the rank of $A$, also equals the number of pivot positions in $A$ and</p>
+
+\[rankA +nullityA=n\]
+
+<p>Rank theorem에 따르면, $A$의 column space와 row space의 dimension이 동일합니다. 따라서 교재마다 rank를 처음 소개할 때, row space의 dimension으로 소개하는 경우도 있습니다. Rank theorem에 의해 row space와 column space의 dimension은 동일하게 되어, rank를 column space의 dimension으로 말하기도 하고, row space의 dimension으로 말할 수 있습니다.</p>
+
+<p>두 번째로, matrix $A$의 rank와 nullity의 합은 $A$의 column의 개수와 동일합니다.</p>
+
+<p>위 정리를 증명하기 위해, 사용되는 정리가 하나 있습니다.</p>
+
+<p><br /></p>
+
+<p><strong>Theorem : Pivot Theorem</strong></p>
+
+<p>The pivot columns of a matrix $A$ forms a basis for $ColA$</p>
+
+<p>위 정리로 인해 $A$의 rank가 pivot position 개수와 같게 됩니다.</p>
+
+<p>두 정리에 대한 증명은 appendix에 남겨놓겠습니다.</p>
+
+<p><em>example</em></p>
+
+\[A = \begin{bmatrix} 2 &amp; -1 &amp; 1 &amp; -6 &amp; 8 \\ 1 &amp; -2 &amp; -4 &amp;3 &amp; -2 \\ -7 &amp; 8 &amp; 10 &amp; 3 &amp; -10 \\4 &amp; -5 &amp; -7 &amp; 0 &amp; 4 \end{bmatrix}\]
+
+<p>$A$의 rank와 nulity를 구해보도록 하겠습니다.</p>
+
+<p>$A$의 pivot position을 찾기 위해 row operation을 통해 echelon form을 구하면</p>
+
+\[\begin{bmatrix} 2 &amp; -1 &amp; 1 &amp; -6 &amp; 8 \\ 1 &amp; -2 &amp; -4 &amp;3 &amp; -2 \\ -7 &amp; 8 &amp; 10 &amp; 3 &amp; -10 \\4 &amp; -5 &amp; -7 &amp; 0 &amp; 4   \end{bmatrix} \sim \begin{bmatrix} 1 &amp; -2 &amp; -4 &amp; -3 &amp; -2 \\ 0 &amp; 3 &amp; 9 &amp; -12 &amp; 12 \\0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp;0  \end{bmatrix}\]
+
+<p>가 됩니다. Echelon form의 leadind entry가 첫 번째, 두 번째 column에만 존재하기 때문에, $ColA$의 basis는</p>
+
+\[B= \{\begin{bmatrix}2 \\ 1 \\ -7 \\ 4\end{bmatrix}, \begin{bmatrix}-1 \\ -2 \\ 8 \\ -5\end{bmatrix}\}\]
+
+<p>가 되고</p>
+
+\[rankA=2\]
+
+<p>임을 구할 수 있습니다.  Rank theorem에 의해서</p>
+
+\[rankA + nullityA = 5\]
+
+<p>가 되어야 하므로</p>
+
+\[nullityA=3\]
+
+<p>임을 알 수 있습니다.</p>
+
+<p>지금까지 rank와 nullity에 대해 알아보았습니다. 다음 포스트에서는 coordinate system에 대해서 알아보겠습니다. 질문이나 오류 있으면 댓글 남겨주세요! 감사합니다!</p>
+
+<p><br /></p>
+
+<h3 id="appendix--proof-of-theorem">Appendix : Proof of Theorem</h3>
+
+<p><br /></p>
+
+<p><strong>Theorem : Pivot Theorem</strong></p>
+
+<p>The pivot columns of a matrix $A$ forms a basis for $ColA$</p>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>Proof</strong></li>
+</ul>
+
+\[A = \begin{bmatrix} \boldsymbol{a_1}, ..., \boldsymbol{a_n} \end{bmatrix}\]
+
+<p>인 $m \times n$ matrix $A$에 대해서</p>
+
+\[ColA = Span\{\boldsymbol{a_1}, ..., \boldsymbol{a_n}\}\]
+
+<p>입니다.</p>
+
+<p>$ColA$의 basis를 찾기 위해서는 ${\boldsymbol{a_1}, …, \boldsymbol{a_n}}$이 linearly independent한지 확인을 하고, linearly dependent하다면 적절한 벡터를 지워서 linearly independent한 set를 만들어주어야 합니다.</p>
+
+<p>만약 ${\boldsymbol{a_1}, …, \boldsymbol{a_n}}$가 linearly independent이면  ${\boldsymbol{a_1}, …, \boldsymbol{a_n}}$는 $ColA$의 basis가 됩니다. 또한 $A$의 모든 column이 pivot column이 되기 때문에, $A$의 pivot column이 $ColA$의 basis를 형성합니다.</p>
+
+<p>한편, 만약  ${\boldsymbol{a_1}, …, \boldsymbol{a_n}}$이 linearly dependent하다면, $A\boldsymbol{x}=0$이 non-trivial solution을 가지는 것을 의미합니다.</p>
+
+<p>이는 $A$의 column 중 pivot column이 아닌 column이 존재합니다. 또한 해당 column은 pivot column들로 표현이 가능합니다.</p>
+
+<p>따라서, pivot column이 아닌 column을 제거한 $S’$ 집합은 linearly independent한 set이 됩니다. 동시에 $ColA$를 span하구요. 따라서 $A$의 pivot column만 가지는 집합 $S’$이 $ColA$의 basis가 됩니다.</p>
+
+<p><br /></p>
+
+<p><strong>Theorem : Rank Theorem</strong></p>
+
+<p>The dimensions of the column space and row space of an $m \times n$ matrix $A$ are equal. This common dimension, the rank of $A$, also equals the number of pivot positions in $A$ and</p>
+
+\[rankA +nullityA=n\]
+
+<p><br /></p>
+
+<ul>
+  <li><strong>Proof</strong></li>
+</ul>
+
+<p><br /></p>
+
+<p>위 정리에서 밝혀야 할 내용은 두 가지입니다.</p>
+
+<ol>
+  <li>Row space와 Column space의 dimension이 같다.</li>
+  <li>$RankA + NullityA = n$</li>
+</ol>
+
+<p><br /></p>
+
+<p>Proof of 1.</p>
+
+<p>Pivot theorem에 의해 $rankA$는 $A$의 pivot column 개수입니다. 이를 다시 말하면 $rankA$는 $A$와 row equivalent한 echelon form matrix $B$의 leading entry를 포함하는 row의 수, 즉 non-zero row의 수와 같습니다. echelon form matrix의 row space의 basis는 non-zero row이기 때문에, $rowB$의 dimension은 nonzero row의 개수가 됩니다. 이 때, row equivalent한 matrix의 row space는 똑같기 때문에 $RowA$의 dimension은 $A$의 pivot column의 개수와 동일합니다. 따라서</p>
+
+\[rankA = \dim RowA\]
+
+<p>가 성립합니다.</p>
+
+<p><br /></p>
+
+<p>Proof of 2.</p>
+
+<p>$rankA = k$라고 하면</p>
+
+<p>matrix $A$는 $k$개의 pivot column을 가집니다. 이는,</p>
+
+\[A\boldsymbol{x}=0\]
+
+<p>equation이 $n-k$개의 free variable을 가지게 됩니다. 즉, 위 system의 solution이 $n-k$개의 vector들의 linear combination으로 표현되고, $n-k$개의 벡터들은 linearly independent합니다. 따라서</p>
+
+\[nullityA = n-k\]
+
+<p>가 되어</p>
+
+\[rankA + nullityA =n\]
+
+<p>을 만족합니다.</p>]]></content><author><name>Twolions</name><email>twa02189@g.skku.edu</email></author><category term="Linear Algebra" /><category term="Linear Algebra" /><category term="Rank" /><summary type="html"><![CDATA[이번 포스트에서는 Rank와 nullity에 대해서 알아보도록 하겠습니다.]]></summary></entry><entry><title type="html">4.4 Linear independent sets ; Basis</title><link href="http://localhost:4000/linear%20algebra/linearalgebra4-4/" rel="alternate" type="text/html" title="4.4 Linear independent sets ; Basis" /><published>2022-04-06T00:00:00+09:00</published><updated>2022-04-06T00:00:00+09:00</updated><id>http://localhost:4000/linear%20algebra/linearalgebra4-4</id><content type="html" xml:base="http://localhost:4000/linear%20algebra/linearalgebra4-4/"><![CDATA[<p>이번 포스트에서는 vector space에서의 Basis에 대해 알아보겠습니다.</p>
+
+<p><br /></p>
+
+<h3 id="1-basis">1) Basis</h3>
+
+<p><br /></p>
+
+<p><strong>Definition : Basis</strong></p>
+
+<p>Let $H$ be a subspace of a vector space $V$. An indexed set of vectors $B ={\boldsymbol{b_1}, \boldsymbol{b_2}, …, \boldsymbol{b_p} }$ in $V$ is a basis for $H$ if</p>
+
+<ol>
+  <li>$B$ is a linera independent set</li>
+  <li>The subspace spanned by $B$ is $H$. That is</li>
+</ol>
+
+\[H=Span\{\boldsymbol{b_1}, \boldsymbol{b_2}, ..., \boldsymbol{b_p} \}\]
+
+<p>Subspace $H$의 basis는 basis에 속한 벡터가 linearly independent여야 하고, 두 번째로, basis를 이용하여 span한 set이 $H$가 되어야 합니다.</p>
+
+<p>vector space $V$의 subset $H$이 subspace가 되기 위해서는 다음의 조건이 필요합니다.</p>
+
+<ol>
+  <li>$H\subset V$</li>
+  <li>For all $\boldsymbol{u, v} \in H, \boldsymbol{u+v} \in H$</li>
+  <li>For all $\boldsymbol{u} \in H$ and scalar $k$, $k\boldsymbol{u} \in H$</li>
+</ol>
+
+<p>subspace $H$에 속한 벡터는 적을수도, 무수히 많을수도 있습니다. 만약 $H$에 속한 벡터가 무수히 많다면, $H$를 설명하거나 표현할 때 어려움이 존재할 수 있고, 이해가 힘들수도 있습니다. 따라서, <strong>$H$를 설명할 수 있는 대표 벡터를 이용하여 $H$의 특징을 설명하고자 합니다.</strong>여기서 말하는 대표 벡터들을 모아놓은 집합이 basis입니다.</p>
+
+<p>그렇다면 $H$를 대표할 수 있다는 뜻은 무엇일까요? 첫 번째로, 대표 벡터만을 이용하여 $H$를 설명할 수 있어야 합니다. 이 조건이 basis 정의에서 두 번째 조건인</p>
+
+\[H=Span\{\boldsymbol{b_1}, \boldsymbol{b_2}, ..., \boldsymbol{b_p} \}\]
+
+<p>조건입니다. 즉, basis에 속한 벡터들의 linear combination으로 $H$에 속한 모든 벡터를 표현할 수 있습니다.</p>
+
+<p>두 번째는 대표 벡터가 중복되게 너무 많으면 안된다는 점입니다. 만약 대표 벡터들끼리 관련이 있거나 다른 대표 벡터로 표현이 가능하다면, 다른 대표 벡터들로부터 표현되는 벡터는 없어도 상관이 없습니다. 따라서, <strong>$H$를 설명할 수 있는 가장 최소한의 벡터들을 생각을 합니다.</strong> 최소한의 벡터 집합을 정의하기 위해 linear independence 정의를 사용합니다. 즉, Basis가 linearly independent한 조건을 통해, 중복거나 서로 관련이 없는(linearly indepenent) 최소한의 벡터를 이용하여 $H$를 설명하게 됩니다.</p>
+
+<p>정리하면, <strong>subspace $H$의 basis $B$는 $H$를 설명하는(span 조건) 가장 최소한의 벡터를 모아놓은(linear independence 조건) 집합입니다.</strong></p>
+
+<p>추가적으로, subspace가 아닌 vector space 또한 subspace가 되기 때문에, vector space의 basis 또한 똑같이 정의됩니다.</p>
+
+<p><br /></p>
+
+<p><em>example</em></p>
+
+<p>Let $A$ be an invertible $n \times n$ matrix, say $A=\begin{bmatrix}\boldsymbol{a_1}, …, \boldsymbol{a_n} \end{bmatrix}$ . Then the columns of $A$ form a basis for $\mathbb R^n$</p>
+
+<p>$A$의 columns이 $R^n$의 basis가 성립되기 위해서는 두 가지 조건을 확인해야 합니다.</p>
+
+<ol>
+  <li>
+    <p>linear independence</p>
+
+    <p>$A$가 invertible하므로, $A$의 column들은 linearly independent합니다.</p>
+  </li>
+  <li>
+    <p>Span</p>
+
+    <p>$A$가 invertible하므로, $\mathbb R^n$에 속하는 모든 벡터 $\boldsymbol{b}$에 대해 $A\boldsymbol{x}=\boldsymbol{b}$는 consistent합니다. 즉, $\mathbb R^n$에 속하는 모든 벡터는 $A$의 columns의 linear combination으로 표현이 가능합니다.</p>
+  </li>
+</ol>
+
+<p>두 조건을 만족하기 때문에 $A$의 column은 $\mathbb R^n$의 basis가 됩니다.</p>
+
+<p>위 예시를 통해 알 수 있는 점은 <strong>특정 vector space의 basis는 하나로 고정되는 것이 아닌 여러개가 존재할 수 있습니다.</strong> (invertible matrix는 무수히 많으니까요.) 하지만, <strong>basis에 속한 벡터의 개수는 같습니다.</strong></p>
+
+<p><br /></p>
+
+<p><em>example</em></p>
+
+<p>The nonzero row vectors of a matrix in row echelon form form a basis for row space</p>
+
+<p>echelon form인 matrix $A$가 다음과 같이 표현된다고 해봅시다.</p>
+
+\[A =\begin{bmatrix}  * &amp; \times &amp; \cdots &amp; \times \\ 0 &amp; * &amp; \cdots &amp;  \times \\ \vdots  &amp; \vdots &amp; \vdots  &amp; \vdots  \\ 0 &amp; 0 &amp; 0 &amp; 0\end{bmatrix}\]
+
+<p>여기서, non-zero row의 leading entry가 모두 다릅니다. 이는 특정 non-zero row를 이를 제외한 나머지 non-zero row의 linear combination으로 표현할 수 없다는 것을 뜻합니다.(leading entry 자리를 채울 수 없기 때문이죠. ) 따라서 non-zero row들은 linearly independent합니다. 또한 row space 정의가 row들의 linear combination 모두 모아놓은 집합이므로 $A$의 row space의 basis는 non-zero row를 모아놓은 집합이 됩니다.</p>
+
+<p>추가적으로, row equivalent한 두 matrix의 row space는 동일하기 때문에, basis 또한 동일합니다. 따라서 어떤 matrix $B$의 row space의 basis를 구하기 위해서는, $B$와 row equivalent한 echelon form $A$를 만든 후, $A$의 non-zero row가 $RowB$의 basis가 됩니다.</p>
+
+<p><br /></p>
+
+<p><em>example</em></p>
+
+<p>Let $\boldsymbol{e_1}, \boldsymbol{e_2}, …, \boldsymbol{e_n}$ be the columns of the $n \times n$ matrix $I_n$. The set ${\boldsymbol{e_1}, …, \boldsymbol{e_n}}$ is called the standard basis of $\mathbb R^n$</p>
+
+\[\boldsymbol{e_1} = \begin{bmatrix}1 \\ 0 \\ \vdots \\ 0 \end{bmatrix}, \ \ \boldsymbol{e_2} = \begin{bmatrix} 0 \\ 1 \\ \vdots \\ 0 \end{bmatrix}, \ \ ... , \boldsymbol{e_n} =\begin{bmatrix} 0 \\ 0 \\ \vdots \\ 1 \end{bmatrix}\]
+
+<p>Identity matrix는 invertible하므로 $I_n$의 column은 $\mathbb R^n$의 basis가 됩니다. 따라서 standard unit vector들 또한 basis가 될 수 있습니다. <strong>$\mathbb R^2, \mathbb R^3$에서 좌표평면, 좌표공간을 그릴 때 x축, y축, z축을 이용하여 그리는데, 축이 standard basis의 벡터 방향을 표시한 것</strong>으로 생각하면 되겠습니다. basis의 정의를 이용하면 일반적인 $\mathbb R^n$에서도 축의 개념(basis 벡터)을 생각해볼 수 있습니다.</p>
+
+<p><br /></p>
+
+<p><em>example</em></p>
+
+\[\boldsymbol{v_1}=\begin{bmatrix} 3 \\ 0 \\ -6\end{bmatrix}, 
+\boldsymbol{v_2}=\begin{bmatrix} -4 \\ 1 \\ 7\end{bmatrix}, 
+\boldsymbol{v_3}=\begin{bmatrix} -2 \\ 1 \\ 5\end{bmatrix}\]
+
+<p>다음 벡터들이 $\mathbb R^3$의 basis가 되는지 확인해봅시다.</p>
+
+<ul>
+  <li>Linearly independent</li>
+</ul>
+
+<p>세 벡터가 linearly independent임을 확인하기 위해서 vector equation이 trivial solution이 갖는지를 확인해보겠습니다.</p>
+
+\[x_1\boldsymbol{v_1} + x_2\boldsymbol{v_2} + x_3\boldsymbol{v_3} = 0\]
+
+<p>다음 vector equation의 augmented matrix를 이용하여 equation을 풀면</p>
+
+\[\begin{bmatrix}3 &amp; -4 &amp; -2 &amp; 0 \\ 0 &amp; 1 &amp; 1 &amp; 0 \\ -6 &amp; 7 &amp; 5 &amp; 0 \end{bmatrix} \sim \begin{bmatrix}1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 0 \end{bmatrix}\]
+
+<p>따라서 solution이 $x_1=x_2=x_3=0$, trivial solution만을 가지기 때문에 linearly independent합니다.</p>
+
+<ul>
+  <li>span</li>
+</ul>
+
+<p>세 벡터로 $\mathbb R^3$를 span하는지 확인해보겠습니다. 임의의 $\boldsymbol b \in \mathbb R^3$ 에 대해서 vector equation</p>
+
+\[x_1\boldsymbol{v_1} + x_2\boldsymbol{v_2} + x_3\boldsymbol{v_3} = \boldsymbol{b}\]
+
+<p>가 consistent하여야 합니다. 위의 linear independence 계산과정에서 알 수 있듯이, 위 equation의 augmented matrix의 첫 번째, 두 번째, 세 번째 column에 pivot이 존재하기 때문에, 위 equation은 반드시 consistent합니다. 즉</p>
+
+\[Span\{\boldsymbol{v_1}, \boldsymbol{v_2}, \boldsymbol{v_3}\} = \mathbb R^3\]
+
+<p>가 성립됩니다. 따라서 ${\boldsymbol{v_1}, \boldsymbol{v_2}, \boldsymbol{v_3}}$은 $\mathbb R^3$의 basis가 됩니다.</p>
+
+<p><br /></p>
+
+<p><strong>Theorem</strong></p>
+
+<p>Let $S$ be a finite set of vectors in a non-zero subspace $V$</p>
+
+<p>If $S$ spans $V$, but is not a basis for $V$, then a basis for $V$ can be obatined by removing appropriate vectors from $S$</p>
+
+<p>If $S$ is linearly independent, but is not abasis for $V$, then a basis for $V$ can be optained by adding appropriate vectors from $V$ to $S$</p>
+
+<p>위 정리는 basis의 두 조건 중 하나만 만족되었을 때, basis를 찾는 방법을 알 수 있는 정리입니다.</p>
+
+<p>만약 $S$가 $V$를 span하지만, basis가 되지 않는다면, $S$가 linearly dependent하다는 것을 뜻합니다. 따라서 span 조건은 유지하면서 적절한 벡터를 제거하여 linearly independent한 set을 만들 수 있고, 그 집합이 basis가 됩니다. (벡터를 제거하여도 span 조건이 유지될 수 있는 이유는 $S$에 속한 벡터 중 하나 이상이 나머지 벡터들의 linear combination으로 표현되기 때문입니다.)</p>
+
+<p>이를 통해 $V$의 basis는 <strong>$V$를 span하는 집합 중 가장 작은 집합</strong>인 것을 알 수 있습니다.</p>
+
+<p>만약 $S$가 linearly independent하지만, basis가 되지 않는다면, $S$가 $V$를 span하지 못한다는 것을 뜻합니다. 따라서, $V$에 있는 벡터 중에 $S$에 추가하여도 linearly independent 성질이 유지되는 벡터가 존재합니다. 따라서 이러한 벡터를 적절히 추가하여, $S$가 $V$를 span하도록 만들 수 있고, 그 집합이 basis가 됩니다.</p>
+
+<p>즉, $V$의 basis는 <strong>$V$에 속하는 linearly independent한 집합 중 가장 큰 집합</strong>인 것을 알 수 있습니다.</p>
+
+<p>지금까지 vector space의 basis에 대해 알아보았습니다. 다음 포스트에서는 dimension에 대해서 알아보겠습니다. 질문이나 오류 있으면 댓글 남겨주세요! 감사합니다!</p>]]></content><author><name>Twolions</name><email>twa02189@g.skku.edu</email></author><category term="Linear Algebra" /><category term="Linear Algebra" /><category term="Basis" /><summary type="html"><![CDATA[이번 포스트에서는 vector space에서의 Basis에 대해 알아보겠습니다.]]></summary></entry><entry><title type="html">4.3 Matrix and subspace</title><link href="http://localhost:4000/linear%20algebra/linearalgebra4-3/" rel="alternate" type="text/html" title="4.3 Matrix and subspace" /><published>2022-04-05T00:00:00+09:00</published><updated>2022-04-05T00:00:00+09:00</updated><id>http://localhost:4000/linear%20algebra/linearalgebra4-3</id><content type="html" xml:base="http://localhost:4000/linear%20algebra/linearalgebra4-3/"><![CDATA[<p>이번 포스트에서는 Matrix를 이용하여 정의하는 null space, column space, row space에 대해서 알아보겠습니다.</p>
+
+<p><br /></p>
+
+<h3 id="1-null-space">1) Null Space</h3>
+
+<p><br /></p>
+
+<p><strong>Definition : Null Space</strong></p>
+
+<p>The null space of an $m \times n $ matrix $A$, written as $NulA$, is the set of all solutions of the homogeneous equation $A\boldsymbol{x}=0$</p>
+
+\[NulA = \{\boldsymbol{x} \mid A\boldsymbol{x} = 0, \boldsymbol{x} \in \mathbb R^n\}\]
+
+<p>matrix $A$의 null space는 $A\boldsymbol{x}=0$을 만족하는 $\boldsymbol{x}$ 를 모은 집합니다.</p>
+
+<p>matrix $A$를 standard matrix로 가지는 matrix transformation $T_A$를 생각해보면</p>
+
+\[NulA = \{\boldsymbol{x} \mid A\boldsymbol{x} = 0, \boldsymbol{x} \in \mathbb R^n\} =  \{\boldsymbol{x} \mid T_A(\boldsymbol{x}) = 0, \boldsymbol{x} \in \mathbb R^n\} = Ker(T_A)\]
+
+<p>$A$의 null space는 다름 아닌 $T_A$의 kernel임을 알 수 있습니다.</p>
+
+<p><br /></p>
+
+<p><strong>Theorem</strong></p>
+
+<p>The null space of an $m \times n$ matrix $A$ is a subspace of $\mathbb R^n$</p>
+
+<p>Linear transformation의 kernel은 subspace가 되는 것을 통해 쉽게 알 수 있습니다.</p>
+
+<p><br /></p>
+
+<p><em>example</em></p>
+
+\[A = \begin{bmatrix}1 &amp; -1 \\ 2 &amp; 5 \\ 3 &amp; 4 \end{bmatrix}\]
+
+<p>의 null space는</p>
+
+\[NulA = \{\boldsymbol{x} \mid A\boldsymbol{x}=0\}\]
+
+<p>가 되어 $A\boldsymbol{x}=0$의 augmented matrix를 이용하여 equation을 풀면</p>
+
+\[\begin{bmatrix}1 &amp; -1 &amp; 0\\ 2 &amp; 5 &amp; 0 \\ 3 &amp; 4 &amp; 0 \end{bmatrix} \sim \begin{bmatrix}1 &amp; 0 &amp; 0\\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 \end{bmatrix}\]
+
+<p>가 되어</p>
+
+\[NulA =\{\begin{bmatrix} 0\\  0 \end{bmatrix}\}\]
+
+<p>이 됩니다.</p>
+
+<p><br /></p>
+
+<h3 id="2-column-space">2) Column Space</h3>
+
+<p><br /></p>
+
+<p><strong>Definition : Column Space</strong></p>
+
+<p>The column space of an $m \times n $ matrix $A$, written as $ColA$, is the set of all linear combinations of the columns of $A$. If $A=\begin{bmatrix}\boldsymbol{a}_1 &amp; \boldsymbol{a}_2 &amp; … &amp; \boldsymbol{a}_n  \end{bmatrix}$,</p>
+
+\[ColA = Span \{\boldsymbol{a}_1, \boldsymbol{a}_2, ..., \boldsymbol{a}_n\}\]
+
+<p>Matrix $A$의 column space는 $A$의 columns의 linear combination을 모은 집합입니다.</p>
+
+<p>vector들에 의해 span된 subset은 subspace가 되므로, column space 역시 subspace가 됩니다.</p>
+
+<p><br /></p>
+
+<p><strong>Theorem</strong></p>
+
+<p>The column space of an $m \times n$ matrix $A$ is a subspace of $\mathbb R^m$</p>
+
+<p>Matrix $A$의 column space에 속한 vector들은 $A$의 column의 linear combination으로 이루어져 있습니다. 따라서</p>
+
+\[ColA = \{\boldsymbol{b} \mid \boldsymbol{b} = A\boldsymbol{x} \ \ for \ \ some \ \ \boldsymbol x \in \mathbb R^n\}\]
+
+<p>으로도 해석할 수 있습니다.</p>
+
+<p><br /></p>
+
+<p><em>example</em></p>
+
+\[A = \begin{bmatrix}1 &amp; -1 \\ 2 &amp; 5 \\ 3 &amp; 4 \end{bmatrix}\]
+
+<p>다음 matrix의 column space는</p>
+
+\[ColA = Span\{\begin{bmatrix}1 \\ 2 \\ 3  \end{bmatrix}, \begin{bmatrix}-1 \\  5 \\  4 \end{bmatrix}\}\]
+
+<p>이 됩니다.</p>
+
+<p><br /></p>
+
+<h3 id="3-the-constrast-between-nula-and-cola">3) The constrast between NulA and ColA</h3>
+
+<p><br /></p>
+
+<p>다음 matrix를 통해서 Null space와 Column space가 가지는 특징을 비교해보겠습니다.</p>
+
+<p><br /></p>
+
+<p><em>example</em></p>
+
+<p>\(A=\begin{bmatrix}2 &amp; 4&amp; -2 &amp; 1 \\ -2 &amp; -5 &amp; 7 &amp; 3 \\ 3 &amp; 7 &amp; -8 &amp; 6 \end{bmatrix}, \ \ \boldsymbol{u}=\begin{bmatrix}3 \\ -2 \\ -1 \\0 \end{bmatrix}, \ \ \boldsymbol{v} =\begin{bmatrix}3 \\ -1 \\3 \end{bmatrix}\)
+<br /></p>
+
+<ul>
+  <li>$NulA$?</li>
+</ul>
+
+<p><br /></p>
+
+<p>Matrix $A$의 null space를 구하기 위해서는</p>
+
+\[A\boldsymbol{x }=0\]
+
+<p>을 풀어야 합니다.  이를 풀면</p>
+
+\[\begin{bmatrix} 2 &amp; 4&amp; -2 &amp; 1 &amp; 0 \\-2 &amp; -5 &amp; 7 &amp; 3 &amp; 0 \\3 &amp; 7 &amp; -8 &amp; 6 &amp; 0 \end{bmatrix} \sim  
+\begin{bmatrix} 1 &amp; 0&amp; 9 &amp; 0 &amp; 0 \\0 &amp; 1 &amp; -5 &amp; 0 &amp; 0 \\0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \end{bmatrix}\]
+
+<p>가 되어</p>
+
+\[\boldsymbol{x} = x_3\begin{bmatrix}-9\\5\\1\\0 \end{bmatrix}, \ \ x_3 : free\]
+
+<p>따라서</p>
+
+\[NulA = Span\{\begin{bmatrix}-9\\5\\1\\0 \end{bmatrix}\}\]
+
+<p>이 됩니다.</p>
+
+<p><br /></p>
+
+<ul>
+  <li>$ColA$?</li>
+</ul>
+
+<p><br /></p>
+
+<p>$A$의 column space는 column의 linear combination을 모두 모은 집합입니다. 따라서</p>
+
+<p>\(ColA = span\{\begin{bmatrix}2 \\ -2 \\ 3 \end{bmatrix}, \begin{bmatrix}4 \\ -5 \\ 7 \end{bmatrix}, \begin{bmatrix}-2 \\ 7 \\ -8 \end{bmatrix}, \begin{bmatrix}1 \\ 3 \\ 6 \end{bmatrix}\}\)
+이 됩니다.</p>
+
+<p><br /></p>
+
+<ul>
+  <li>$\boldsymbol{u} \in NulA$?</li>
+</ul>
+
+<p><br /></p>
+
+<p>$\boldsymbol{u}$가 $NulA$에 속한다는 것은 $A\boldsymbol{u}=0$을 만족한다는 뜻입니다. 따라서</p>
+
+\[A\boldsymbol{u} = \begin{bmatrix}6-8+2 \\-6+10-7+3 \\ 9-14+8 \end{bmatrix} = \begin{bmatrix}0 \\ 0\\3 \end{bmatrix} \neq 0\]
+
+<p>따라서 $\boldsymbol{u} \notin NulA$입니다.</p>
+
+<p><br /></p>
+
+<ul>
+  <li>$\boldsymbol{v} \in ColA$?</li>
+</ul>
+
+<p><br /></p>
+
+<p>$\boldsymbol{v}$가 $ColA$에 속한다는 것은 $\boldsymbol{v}$가 $A$의 column의 linear combination으로 표현된다는 것을 뜻합니다. 따라서</p>
+
+\[A\boldsymbol{x}=\boldsymbol{v}\]
+
+<p>방정식이 consistent한지 확인을 해야 합니다. 다음 linear system의 augmented matrix를 이용하면</p>
+
+\[\begin{bmatrix} 2 &amp; 4&amp; -2 &amp; 1 &amp; 3 \\-2 &amp; -5 &amp; 7 &amp; 3 &amp; -1 \\3 &amp; 7 &amp; -8 &amp; 6 &amp; 3 \end{bmatrix} \sim 
+\begin{bmatrix} 2 &amp; 4&amp; -2 &amp; 1 &amp; 3 \\0 &amp; -1 &amp; 5 &amp; 4 &amp; 2 \\0 &amp; 0 &amp; 0 &amp;\frac{31}{2} &amp; \frac{1}{2} \end{bmatrix}\]
+
+<p>echelon form의 모든 row에 leading entry가 있기 때문에, 다음 system의 solution이 존재합니다. 따라서 위 linear system은consistent하고 $\boldsymbol{v} \in ColA$입니다.</p>
+
+<p><br /></p>
+
+<p>Matrix $A$를 통해 null space와 column space를 구해보고, 특정 벡터가 column space, null space에 속하는지 확인도 해보았습니다.</p>
+
+<p>$m \times n$ matrix $A$에 대해 Null space는 다음의 특징을 가집니다.</p>
+
+<ol>
+  <li>
+    <p>$NulA$ is subspace of $\mathbb R^n$</p>
+  </li>
+  <li>
+    <p>$NulA$ is implicitly defined</p>
+
+    <p>$NulA$를 구하려면 $A\boldsymbol{x}=0$을 풀어야 합니다. 따라서 linear system을 풀어야 하기 때문에 시간이 걸립니다.</p>
+  </li>
+  <li>
+    <p>No obvious relation between $NulA$ and the entries in $A$</p>
+
+    <p>$A$의 entry를 이용하여 $NulA$를 바로 확인할 수 없습니다.</p>
+  </li>
+  <li>
+    <p>A typical vector $\boldsymbol{v}$ in $NulA$ has the property that $A\boldsymbol{v}=0$</p>
+  </li>
+  <li>
+    <p>It is easy to tell if $\boldsymbol{v}$ is in $NulA$</p>
+
+    <p>$A\boldsymbol{v}$를 계산해서, $0$이 나오면 $NulA$에 속하고, $0$이 나오지 않으면 $NulA$에 속하지 않습니다.</p>
+  </li>
+  <li>
+    <p>$NulA={0}$ if and only if $A\boldsymbol{x}=0$ has only the trivial solution</p>
+  </li>
+  <li>
+    <p>$NulA={0}$ if and only if the linear transformation $\boldsymbol{x} \rightarrow A\boldsymbol x$ is one to one</p>
+
+    <p>6과 7은 null space의 정의와 linear transformation이 one to one일 때 가지는 성질을 이용하여 쉽게 확인할 수 있습니다.</p>
+  </li>
+</ol>
+
+<p><br /></p>
+
+<p>한편, $m \times n$ matrix $A$의 Column space는 다음의 특징을 가집니다.</p>
+
+<ol>
+  <li>
+    <p>$ColA$ is subspace of $\mathbb R^m$</p>
+  </li>
+  <li>
+    <p>$ColA$ is explicitly defined</p>
+
+    <p>$ColA$는 $A$의 column의 linear combination을 모두 모은 집합입니다. 따라서 $A$를 통해 $ColA$를 바로 구할 수 있습니다.</p>
+  </li>
+  <li>
+    <p>Obvious relation between $ColA$ and the entries of $A$</p>
+
+    <p>따라서, $A$의 entry와 $ColA$는 명확한 관계를 가집니다.</p>
+  </li>
+  <li>
+    <p>A typical vector $\boldsymbol{u}$ in $ColA$ has the property that the equation $A\boldsymbol{x} = \boldsymbol{u}$ is consistent</p>
+  </li>
+  <li>
+    <p>It takes times to tell if $\boldsymbol u$ is in $ColA$</p>
+
+    <p>$A\boldsymbol{x} = \boldsymbol{u}$ 가 consistent한지 확인을 해야 하기 때문에, linear system을 풀어야 합니다.</p>
+  </li>
+  <li>
+    <p>$ColA =\mathbb R^m$ if and only if the equation $A\boldsymbol{x} =\boldsymbol{b}$ has a solution for every $\boldsymbol{b} \in \mathbb R^m$</p>
+  </li>
+  <li>
+    <p>$ColA =\mathbb R^m$ if and only if the linear transformation $\boldsymbol x \rightarrow A\boldsymbol{x}$ is onto</p>
+
+    <p>6과 7은 column space의 정의와 linear transformation이 onto일 때 가지는 성질을 이용하여 쉽게 확인할 수 있습니다.</p>
+  </li>
+</ol>
+
+<p><br /></p>
+
+<h3 id="4-row-space">4) Row Space</h3>
+
+<p><br /></p>
+
+<p>**Definition : Row Space **</p>
+
+<p>The row space of an $m \times n$ matrix $A$, written as $RowA$, is the set of all linear combinations of the rows of $A$</p>
+
+<p>Matrix $A$의 row들의 linear combination을 모두 모은 집합이 $RowA$입니다.</p>
+
+<p>각각의 row는 $n$개의 entry를 가지기 때문에, $RowA \subset \mathbb R^n$입니다.</p>
+
+<p>또한, matrix $A$의 row는 matrix $A^T$의 column과 같기 때문에</p>
+
+\[RowA=ColA^T\]
+
+<p>이 성립합니다.</p>
+
+<p>Row space는 다음의 성질을 가집니다.</p>
+
+<p><br /></p>
+
+<p><strong>Theorem</strong></p>
+
+<p>If two matrices $A$ and $B$ are row equivalent, then their row spaces are the same.</p>
+
+<p>Row eqivalent하다면, row operation을 통하여 다른 matrix를 만들 수 있다는 뜻입니다. row operation은 linear combination를 모두 모은 집합에는 영향을 끼치지 않기 때문에, 두 matrix의 row space는 동일합니다.</p>
+
+<p><br /></p>
+
+<p><em>example</em></p>
+
+\[A = \begin{bmatrix}-2 &amp; -5 &amp; 8 &amp; 0 &amp; -17 \\ 1 &amp; 3 &amp; -5 &amp; 1 &amp; 5 \\ 3 &amp; 11 &amp; -19 &amp; 7 &amp; 1 \\ 1 &amp; 7 &amp; -13 &amp; 5 &amp; -3 \end{bmatrix}\]
+
+<p>다음 matrix의 row space는</p>
+
+<p>\(RowA = Span\{\boldsymbol{a_1}, \boldsymbol{a_2}, \boldsymbol{a_3}, \boldsymbol{a_4}\} \\
+where \ \ \ \boldsymbol{a_1}=\begin{bmatrix}-2 \\ -5 \\8 \\0 \\ -17\end{bmatrix}, \ \ 
+\boldsymbol{a_1}=\begin{bmatrix}1 \\ 3 \\ -5 \\ 1 \\ 5\end{bmatrix}, \ \
+\boldsymbol{a_1}=\begin{bmatrix}3 \\ 11 \\ -19 \\ 7 \\ 1\end{bmatrix}, \ \ 
+\boldsymbol{a_1}=\begin{bmatrix}1 \\ 7 \\ -13 \\ 5 \\ -3\end{bmatrix}\)
+이 됩니다.</p>
+
+<p>지금까지 matrix를 통해 정의하는 vector space인 null space, column space, row space에 대해 알아보았습니다. 다음 포스트에서는 basis에 대해 알아보도록 하겠습니다. 질문이나 오류 있으면 댓글 남겨주세요! 감사합니다!</p>
+
+<p><br /></p>
+
+<h3 id="appendix--proof-of-theorem">Appendix : Proof of Theorem</h3>
+
+<p><br /></p>
+
+<p><strong>Theorem</strong></p>
+
+<p>If two matrices $A$ and $B$ are row equivalent, then their row spaces are the same.</p>
+
+<ul>
+  <li><strong>Proof</strong></li>
+</ul>
+
+<p>$m \times n $ matrix $A$를 다음과 같이 표현을 하면</p>
+
+\[A = \begin{bmatrix}-\boldsymbol a_{1}-  \\ \vdots \\ -\boldsymbol a_{m}-\end{bmatrix}\]
+
+<p>$\boldsymbol{a}_1, \boldsymbol{a}_2, …, \boldsymbol{a}_m$은 $\mathbb R^n$에 속하는 벡터입니다.</p>
+
+<p>$A$와 $B$가 row equivalent하다는 것은 row operation을 통해서 $A$에서 $B$, $B$에서 $A$를 만들 수 있다는 뜻입니다. row operation인 replacement, interchange, scaling은 row space의 변화에 영향을 끼치지 않는 것을 통해 두 matrix의 row space가 같은 것을 확인할 수 있습니다.</p>
+
+<ul>
+  <li>Replacement</li>
+</ul>
+
+\[\begin{aligned}
+
+RowA &amp;= Span\{\boldsymbol{a}_1, ..., \boldsymbol{a}_m\} \\
+&amp;= Span\{\boldsymbol{a}_1+k\boldsymbol{a}_i, ..., \boldsymbol{a}_m\}\ \ \ i=1, ..., m
+
+
+\end{aligned}\]
+
+<ul>
+  <li>Interchange</li>
+</ul>
+
+\[\begin{aligned}
+
+RowA &amp;= Span\{\boldsymbol{a}_1, ...,\boldsymbol{a}_i, ..., \boldsymbol{a}_j,  \boldsymbol{a}_m\} \\
+&amp;= Span\{\boldsymbol{a}_1, ..., \boldsymbol{a}_j, ..., \boldsymbol{a}_i,  \boldsymbol{a}_m\}\ \ \ i \neq j, \ \  i, j=1, ..., m
+
+\end{aligned}\]
+
+<ul>
+  <li>Scaling</li>
+</ul>
+
+\[\begin{aligned}
+
+RowA &amp;= Span\{\boldsymbol{a}_1, ...,\boldsymbol{a}_i, \boldsymbol{a}_m\} \\
+&amp;= Span\{\boldsymbol{a}_1, ..., k\boldsymbol{a}_i,  \boldsymbol{a}_m\}\ \ \ i=1, ..., m
+
+\end{aligned}\]
+
+<p>Row operation을 하더라도 row space가 변화하지 않으므로, Row equivalent한 두 matrix의 row space는 동일합니다.</p>]]></content><author><name>Twolions</name><email>twa02189@g.skku.edu</email></author><category term="Linear Algebra" /><category term="Linear Algebra" /><category term="Column space" /><category term="Null space" /><category term="Row space" /><summary type="html"><![CDATA[이번 포스트에서는 Matrix를 이용하여 정의하는 null space, column space, row space에 대해서 알아보겠습니다.]]></summary></entry><entry><title type="html">4.2 Linear transformation (1)</title><link href="http://localhost:4000/linear%20algebra/linearalgebra4-2(1)/" rel="alternate" type="text/html" title="4.2 Linear transformation (1)" /><published>2022-04-03T00:00:00+09:00</published><updated>2022-04-03T00:00:00+09:00</updated><id>http://localhost:4000/linear%20algebra/linearalgebra4-2(1)</id><content type="html" xml:base="http://localhost:4000/linear%20algebra/linearalgebra4-2(1)/"><![CDATA[<p>이번 포스트에서는 Linear transformation에 대해서 알아보겠습니다.</p>
+
+<p><br /></p>
+
+<h3 id="1-linear-transformation">1) Linear Transformation</h3>
+
+<p><br /></p>
+
+<h4 id="1-transformation">(1) Transformation</h4>
+
+<p><br /></p>
+
+<p>Transformation은 다음과 같이 정의됩니다.</p>
+
+<p><br /></p>
+
+<p><strong>Definition : Transformation</strong></p>
+
+<p>Transformation is a function whose inputs and outputs are vectors</p>
+
+\[T : \mathbb R^n \rightarrow \mathbb R^m\]
+
+<p>A transformation</p>
+
+\[T : \mathbb R^n \rightarrow \mathbb R^n\]
+
+<p>is called operator on $\mathbb R^n$</p>
+
+<p>Transformation이란, input과 output이 vector인 함수입니다. 고등학교에서 배운 함수는 input과 output이 실수인, 또는 input이 벡터지만 output이 실수인 경우만 다루었다면, transformation은 이에서 확장하여 input과 output이 모두 vector인 경우를 뜻합니다. 또한, input과 output이 $\mathbb R^n$으로 같다면, 해당 transformation은 operator가 됩니다. Transformation 또한 함수이기 때문에, 기존의 함수에서 사용했던 개념인 정의역(domain), 공역(codomain), 치역(image) 또한 똑같이 정의됩니다.</p>
+
+<p><br /></p>
+
+<p><em>Example</em></p>
+
+<p>$T$ : transformation that maps a vector $\boldsymbol{x}=(x_1, x_2)$ in $\mathbb R^2$ into the vector $2\boldsymbol{x} = (2x_1, 2x_2)$ in $\mathbb R^2$</p>
+
+<p>input과 output 모두 $\mathbb R^2$에 속하는 함수입니다. 따라서 $T$는 transformation입니다. 또한, input과 output이 모두  $\mathbb R^2$에 속하므로, operator입니다.</p>
+
+<p><br /></p>
+
+<h4 id="2-linear-transformation">(2) Linear transformation</h4>
+
+<p><br /></p>
+
+<p><strong>Definition : Linear transformation</strong></p>
+
+<p>A function $T : \mathbb R^n \rightarrow \mathbb R^m$ is called a linear transformation from $\mathbb R^n$ to $\mathbb R^m$ if following two properties hold for all vectors $\boldsymbol{u, v}$ in $\mathbb R^n$ and for all scalars $c$.</p>
+
+<ol>
+  <li>$T(c\boldsymbol u) = cT(\boldsymbol{u})$</li>
+  <li>$T(\boldsymbol{u+v}) = T(\boldsymbol{u}) + T(\boldsymbol{v})$</li>
+</ol>
+
+<p>If $n=m$, then the linear transformation $T$ is called linear operator.</p>
+
+<p>Linear transformation이 정의되기 위해서는 transformation이 scalar multiplication, vector addition에 대한 조건을 만족하여야 합니다. 또한 input과 output이 $\mathbb R^n$인 linear transformation을 linear operator라고 정의합니다. 어떤 transformation이 linear transformation임을 확인하기 위해서는 정의역에 존재하는 임의의 벡터에 해대서 위 두 조건을 만족하는지 확인하면 됩니다.</p>
+
+<p><br /></p>
+
+<p><em>example</em></p>
+
+<p>$T$ : transformation that maps a vector $\boldsymbol{x}=(x_1, x_2)$ in $\mathbb R^2$ into the vector $2\boldsymbol{x} = (2x_1, 2x_2)$ in $\mathbb R^2$</p>
+
+<p>위 transformation이 linear transformation을 만족하는지 확인해봅시다.</p>
+
+<ol>
+  <li>$\boldsymbol{u, v} \in \mathbb R^2, T(\boldsymbol{u+v}) = 2(\boldsymbol{u+v}) = 2\boldsymbol{u}+2\boldsymbol{v} = T(\boldsymbol{u}) + T(\boldsymbol{v})$,</li>
+  <li>$\boldsymbol u \in \mathbb R^2, c \in \mathbb R, T(c\boldsymbol{u})=2c\boldsymbol{u}=c2\boldsymbol{u}=cT(\boldsymbol{u})$</li>
+</ol>
+
+<p>$\mathbb R^2$에 속하는 임의의 vector와 scalar에 대해서 두 조건이 성립하기 때문에, 위 transformation은 linear transformation입니다. 또한 정의역과 공역이 $\mathbb R^2$이므로 linear operator입니다.</p>
+
+<p>Linear transformation의 특징을 파악하기 위해서는 matrix transformation이 필요합니다.</p>
+
+<p><br /></p>
+
+<p><strong>Definition : Matrix transformation</strong></p>
+
+<p>If $A$ is $m \times n$ matrix, and if $\boldsymbol{x}$ is a column vector in $\mathbb R^n$, then the product $A\boldsymbol x$ is a vector in $\mathbb R^m$. Therefore, the transformation</p>
+
+\[T_A = \mathbb R^n \rightarrow \mathbb R^m \\
+T_A(\boldsymbol{x}) = A\boldsymbol{x}\]
+
+<p>is called the multiplication by $A$ or the transformation $A$</p>
+
+<p>즉 matrix product로 이루어지는 transformation을 matrix transformation이라고 합니다.</p>
+
+<p><br /></p>
+
+<p><em>example</em></p>
+
+\[A = \begin{bmatrix}1 &amp; -1 \\ 2 &amp; 5 \\ 3 &amp; 4 \end{bmatrix}, \boldsymbol{b} = \begin{bmatrix}7 \\ 0 \\ 7 \end{bmatrix}\]
+
+<p>이 때, $T_A(\boldsymbol x) = A\boldsymbol{x}$가 됩니다. $T(\boldsymbol{x}) =\boldsymbol{b}$를 만족시키는 $\boldsymbol{x}$는 $A\boldsymbol{x} = \boldsymbol{b}$를 만족합니다. 따라서 matrix equation을 풀면 
+\(\boldsymbol{x} = \begin{bmatrix} 6 \\ -1 \end{bmatrix}\)
+이 됩니다.</p>
+
+<p><br /></p>
+
+<p><em>example</em></p>
+
+<p>$T_0$ : Zero transformation</p>
+
+<p>output이 0인 transformation 또한 matrix transformation입니다. Zero matrix를 이용하여 transformation을 정의할 수 있습니다.
+\(T_0 : \mathbb R^n \rightarrow \mathbb R^m \\
+T(\boldsymbol{x}) = 0\boldsymbol{x} = 0\)</p>
+
+<p><br /></p>
+
+<p><em>example</em></p>
+
+<p>$T_I$ : Identity transformation</p>
+
+<p>Output이 input과 같도록 만드는 transformation 또한 matrix transformation입니다. Identity matrix를 이용하여 transformation을 정의할 수 있습니다.
+\(T_I = \mathbb R^n \rightarrow \mathbb R^n \\
+T_I(\boldsymbol{x}) = I\boldsymbol{x} = \boldsymbol{x}\)</p>
+
+<p>이 때, 위 transfromation은 operator이기도 합니다.</p>
+
+<p>다음은 linear transformation과 matrix transformation 사이의 관계를 알아봅시다. 사실, 두 transformation은 같은 transformation입니다.</p>
+
+<p><br /></p>
+
+<p><strong>Theorem</strong></p>
+
+<p>All linear transformation are matrix transformation</p>
+
+<p>Let $T : \mathbb R^n \rightarrow \mathbb R^m$ be a linear transformation. If $\boldsymbol{e_1, e_2, …, e_n}$ are standard unit vectors in $\mathbb R^n$, and $\boldsymbol{x}$ is any vector in $\mathbb R^n$, then $T(\boldsymbol{x})$ can be represented as</p>
+
+\[T(\boldsymbol{x}) = Ax \\
+where \ A =\begin{bmatrix}T(\boldsymbol{e_1}) &amp; T(\boldsymbol{e_2})&amp;...&amp;T(\boldsymbol{e_n}) \end{bmatrix}\]
+
+<p>$A$ : Standard matrix for $T$ and $A=\begin{bmatrix}T\end{bmatrix}$</p>
+
+<p>즉 모든 linear transformation은 matrix transformation으로 나타낼 수 있습니다. 또한 matrix tranformation은 linear transformation이므로, 사실상 두 transformation은 같은 transfromation임을 알 수 있습니다.</p>
+
+<p><em>example</em></p>
+
+\[T : \mathbb R^3 \rightarrow \mathbb R^2 \\
+T : \begin{bmatrix}x_1 \\ x_2\\x_3 \end{bmatrix} \rightarrow \begin{bmatrix}x_1 + x_2  \\ x_2 - x_3\end{bmatrix}\]
+
+<p>먼저 위 transformation이 linear transformation인지 확인해봅시다.</p>
+
+<ol>
+  <li>
+    <p>$\boldsymbol{u, v} \in \mathbb R^3, \boldsymbol{u} = \begin{bmatrix}u_1 \ u_2 \ u_3 \end{bmatrix}, \boldsymbol{v} = \begin{bmatrix}v_1 \ v_2 \ v_3 \end{bmatrix}$</p>
+
+    <p>$T(\boldsymbol{u+v}) = \begin{bmatrix}(u_1+v_1) + (u_2 + v_2) \ (u_2+v_2)-(u_3+v_3)\end{bmatrix} = \begin{bmatrix}u_1 + u_2 \ u_2-u_3\end{bmatrix} + \begin{bmatrix}v_1 + v_2 \ v_2-v_3\end{bmatrix} = T(\boldsymbol{u}) + T(\boldsymbol{v})$</p>
+  </li>
+  <li>
+    <p>$c \in \mathbb R$</p>
+
+    <p>$T(c\boldsymbol u) = \begin{bmatrix}cu_1 +cu_2 \ cu_2 - cu_3 \end{bmatrix} = c\begin{bmatrix}u_1 +u_2 \ u_2 - u_3 \end{bmatrix} = cT(\boldsymbol{u})$</p>
+  </li>
+</ol>
+
+<p>따라서 위 transformation은 linear transformation입니다. 위 linear transformation의 standard matrix를 찾기 위해 unit vector을 이용하면</p>
+
+<p>\(T(\begin{bmatrix}1 \\0 \\0  \end{bmatrix}) = \begin{bmatrix}1 \\ 0\end{bmatrix}, \ \ T(\begin{bmatrix}0 \\1 \\0  \end{bmatrix}) = \begin{bmatrix}1 \\ 1 \end{bmatrix}, \ \ T(\begin{bmatrix}0 \\0 \\1  \end{bmatrix}) = \begin{bmatrix}0 \\ -1 \end{bmatrix}\)
+ 따라서</p>
+
+<p>\([T] = \begin{bmatrix}1 &amp; 1 &amp; 0 \\ 0 &amp; 1 &amp; -1 \end{bmatrix}\)
+임을 알 수 있습니다.</p>
+
+<p>지금까지 transformation과 linear transformation을 알아보았습니다. 다음 포스트에서는 kernel과 range에 대해서 알아보도록 하겠습니다. 질문이나 오류 있으면 댓글 남겨주세요! 감사합니다!</p>
+
+<p><br /></p>
+
+<h3 id="appendix--proof-of-theorem">Appendix : Proof of Theorem</h3>
+
+<p><br /></p>
+
+<p>Linear tranformation과 matrix transformation의 관계에 대한 정리에 대한 증명입니다.</p>
+
+<p><br /></p>
+
+<p><strong>Theorem</strong></p>
+
+<p>Let $T : \mathbb R^n \rightarrow \mathbb R^m$ be a linear transformation. If $\boldsymbol{e_1, e_2, …, e_n}$ are standard unit vectors in $\mathbb R^n$, and $\boldsymbol{x}$ is any vector in $\mathbb R^n$, then $T(\boldsymbol{x})$ can be represented as</p>
+
+\[T(\boldsymbol{x}) = Ax \\
+where \ A =\begin{bmatrix}T(\boldsymbol{e_1}) &amp; T(\boldsymbol{e_2})&amp;...&amp;T(\boldsymbol{e_n}) \end{bmatrix}\]
+
+<p>$A$ : Standard matrix for $T$ and $A=\begin{bmatrix}T\end{bmatrix}$</p>
+
+<ul>
+  <li><strong>Proof</strong></li>
+</ul>
+
+<p>$\boldsymbol x \in \mathbb R^n$이라고 하면</p>
+
+\[\boldsymbol{x} = \begin{bmatrix}x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix} = x_1\begin{bmatrix}1 \\ 0 \\ \vdots \\ 0 \end{bmatrix} + x_2 \begin{bmatrix} 0 \\ 1 \\   \vdots \\ 0 \end{bmatrix} + \cdots + x_n \begin{bmatrix} 0 \\ 0 \\ \vdots \\ 1\end{bmatrix} = x_1\boldsymbol{e_1} + x_2\boldsymbol{e_2} + \cdots + x_n\boldsymbol{e_n}\]
+
+<p>, 즉 standard unit vector의 linear combination으로 표현됩니다.</p>
+
+<p>$T$가 linear transformation이므로, $T(\boldsymbol{x})$은 다음과 같이 표현됩니다.</p>
+
+\[T(\boldsymbol{x}) =T(x_1\boldsymbol{e_1} + x_2\boldsymbol{e_2} + \cdots + x_n\boldsymbol{e_n}) = x_1T(\boldsymbol{e_1}) + x_2T(\boldsymbol{e_2}) + \cdots + x_nT(\boldsymbol{e_n})\]
+
+<p>이는 matrix product에 따라</p>
+
+\[x_1T(\boldsymbol{e_1}) + x_2T(\boldsymbol{e_2}) + \cdots + x_nT(\boldsymbol{e_n}) = \begin{bmatrix}T(\boldsymbol{e_1}) &amp; T(\boldsymbol{e_2}) &amp; \cdots &amp; T(\boldsymbol{e_n}) \end{bmatrix}\begin{bmatrix}x_1 \\ x_2 \\ \vdots \\ x_n\end{bmatrix}\]
+
+<p>이 되어,  다음 matrix
+\([T] =\begin{bmatrix}T(\boldsymbol{e_1}) &amp; T(\boldsymbol{e_2}) &amp; \cdots &amp; T(\boldsymbol{e_n}) \end{bmatrix}\)</p>
+
+<p>의 transformation이 됩니다. 즉</p>
+
+\[T : \mathbb R^n \rightarrow \mathbb R^m \\
+T(\boldsymbol{x}) = [T]\boldsymbol{x}\]
+
+<p>따라서, linear transformation은 matrix transformation이고, standard unit vector를 통해 standard matrix를 구할 수 있습니다.</p>]]></content><author><name>Twolions</name><email>twa02189@g.skku.edu</email></author><category term="Linear Algebra" /><category term="Linear Algebra" /><category term="Linear transformation" /><summary type="html"><![CDATA[이번 포스트에서는 Linear transformation에 대해서 알아보겠습니다.]]></summary></entry><entry><title type="html">4.2 Linear transformation (2)</title><link href="http://localhost:4000/linear%20algebra/linearalgebra4-2(2)/" rel="alternate" type="text/html" title="4.2 Linear transformation (2)" /><published>2022-04-03T00:00:00+09:00</published><updated>2022-04-03T00:00:00+09:00</updated><id>http://localhost:4000/linear%20algebra/linearalgebra4-2(2)</id><content type="html" xml:base="http://localhost:4000/linear%20algebra/linearalgebra4-2(2)/"><![CDATA[<p>이번 포스트에서는 tranformation에서의 kernel과 range에 대해서 알아보겠습니다.</p>
+
+<p><br /></p>
+
+<h3 id="1-kernel-of-transformation">1) Kernel of transformation</h3>
+
+<p><br /></p>
+
+<h4 id="1-kernel">(1) Kernel</h4>
+
+<p><br /></p>
+
+<p><strong>Definition : Kernel of transformation</strong></p>
+
+<p>If $T : \mathbb R^n \rightarrow \mathbb R^m$ is a transformation, then the set of vectors in $\mathbb R^n$ that $T$ maps into $0$ is called kernel of $T$ and is denoted by $ker(T)$</p>
+
+\[Ker(T) = \{\boldsymbol{x} \mid T(\boldsymbol x)=0\}\]
+
+<p>즉 transformation $T$의 kernel은 $T(\boldsymbol{x})=0$을 만족시키는 모든 $\boldsymbol{x}$ 을 모은 집합입니다.</p>
+
+<p><br /></p>
+
+<p><em>example</em></p>
+
+\[A = \begin{bmatrix}1 &amp; -1 \\ 2 &amp; 5 \\ 3 &amp; 4 \end{bmatrix}\]
+
+<p>에 대해서 matrix transformation $T_A$의 kernel은</p>
+
+\[T_A(\boldsymbol{x}) = A\boldsymbol{x} = 0\]
+
+<p>을 만족시키는 $\boldsymbol x$의 집합니다. 따라서</p>
+
+\[\begin{bmatrix}1 &amp; -1 &amp; 0\\ 2 &amp; 5  &amp;0\\ 3 &amp; 4 &amp;0\end{bmatrix}\]
+
+<p>다음의 augmented matrix를 가진 linear system을 푸는 문제로 바뀌고, 이를 풀게 되면</p>
+
+\[\begin{bmatrix}1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 \end{bmatrix}\]
+
+<p>이 되어, 위 system의 solution은 zero vector밖에 존재하지 않아</p>
+
+\[ker(T_A) = \{0\}\]
+
+<p>가 됩니다.</p>
+
+<p><br /></p>
+
+<p><em>example</em></p>
+
+<p>정의역과 공역이 $\mathbb R^n$인 Zero operator $T_0$의 kernel은</p>
+
+\[ker(T_0) = \{\boldsymbol{x} \mid T_0(\boldsymbol{x}) = 0\boldsymbol{x} =0\}\]
+
+<p>을 만족시키는 $\boldsymbol{x}$ 집합이므로, $\mathbb R^n$에 속하는 모든 벡터가 kernel에 속합니다. 따라서</p>
+
+\[ker(T_0) = \mathbb R^n\]
+
+<p>이 됩니다.</p>
+
+<p><br /></p>
+
+<p><em>example</em></p>
+
+<p>정의역과 공역이 $\mathbb R^n$인 identity operator $T_I$의 kernel은</p>
+
+\[ker(T_I) = \{\boldsymbol{x} \mid T_I(\boldsymbol x) = I\boldsymbol{x} = 0\}\]
+
+<p>이므로, zero vector만 성립됩니다. 따라서</p>
+
+\[ker(T_I) = \{0\}\]
+
+<p>가 됩니다.</p>
+
+<p>Kernel과 linear transformation과 관련된 정리는 다음과 같습니다.</p>
+
+<p><br /></p>
+
+<p><strong>Theorem</strong></p>
+
+<p>The kernel of a linear transformation always contains the zero vector</p>
+
+<p>linear transformation의 kernel은 반드시 zero vector를 포함합니다.</p>
+
+<p><br /></p>
+
+<p><strong>Theorem</strong></p>
+
+<p>If $T : \mathbb R^n \rightarrow \mathbb R^m$ is a linear transformation, then the kernel of $T$ is a subspace of $\mathbb R^n$</p>
+
+<p>linear transformation의 kernel은 domain의 subspace가 됩니다.</p>
+
+<p><br /></p>
+
+<h4 id="2-one-to-one">(2) One to one</h4>
+
+<p><br /></p>
+
+<p><strong>Definition : One to one</strong></p>
+
+<p>The transformation $T : \mathbb R^n \rightarrow \mathbb R^m$ is one to one if $T$ maps distinct vectors in $\mathbb R^n$ into distinct vectors in $\mathbb R^m$</p>
+
+<p>one to one은 함수에서 정의되는 일대일 함수의 정의와 같습니다. 즉</p>
+
+\[if \ \ T(\boldsymbol{x}) = \ T(\boldsymbol{y}) \Rightarrow \boldsymbol{x} = \boldsymbol{y} \ \ for \ \ all \ \ \boldsymbol{x, y} \in \mathbb R^n\]
+
+<p>일 때, $T$는 one to one이라고 합니다.  위 정의의 대우인</p>
+
+\[if \ \  \boldsymbol{x} \neq \boldsymbol{y} \Rightarrow T(\boldsymbol{x}) \neq \ T(\boldsymbol{y}) \ \ for \ \ all \ \ \boldsymbol{x, y} \in \mathbb R^n\]
+
+<p>또한 많이 사용됩니다.</p>
+
+<p>one to one과 linear transformation, kernel은 다음과 같은 관계를 가지고 있습니다.</p>
+
+<p><br /></p>
+
+<p><strong>Theorem</strong></p>
+
+<p>If $T: \mathbb R^n \rightarrow \mathbb R^m$ is a linear transformation, then the followings are equivalent</p>
+
+<ol>
+  <li>$T$ is one to one</li>
+  <li>$ker(T) = {\boldsymbol{0}}$</li>
+</ol>
+
+<p>만약 $T$가 linear transformation이면, T가 one to one임과 kernel이 zero vector만 있는 것은 동치입니다.</p>
+
+<p><br /></p>
+
+<p><strong>Theorem</strong></p>
+
+<p>If $A$ is $m \times n$ matrix, then the corresponding linear transformation $T_A : \mathbb R^n \rightarrow \mathbb R^m$ is one to one if and only if the linear system $A\boldsymbol{x} =0$ has only the trivial solution.</p>
+
+<p>matrix transformation과 one to one 간의 관계를 나타내는 정리입니다. 위의 linear transformation이 one to one이면 kernel이 zero vector만을 가지는 것을 이용하면 쉽게 증명할 수 있습니다.</p>
+
+<p><br /></p>
+
+<h3 id="2-range-of-transformation">2) Range of transformation</h3>
+
+<p><br /></p>
+
+<h4 id="1-range-of-transformation">(1) Range of transformation</h4>
+
+<p><br /></p>
+
+<p><strong>Definition : Range of transformation</strong></p>
+
+<p>If $T : \mathbb R^n \rightarrow \mathbb R^m$ is a transformation, then the range(image) of $T$, denoted by $ran(T)$ is the set of all vectors in $\mathbb R^m$ that are images of at least one vector in $\mathbb R^n$</p>
+
+<p>range는 함수에서 정의되는 치역과 같습니다. 즉,</p>
+
+\[ran(T) = \{\boldsymbol{b} \mid \boldsymbol{b} = T(\boldsymbol{x}) \ \ for \ \ all \ \ \boldsymbol{x} \in \mathbb R^n\}\]
+
+<p>kernel과 달리 range는 transfrom된 output 값들의 집합이기 때문에, 공역의 부분집합입니다.</p>
+
+<p><br /></p>
+
+<p><em>example</em></p>
+
+\[A = \begin{bmatrix}1 &amp; -1 \\ 2 &amp; 5 \\ 3 &amp; 4 \end{bmatrix}\]
+
+<p>일 때, matrix transformation $T_A$의 range는</p>
+
+\[ran(T_A) = \{T_A(\boldsymbol{x}) \mid \boldsymbol{x} \in \mathbb R^2\}\]
+
+<p>입니다. 이 때,</p>
+
+\[T_A(\boldsymbol{x}) = x_1\begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix} + x_2\begin{bmatrix} -1 \\ 5 \\ 4 \end{bmatrix}\]
+
+<p>가 되고, $\mathbb R^2$에 포함되는 모든 $\boldsymbol{x}$에 대해 위 output을 전부 모은 집합이니, 이는 $A$의 column의 linear combination을 모두 모은 집합입니다. 즉</p>
+
+\[ran(T_A) = span\{\begin{bmatrix}1 \\ 2 \\ 3 \end{bmatrix}, \begin{bmatrix}-1 \\ 5 \\ 4 \end{bmatrix}\}\]
+
+<p><br /></p>
+
+<p><em>example</em></p>
+
+<p>정의역과 공역이 $\mathbb R^n$인 zero operator의 경우</p>
+
+\[ran(T_0) = \{T_0(\boldsymbol{x}) \mid \boldsymbol x \in \mathbb R^n\} = \{0\}\]
+
+<p>output이 zero vector밖에 없기 때문에, range는 zero vector만을 가집니다.</p>
+
+<p><br /></p>
+
+<p><em>example</em></p>
+
+<p>정의역과 공역이 $\mathbb R^n$인 identity operator $T_I$의 range는</p>
+
+\[ran(T_I) = \{T_I(\boldsymbol{x}) \mid \boldsymbol x \in \mathbb R^n\} = \mathbb R^n\]
+
+<p>$\mathbb R^n$ 에 속한 모든 vector $\boldsymbol{x}$에 대해 output은 자기 자신이고, 이를 모두 모은 집합이니, range는 $\mathbb R^n$이 됩니다.</p>
+
+<p>Range와 linear transformation은 다음과 같은 관계를 가집니다.</p>
+
+<p><br /></p>
+
+<p><strong>Theorem</strong></p>
+
+<p>If $T : \mathbb R^n \rightarrow \mathbb R^m$ is a linear transformation, then $ran(T)$ is a subspace of $\mathbb R^m$</p>
+
+<p>linear transformation의 range는 공역의 subspace가 됩니다.</p>
+
+<p><br /></p>
+
+<h4 id="2-onto">(2) Onto</h4>
+
+<p><br /></p>
+
+<p>**Definition : Onto **</p>
+
+<p>A transformation $T : \mathbb R^n \rightarrow \mathbb R^m$ is onto if the range of $T$ is the entire codomain $\mathbb R^m$</p>
+
+<p>즉, range와 codomain이 같을 때 transformation은 onto라고 합니다.</p>
+
+<p>onto와 range, linear transformation과의 관계는 다음과 같습니다.</p>
+
+<p><br /></p>
+
+<p><strong>Theorem</strong></p>
+
+<p>If $A$ is ans $m \times n$ matrix, then the corresponding linear treansformation $T_A : \mathbb R^n \rightarrow \mathbb R^m$ is onto if and only if the linear system $A\boldsymbol{x} = \boldsymbol{b}$ is consistent form every $\boldsymbol{b}$ in $\mathbb R^m$</p>
+
+<p>linear transformation일 때 range의 성질과 onto의 정의를 이용하면 쉽게 증명할 수 있습니다.</p>
+
+<p><br /></p>
+
+<h3 id="3-linear-operator">3) Linear operator</h3>
+
+<p><br /></p>
+
+<h4 id="1-linear-operator">(1) Linear operator</h4>
+
+<p>앞서서 정의한 linear transformation, kernel, one to one, range, onto를 linear operator에 적용하면 다음의 정리를 얻습니다.</p>
+
+<p><br /></p>
+
+<p>**Theorem **</p>
+
+<p>If $T:\mathbb R^n \rightarrow \mathbb R^n$ is a linear operator on $\mathbb R^n$, then $T$ is one to one if and only if it is onto.</p>
+
+<p><br /></p>
+
+<h4 id="2-invertible-matrix-theorem">(2) Invertible Matrix Theorem</h4>
+
+<p>linear operator에서 onto, one to one의 성질을 이용하면, linear operator의 standard matrix의 invertibility에 대해서도 논할 수 있습니다. 만약 standard matrix가 one to one이고 onto이면(linear operator에서는 동치입니다. ), 해당 standard matrix는 invertible 합니다. 해당 명제의 역 또한 성립하구요. 따라서 이전의 Invertible Matrix Theorem에 다음의 명제가 추가됩니다.</p>
+
+<p>Let $A$ be a square $n \times n$ matrix. Then the following statements are equivalent. That is, for given $A$, the statements are either all true or all false</p>
+
+<p>a. $A$ is an invertible matrix</p>
+
+<p>b. $A$ is row equivalent to the $n \times n $ identity matrix</p>
+
+<p>c. $A$ has $n$ pivot positions</p>
+
+<p>d. The equation $A\boldsymbol{x}=\boldsymbol{0}$ has only the trivial solution</p>
+
+<p>e. The columns of $A$ form a linearly independent set</p>
+
+<p>f. The columns of $A$ span $\mathbb{R}^n$</p>
+
+<p>g. There is an $n \times n $ matrix $C$ such taht $CA=I$</p>
+
+<p>h. There is an $n \times n$ matrix $D$ such that $AD=I$</p>
+
+<p>i. The equation $A\boldsymbol{x}=\boldsymbol{0}$ has at least one solution for each $\boldsymbol{b}$ in $\mathbb{R}^n$</p>
+
+<p>j. $A^T$ is an invertible matrix</p>
+
+<p>k. $detA\neq 0$</p>
+
+<p><strong>l.</strong> $T_A$ is one to one</p>
+
+<p><strong>m.</strong> $T_A$ is onto</p>
+
+<p>지금까지 kernel과 range에 대해서 알아보았습니다. 다음 포스트에서는 matrix로 정의할 수 있는 vector space인 row space, column space, null space에 대해서 알아보겠습니다.  질문이나 오류 있으면 댓글 남겨주세요! 감사합니다!</p>
+
+<p><br /></p>
+
+<h3 id="appendix--proof-of-theorem">Appendix : Proof of Theorem</h3>
+
+<p><br /></p>
+
+<h4 id="1-kernel--one-to-one">(1) Kernel , one to one</h4>
+
+<p><br /></p>
+
+<p><strong>Theorem</strong></p>
+
+<p>The kernel of a linear transformation always contains the zero vector</p>
+
+<ul>
+  <li><strong>proof</strong></li>
+</ul>
+
+<p>$T : \mathbb R^n \rightarrow \mathbb R^m$ 가 linear transformation일 때, $T$의 kernel은</p>
+
+\[Ker(T) = \{\boldsymbol{x} \mid T(\boldsymbol x) = 0\}\]
+
+<p>입니다. $T$가 linear transformation이므로</p>
+
+\[T(0) = T(0  \ \boldsymbol{v}) = 0\cdot T(\boldsymbol{v})  = 0\]
+
+<p>을 만족합니다. 따라서 zero vector는 linear transformation의 kernel에 반드시 포함됩니다.</p>
+
+<p><br /></p>
+
+<p><strong>Theorem</strong></p>
+
+<p>If $T : \mathbb R^n \rightarrow \mathbb R^m$ is a linear transformation, then the kernel of $T$ is a subspace of $\mathbb R^n$</p>
+
+<ul>
+  <li><strong>proof</strong></li>
+</ul>
+
+<p>Kernel이 $\mathbb R^n$의 subspace임을 확인하기 위해서는 4가지를 확인해야 합니다.</p>
+
+<ol>
+  <li>
+    <p>$Ker(T) \subset  \mathbb R^n$</p>
+
+    <p>Kernel의 정의에 따라 $\mathbb R^n$의 subspace입니다.</p>
+  </li>
+  <li>
+    <p>$0 \in Ker(T)$</p>
+
+    <p>앞선 정리에서 linear transformation의 kernel에는 zero vector를 반드시 포함합니다.</p>
+  </li>
+  <li>
+    <p>$\boldsymbol{u, v} \in Ker(T) \Rightarrow T(\boldsymbol{u})=T(\boldsymbol{v}) = 0 $</p>
+
+    <p>이므로, $T(\boldsymbol{u+v}) = T(\boldsymbol{u}) + T(\boldsymbol{v}) = 0 $을 만족하여 $\boldsymbol{u+v} \in Ker(T)$을 만족합니다.</p>
+  </li>
+  <li>
+    <p>$\boldsymbol{u} \in Ker(T), c \in \mathbb R $</p>
+
+    <p>일 때, $T(c\boldsymbol{u}) = cT(\boldsymbol u) = 0$이 되어 $c\boldsymbol u \in Ker(T)$를 만족합니다.</p>
+  </li>
+</ol>
+
+<p>따라서 subspace의 조건을 모두 만족하므로 $Ker(T)$는 $\mathbb R^n$의 subspace입니다.</p>
+
+<p><br /></p>
+
+<p><strong>Theorem</strong></p>
+
+<p>If $T: \mathbb R^n \rightarrow \mathbb R^m$ is a linear transformation, then the followings are equivalent</p>
+
+<ol>
+  <li>$T$ is one to one</li>
+  <li>$ker(T) = {\boldsymbol{0}}$</li>
+</ol>
+
+<ul>
+  <li><strong>proof</strong></li>
+</ul>
+
+<p>$T$ is one to one $\Rightarrow Ker(T) = {0}$</p>
+
+<p>$T$가 one to one이면</p>
+
+\[T(\boldsymbol{x}) = T(\boldsymbol{y}) \Rightarrow \boldsymbol{x} = \boldsymbol y\]
+
+<p>을 만족합니다. 또한 $T$가 linear transformation이므로 $0$는 $T$의 kernel에 속합니다. 만약 $0$ 가 아닌 다른 벡터 $\boldsymbol{v}$가 $Ker(T)$에 속한다고 가정해봅시다.</p>
+
+<p>그럼</p>
+
+\[T(\boldsymbol{v}) = T(0) = 0\]
+
+<p>이고, $T$가 one to one이므로</p>
+
+\[\boldsymbol{v} = 0\]
+
+<p>가 됩니다. 현재 $\boldsymbol{v}$는 $0$가 아니라고 가정하였기 때문에 모순이 발생하여, $ker(T)={0}$입니다.</p>
+
+<p>$Ker(T) = {0} \Rightarrow $ $T$ is one to one</p>
+
+<p>$T$가 one to one임을 확인하기 위하여</p>
+
+\[T(\boldsymbol{x}) = T(\boldsymbol{y})\]
+
+<p>인 경우를 생각해봅시다. 이는 $T$가 linear transformation이므로</p>
+
+\[T(\boldsymbol{x}) - T(\boldsymbol{y}) = T(\boldsymbol{x-y})=0\]
+
+<p>가 성립합니다. 즉 $\boldsymbol{x-y} \in Ker(T)$이고, $Ker(T)$에 속한 vector는 $0$이므로</p>
+
+\[\boldsymbol{x-y}=0 \Rightarrow \boldsymbol{x}=\boldsymbol{y}\]
+
+<p>따라서 $T$는 one to one이 됩니다.</p>
+
+<p><br /></p>
+
+<p><strong>Theorem</strong></p>
+
+<p>If $A$ is $m \times n$ matrix, then the corresponding linear transformation $T_A : \mathbb R^n \rightarrow \mathbb R^m$ is one to one if and only if the linear system $A\boldsymbol{x} =0$ has only the trivial solution.</p>
+
+<ul>
+  <li><strong>proof</strong></li>
+</ul>
+
+<p>$T_A$가 one to one이면 $T_A$의 kernel은 zero vector만 존재합니다. 즉</p>
+
+\[Ker(T_A) = \{\boldsymbol{x} \mid T_A(\boldsymbol{x}) = A\boldsymbol{x}=0\} = \{0\}\]
+
+<p>을 만족시키는 $\boldsymbol{x}$가 $0$밖에 없기 때문에, linear system $A\boldsymbol{x} =0$ 은 trivial solution만을 가지게 됩니다.</p>
+
+<p>반대로 linear system $A\boldsymbol{x} =0$ 이 trivial solution만을 가지면 $T_A$의 kernel이 zero vector만 가지기 때문에, one to one이 성립됩니다.</p>
+
+<p><br /></p>
+
+<h4 id="2-range-onto">(2) Range, onto</h4>
+
+<p><br /></p>
+
+<p><strong>Theorem</strong></p>
+
+<p>If $T : \mathbb R^n \rightarrow \mathbb R^m$ is a linear transformation, then $ran(T)$ is a subspace of $\mathbb R^m$</p>
+
+<ul>
+  <li><strong>proof</strong></li>
+</ul>
+
+<p>$T$의 range가 $\mathbb R^m$의 subspace임을 밝히기 위해서는 4가지를 확인해야 합니다.</p>
+
+<ol>
+  <li>
+    <p>$ran(T) \subset \mathbb R^m$</p>
+
+    <p>range의 정의에 의해 성립합니다.</p>
+  </li>
+  <li>
+    <p>$0 \in ran(T)$</p>
+
+    <p>$T$가 linear transformation이므로 $T(0)=0$임을 만족하고, 따라서 $0 \in ran(T)$를 만족합니다.</p>
+  </li>
+  <li>
+    <p>$\boldsymbol{u, v} \in ran(T)$ 이면, 어떤 $\boldsymbol{x, y} \in \mathbb R^n$이 존재하여 $T(\boldsymbol{x})=\boldsymbol{u},T(\boldsymbol{y})=\boldsymbol{v}$을 만족합니다. 이 때</p>
+
+    <p>$\boldsymbol{u+v}= T(\boldsymbol{x}) + T(\boldsymbol{y}) = T(\boldsymbol{x+y}) \in ran(T)$입니다.</p>
+  </li>
+  <li>
+    <p>$\boldsymbol{u} \in ran(T), c \in \mathbb R$에 대해서,  $T(\boldsymbol{x}) = \boldsymbol{u}$을 만족하는 $\boldsymbol{x}$가 존재합니다. 따라서</p>
+
+    <p>$c\boldsymbol{u} = cT(\boldsymbol{x}) = T(c\boldsymbol{x}) \in ran(T)$ 입니다.</p>
+  </li>
+</ol>
+
+<p>따라서 $ran(T)$는 $\mathbb R^m$의 subspace입니다.</p>
+
+<p><br /></p>
+
+<p><strong>Theorem</strong></p>
+
+<p>If $A$ is ans $m \times n$ matrix, then the corresponding linear treansformation $T_A : \mathbb R^n \rightarrow \mathbb R^m$ is onto if and only if the linear system $A\boldsymbol{x} = \boldsymbol{b}$ is consistent for every $\boldsymbol{b}$ in $\mathbb R^m$</p>
+
+<ul>
+  <li><strong>proof</strong></li>
+</ul>
+
+<p>$T_A : \mathbb R^n \rightarrow \mathbb R^m$ 가 onto이므로, $ran(T_A) = \mathbb R^m$입니다. range의 정의가</p>
+
+\[ran(T_A) = \{T_A(\boldsymbol{x}) \mid \boldsymbol{x} \in \mathbb R^n\} = \mathbb R^m\]
+
+<p>이므로, $\mathbb R^m$에 존재하는 임의의 vector $\boldsymbol b$에 대해 $T_A(\boldsymbol x) = A\boldsymbol x$를 만족하는 $\boldsymbol x$존재합니다. 즉</p>
+
+\[A\boldsymbol x = \boldsymbol b\]
+
+<p>는 모든 $\boldsymbol b$에 대해 solution을 가집니다. 즉 consistent합니다.</p>
+
+<p>마찬가지로, $A\boldsymbol{x} =\boldsymbol{b}$가 모든 $\boldsymbol b\in \mathbb R^m$에 대해 consistent하면 range 정의에 따라 $ran(T_A)=\mathbb R^m$입니다. 따라서 $T_A$는 onto입니다.</p>
+
+<p><br /></p>
+
+<h4 id="3-linear-operator-1">(3) Linear operator</h4>
+
+<p><br /></p>
+
+<p>**Theorem **</p>
+
+<p>If $T:\mathbb R^n \rightarrow \mathbb R^n$ is a linear operator on $\mathbb R^n$, then $T$ is one to one if and only if it is onto.</p>
+
+<ul>
+  <li><strong>proof</strong></li>
+</ul>
+
+<p>$T$가 one to one이면  $T$의 standard matrix $[T]$에 대해서</p>
+
+\[[T]\boldsymbol x = 0\]
+
+<p>이 반드시 trivial solution을 가집니다. 이는 invertible matrix theorem에 따라 $[T]$는 invertible합니다.</p>
+
+<p>$[T]$가 invertible하면, $\mathbb R^n$에 속하는 모든 $\boldsymbol b$에 대해</p>
+
+\[[T]\boldsymbol{x} = \boldsymbol b\]
+
+<p>가 consistent합니다. 따라서</p>
+
+\[ran(T) = \mathbb R^n\]
+
+<p>이므로 $T$는 onto입니다.</p>
+
+<p>위 과정을 거꾸로 진행하면 $T$가 onto이면 $T$가 one to one인 것 또한 쉽게 알 수 있습니다.</p>]]></content><author><name>Twolions</name><email>twa02189@g.skku.edu</email></author><category term="Linear Algebra" /><category term="Linear Algebra" /><category term="Linear transformation" /><category term="Kernel" /><category term="Range" /><summary type="html"><![CDATA[이번 포스트에서는 tranformation에서의 kernel과 range에 대해서 알아보겠습니다.]]></summary></entry><entry><title type="html">4.1 Vector Space</title><link href="http://localhost:4000/linear%20algebra/linearalgebra4-1/" rel="alternate" type="text/html" title="4.1 Vector Space" /><published>2022-02-07T00:00:00+09:00</published><updated>2022-02-07T00:00:00+09:00</updated><id>http://localhost:4000/linear%20algebra/linearalgebra4-1</id><content type="html" xml:base="http://localhost:4000/linear%20algebra/linearalgebra4-1/"><![CDATA[<p>이번 포스트에서는 Vector space와 subspace에 대해서 알아보겠습니다.</p>
+
+<p><br /></p>
+
+<h3 id="1-vector-space">1) Vector Space</h3>
+
+<p><br /></p>
+
+<h4 id="1-vector-space-1">1) Vector Space</h4>
+
+<p><br /></p>
+
+<p>이전까지 어떤 집합에서 연산을 다룰 때 집합 간의 연산만을 다루었지(ex : 합집합, 교집합, 차집합 등등…), 집합 내의 원소간 연산은 다루지 않았습니다. 집합에서 집합 내의 원소간 연산을 추가하여 vector space를 정의합니다.</p>
+
+<p><br /></p>
+
+<p><strong>Definition : Vector space</strong></p>
+
+<p>A vector space is a nonempty set $V$ of objects, called vectors, on which are defined two operation, called <strong>addition</strong> and <strong>scalar multiplication(real numbers)</strong>, subject to ten axioms listed below. The axioms must hold for all vectors $\boldsymbol{u}$ and $\boldsymbol{v}$ in $V$ and for all scalars $c$ and $d$</p>
+
+<ol>
+  <li>The sum of $\boldsymbol{u}$ and $\boldsymbol{v}$, denoted by $\boldsymbol{u+v}$, is in $V$</li>
+  <li>$\boldsymbol{u+v}=\boldsymbol{v+u}$</li>
+  <li>$\boldsymbol{(u+v)+w = u+(v+w)}$</li>
+  <li>There is a **zero vector ** $\boldsymbol{0}$ in $V$ such that $\boldsymbol{0+u}=\boldsymbol{u}$</li>
+  <li>For each $\boldsymbol{u}$ in $V$, there is a vector $\boldsymbol{-u}$ in $V$ such that $\boldsymbol{u+(-u)=0}$</li>
+  <li>The scalar multiple of $\boldsymbol{u}$ by $c$, denoted by $c\boldsymbol{u}$ is in $V$</li>
+  <li>$c(\boldsymbol{u+v}) = c\boldsymbol{u}+c\boldsymbol{v}$</li>
+  <li>$(c+d)\boldsymbol{u}=c\boldsymbol{u} + d\boldsymbol{u}$</li>
+  <li>$c(d\boldsymbol{u})=(cd)\boldsymbol{u}$</li>
+  <li>$1\boldsymbol{u}=\boldsymbol{u}$</li>
+</ol>
+
+<p>Vector space에 속한 원소들을 vector라고 하며, 추가적으로 두 개의 연산이 정의됩니다. 한 연사는 <strong>addition</strong>, 다른 연산은 <strong>scalar multiplication</strong>입니다. vector space에서 두 연산이 정의가 되기 위해서는 10가지의 공리를 만족해야 합니다. 따라서 위의 10가지 공리를 만족하는 집합 $V$를 <strong>vector space</strong>라고 합니다.</p>
+
+<p>위 공리에서 특히 중요한 공리는 다음 3개 입니다.</p>
+
+<ol>
+  <li>There is a **zero vector ** $\boldsymbol{0}$ in $V$ such that $\boldsymbol{0+u}=\boldsymbol{u}$</li>
+  <li>The sum of $\boldsymbol{u}$ and $\boldsymbol{v}$, denoted by $\boldsymbol{u+v}$, is in $V$</li>
+  <li>The scalar multiple of $\boldsymbol{u}$ by $c$, denoted by $c\boldsymbol{u}$ is in $V$</li>
+</ol>
+
+<p>첫 번째는 zero vector 유무입니다. Vector space는 반드시 <strong>zero vector</strong>를 포함합니다.</p>
+
+<p>두 번째는 <strong>‘덧셈에 대해 닫혀있다’</strong>입니다. 즉 $V$에 있는 임의의 두 vector의 합 또한 $V$에 존재해야 합니다.</p>
+
+<p>세 번째는 <strong>‘scalar multiplication에 닫혀있다’</strong>입니다. 즉 $V$에 있는 임의의 vector와 임의의 scalar에 대해서, scalar multiplication 결과 역시 $V$에 존재해야 합니다.</p>
+
+<p>이 세 가지 조건을 만족하면, vector space를 정의할 때의 10가지 공리를 모두 만족하게 됩니다. 따라서 어떤 set이 vector space임을 확인할 때 위 세 조건을 만족 여부를 통해 확인하게 됩니다.</p>
+
+<p><br /></p>
+
+<p><em>example</em></p>
+
+<p>The space $\mathbb{R}^3$ : vector space</p>
+
+<p>$\mathbb{R}^3$은 vector space입니다.</p>
+
+\[\mathbb{R}^3 = \{\begin{bmatrix}x_1 \\ x_2 \\ x_3\end{bmatrix} \mid x_1, x_2, x_3 \in \mathbb R\}\]
+
+<ol>
+  <li>zero vector</li>
+</ol>
+
+\[\boldsymbol{0} = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix} \in \mathbb R^3\]
+
+<p>zero vector는 $\mathbb R^3$에 존재합니다.</p>
+
+<ol>
+  <li>Addition</li>
+</ol>
+
+\[\boldsymbol{u, v} \in \mathbb R^3 \\
+
+\boldsymbol{u} =\begin{bmatrix} u_1 \\ u_2 \\ u_3 \end{bmatrix}, \boldsymbol{v} =\begin{bmatrix} v_1 \\ v_2 \\ v_3 \end{bmatrix} \\
+
+\boldsymbol{u+v} =\begin{bmatrix} u_1+v_1 \\ u_2+v_2 \\ u_3+v_3 \end{bmatrix} \in \mathbb R^3\]
+
+<p>$\mathbb R^3$에 있는 두 벡터의 합 또한 $\mathbb R^3$에 존재합니다. 따라서 덧셈에 대해 닫혀있습니다.</p>
+
+<ol>
+  <li>Scalar multiplication</li>
+</ol>
+
+\[\boldsymbol{u} \in \mathbb R^3, k \in \mathbb R \\
+
+\boldsymbol{u} =\begin{bmatrix} u_1 \\ u_2 \\ u_3 \end{bmatrix} \\
+
+k\boldsymbol{u} =\begin{bmatrix} ku_1 \\ ku_2 \\ ku_3 \end{bmatrix} \in \mathbb R^3\]
+
+<p>$\mathbb R^3$에 있는 벡터의 scalar multiple 값 또한  $\mathbb R^3$에 존재합니다. 따라서 scalar multiplication에 대해 닫혀있습니다.</p>
+
+<p>따라서  $\mathbb R^3$는 vector space입니다.</p>
+
+<p>이를 확장하면, <strong>$\mathbb R^n$ 또한 vector space임을 알 수 있습니다.</strong></p>
+
+<p><br /></p>
+
+<p><em>example</em></p>
+
+<p>For $n\geq 0$, the set $\mathbb P_n$ of polynomials of degree at most $n$ consists of all polynomials of the form</p>
+
+\[\boldsymbol{p}(t)=a_0+a_1t+\cdots+a_nt^n\]
+
+<p>where all the coefficients $a_0, a_1, …, a_n$ and the variable $t$ are real numbers. If all of coefficients $a_0, …, a_n$ are zero, this polynomial is called zero polynomial</p>
+
+<p>차수가 $n$보다 작거나 같은 모든 다항식을 모은 집합을 $\mathbb P_n$이라 합시다. 이 때, $\mathbb P_n$ 역시 vector space가 됩니다.</p>
+
+<ol>
+  <li>zero vector</li>
+</ol>
+
+\[a_0=a_1=...=a_n=0\]
+
+<p>모든 coefficient가 0일 때, zero polynomial이 되고, zero polynomial이 zero vector의 역할을 합니다. (zero polynomial에 어떤 polynomial을 더하든 자기 자신이 나오기 때문이죠.)</p>
+
+<ol>
+  <li>Addition</li>
+</ol>
+
+\[\boldsymbol{p}(t)=a_0+a_1t+\cdots+a_nt^n \\
+\boldsymbol{q}(t)=b_0+b_1t+\cdots+b_nt^n\]
+
+<p>라고 했을 때, 두 다항식의 합</p>
+
+\[\begin{aligned}
+
+\boldsymbol{p}(t)+\boldsymbol{q}(t)&amp;=(a_0+a_1t+\cdots+a_nt^n) + (b_0+b_1t+\cdots+b_nt^n)\\
+&amp;=(a_0+b_0) + (a_1+b_1)t + \cdots + (a_n + b_n)t^n
+
+\end{aligned}\]
+
+<p>또한 $\mathbb P_n$에 속합니다. 결과의 coefficient가 실수이기 때문입니다.</p>
+
+<ol>
+  <li>Scalar multiplication</li>
+</ol>
+
+\[\boldsymbol{p}(t)=a_0+a_1t+\cdots+a_nt^n , \ k \in \mathbb R\]
+
+<p>일 때,</p>
+
+\[k\boldsymbol{p}(t)=k(a_0+a_1t+\cdots+a_nt^n) = ka_0+ka_1t+\cdots+ka_nt^n\]
+
+<p>가 되고, 이 역시 $\mathbb P_n$에 속합니다.</p>
+
+<p>위 세 가지 조건을 모두 만족하기 때문에, $\mathbb P_n$ 역시 vector space가 됩니다.</p>
+
+<p><br /></p>
+
+<h4 id="2-subspace">2) Subspace</h4>
+
+<p><br /></p>
+
+<p>집합에도 부분집합이 있듯이, vector space 역시 부분집합과 같은 개념인 subspace가 존재합니다.</p>
+
+<p><br /></p>
+
+<p><strong>Definition : Subspace</strong></p>
+
+<p>A subspace of a vector space $V$ is a subset $H$ of $V$ that has three properties</p>
+
+<ol>
+  <li>The zero vector of $V$ is in $H$</li>
+  <li>$H$ is closed under vector addition. For each $\boldsymbol{u}, \boldsymbol{v}$ in $H$, the sum $\boldsymbol{u+v}$ is in $H$</li>
+  <li>$H$ is closed under multiplication by scalars. For each $\boldsymbol{u}$ in $H$ and each scalar $c$, the vector $c\boldsymbol{u}$ is in $H$</li>
+</ol>
+
+<p>즉 subspace는 <strong>어떤 vector space의 부분집합이면서, vector space의 조건을 만족하는 집합</strong>입니다. Subspace가 되기 위한 조건은 총 4가지로</p>
+
+<ol>
+  <li>$H$는 $V$의 부분집합이다.</li>
+  <li>Zero vector가 $H$에 존재해야 한다.</li>
+  <li>$H$는 덧셈에 대해 닫혀있다.</li>
+  <li>$H$는 scalar multiplication에 대해 닫혀있다.</li>
+</ol>
+
+<p>입니다. 여기서 첫 번째 조건이 어떤 vector space에 포함된 subset 조건을 나타내고, 두 번째부터 마지막 조건은 vector space을 만족하기 위한 조건을 나타냅니다.</p>
+
+<p>부분집합을 정의할 때 두 집합을 통해 정의하듯이, subspace가 정의되기 위해서는 두 vector space가 필요합니다.</p>
+
+<p><br /></p>
+
+<p><em>example</em></p>
+
+<ul>
+  <li>Zero subspace</li>
+</ul>
+
+<p>$V$에 존재하는 <strong>zero vector</strong>만을 가지는 집합은 $V$의 subspace가 됩니다. 이를 <strong>zero subspace</strong>라고 합니다.</p>
+
+\[\{\boldsymbol{0}\}\]
+
+<p>다음 집합은 subspace의 조건을 만족합니다.</p>
+
+<ol>
+  <li>${\boldsymbol{0}} \subseteq V$</li>
+  <li>$\boldsymbol{0} \in {\boldsymbol{0}}$</li>
+  <li>$\boldsymbol{u}, \boldsymbol{v} \in {\boldsymbol{0}} \Rightarrow \boldsymbol{u}= \boldsymbol{v}=\boldsymbol{0}, \boldsymbol{u}+ \boldsymbol{v}=\boldsymbol{0}$</li>
+  <li>$\boldsymbol{u}\in {\boldsymbol{0}}, k \in \mathbb R \Rightarrow k\boldsymbol{u}= 0 \in {\boldsymbol{0}}$</li>
+</ol>
+
+<p><br /></p>
+
+<p><em>example</em></p>
+
+<p>The vector space $\mathbb R^2, \mathbb R^3$</p>
+
+<p>$\mathbb{R}^2$와 $\mathbb R^3$는 다음과 같이 정의됩니다.</p>
+
+\[\begin{aligned}
+
+\mathbb{R}^2 &amp;= \{\begin{bmatrix}x_1 \\ x_2 \end{bmatrix} \mid x_1, x_2 \in \mathbb R\}
+
+\\ \\
+\mathbb{R}^3 &amp;= \{\begin{bmatrix}x_1 \\ x_2 \\ x_3\end{bmatrix} \mid x_1, x_2, x_3 \in \mathbb R\}
+
+\end{aligned}\]
+
+<p>두 집합 간 포함관계가 성립이 되지 않기 때문에, 두 vector space 간 subspace를 따질 수 없습니다.</p>
+
+<p><br /></p>
+
+<p><em>example</em></p>
+
+<p>한편 다음 집합 $H$를 살펴봅시다.</p>
+
+\[H= \{\begin{bmatrix}x_1 \\ x_2 \\ 0\end{bmatrix} \mid x_1, x_2 \in \mathbb R\}\]
+
+<p>$H$의 경우 $\mathbb R^3$의 subspace가 됩니다.</p>
+
+<ol>
+  <li>$H \subseteq \mathbb R^3$</li>
+  <li>$\boldsymbol{0} \in H$</li>
+  <li>$\boldsymbol{u}, \boldsymbol{v} \in H$이면</li>
+</ol>
+
+\[\boldsymbol{u}=\begin{bmatrix}u_1 \\ u_2 \\ 0 \end{bmatrix}, \boldsymbol{v}=\begin{bmatrix}v_1 \\ v_2 \\ 0 \end{bmatrix}\]
+
+<p>가 되어</p>
+
+\[\boldsymbol{u+v} = \begin{bmatrix}u_1+v_1 \\ u_2+v_2 \\ 0 \end{bmatrix} \in H\]
+
+<p>따라서 덧셈에 대해 닫혀 있습니다.</p>
+
+<ol>
+  <li>$\boldsymbol{u} \in H, k \in R$에 대해서</li>
+</ol>
+
+\[\boldsymbol{u} =\begin{bmatrix}u_1 \\ u_2 \\ 0 \end{bmatrix}\]
+
+<p>일 때</p>
+
+\[k\boldsymbol{u} = \begin{bmatrix}ku_1 \\ ku_2 \\ 0 \end{bmatrix} \in H\]
+
+<p>따라서 scalar multiplication에도 닫혀 있습니다.</p>
+
+<p>subspace 조건을 모두 만족하기 때문에, $H$는 $\mathbb R^3$의 subspace입니다.</p>
+
+<p>다음은 subspace와 span의 관계를 나타내는 정리에 대해 알아보겠습니다.</p>
+
+<p><br /></p>
+
+<p><strong>Theorem</strong></p>
+
+<p>If $\boldsymbol{v_1}, \boldsymbol{v_2}, …, \boldsymbol{v_p}$ are in a vector space $V$, then</p>
+
+\[Span\{\boldsymbol{v_1}, \boldsymbol{v_2}, ..., \boldsymbol{v_p}\}\]
+
+<p>is a subspace of $V$</p>
+
+<p>이 정리를 통해, the subset spanned by vectors in $V$($V$에 있는 vector로 spanned한 집합)은 subspace가 됩니다.</p>
+
+<p>Given any subspace $H$ of $V$, a <strong>spanning set for $H$</strong> is a set ${\boldsymbol{v_1}, \boldsymbol{v_2}, …, \boldsymbol{v_p}}$ in $H$ such that</p>
+
+\[H=Span\{\boldsymbol{v_1}, \boldsymbol{v_2}, ..., \boldsymbol{v_p}\}\]
+
+<p>$H$에 있는 특정 vector $\boldsymbol{v_1}, \boldsymbol{v_2}, …, \boldsymbol{v_p}$을 span하여 $H$를 만들었을 때, 이 vector들로 이루어진 집합을 <strong>Spanning set for $H$</strong>라고 합니다.</p>
+
+<p>(증명은 appendix 참고)</p>
+
+<p><br /></p>
+
+<p>지금까지 vector space와 subspace에 대해 알아보았습니다. 다음 포스트에서는 linear transformation에 대해 알아보도록 하겠습니다. 질문이나 오류 있으면 댓글 남겨주세요! 감사합니다!</p>
+
+<p><br /></p>
+
+<h4 id="appendix--proof-of-theorem">Appendix : Proof of Theorem</h4>
+
+<p><br /></p>
+
+<p><strong>Theorem</strong></p>
+
+<p>If $\boldsymbol{v_1}, \boldsymbol{v_2}, …, \boldsymbol{v_p}$ are in a vector space $V$, then</p>
+
+\[Span\{\boldsymbol{v_1}, \boldsymbol{v_2}, ..., \boldsymbol{v_p}\}\]
+
+<p>is a subspace of $V$</p>
+
+<ul>
+  <li><strong>Proof</strong></li>
+</ul>
+
+\[H=Span\{\boldsymbol{v_1}, \boldsymbol{v_2}, ..., \boldsymbol{v_p}\} = 
+\{\boldsymbol{y} \mid \boldsymbol{y}=c_1\boldsymbol{v_1}+c_2\boldsymbol{v_2}+\cdots+c_p\boldsymbol{v_p}, \ \ \ c_1, c_2, ..., c_p \in \mathbb R \}\]
+
+<p>Span의 정의는 span을 구성하는 set에 속하는 vector들의 linear combination을 모두 모은 집합니다. 따라서, 이 집합이 subspace가 되기 위한 4가지 조건을 만족하는지 확인하면 됩니다.</p>
+
+<ol>
+  <li>$H \subseteq V$</li>
+</ol>
+
+<p>$V$는 vector space이고, $\boldsymbol{v_1}, \boldsymbol{v_2}, …, \boldsymbol{v_p}$ 모두 $V$에 속한 vector이기 때문에, $\boldsymbol{v_1}, \boldsymbol{v_2}, …, \boldsymbol{v_p}$의 linear combination 또한 $V$에 속합니다. 따라서 $Span{\boldsymbol{v_1}, \boldsymbol{v_2}, …, \boldsymbol{v_p}} \subseteq V$을 만족합니다.</p>
+
+<ol>
+  <li>$\boldsymbol{0} \in H$</li>
+</ol>
+
+<p>$c_1=c_2=…=c_p=0$인 경우, zero vector가 됩니다.</p>
+
+<ol>
+  <li>$\boldsymbol{u}, \boldsymbol{w} \in H$</li>
+</ol>
+
+<p>$H$에 속하는 두 vector $\boldsymbol{u}, \boldsymbol{w}$을 다음과 같이 표현할 수 있습니다.</p>
+
+\[\boldsymbol{u}=c_1\boldsymbol{v_1}+c_2\boldsymbol{v_2}+\cdots+c_p\boldsymbol{v_p} \\
+\boldsymbol{w}=d_1\boldsymbol{v_1}+d_2\boldsymbol{v_2}+\cdots+d_p\boldsymbol{v_p}\]
+
+<p>두 vector를 더하면</p>
+
+\[\begin{aligned}
+
+\boldsymbol{u}+\boldsymbol{v}&amp;=(c_1\boldsymbol{v_1}+c_2\boldsymbol{v_2}+\cdots+c_p\boldsymbol{v_p})+(d_1\boldsymbol{v_1}+d_2\boldsymbol{v_2}+\cdots+d_p\boldsymbol{v_p}) \\
+&amp;=(c_1+d_1)\boldsymbol{v_1}+(c_2+d_2)\boldsymbol{v_2}+\cdots+(c_p+d_p)\boldsymbol{v_p} \in H
+
+\end{aligned}\]
+
+<p>가 되고 $H$에 속합니다. 따라서 $H$는 덧셈에 대해 닫혀있습니다.</p>
+
+<ol>
+  <li>$\boldsymbol{u} \in H, k \in \mathbb R$</li>
+</ol>
+
+<p>$H$에 속하는 $\boldsymbol{u}$와 scalar $k$에 대해서</p>
+
+\[\begin{aligned}
+k\boldsymbol{u} &amp;=k(c_1\boldsymbol{v_1}+c_2\boldsymbol{v_2}+\cdots+c_p\boldsymbol{v_p}) \\
+&amp;= kc_1\boldsymbol{v_1}+kc_2\boldsymbol{v_2}+\cdots+kc_p\boldsymbol{v_p} \in H
+\end{aligned}\]
+
+<p>가 되고 마찬가지로 $H$에 속합니다. 따라서 $H$는 scalar multiplication에 대해 닫혀있습니다.</p>
+
+<p>$H$는 $V$의 subspace가 되기 위한 4가지 조건을 모두 만족하기 때문에, $H$는 $V$의 subspace입니다.</p>]]></content><author><name>Twolions</name><email>twa02189@g.skku.edu</email></author><category term="Linear Algebra" /><category term="Linear Algebra" /><category term="Vector Space" /><summary type="html"><![CDATA[이번 포스트에서는 Vector space와 subspace에 대해서 알아보겠습니다.]]></summary></entry><entry><title type="html">Side Project - TFT series</title><link href="http://localhost:4000/side%20project-tft/tft2/" rel="alternate" type="text/html" title="Side Project - TFT series" /><published>2022-02-04T00:00:00+09:00</published><updated>2022-02-04T00:00:00+09:00</updated><id>http://localhost:4000/side%20project-tft/tft2</id><content type="html" xml:base="http://localhost:4000/side%20project-tft/tft2/"><![CDATA[<p>이번 포스트에서는 api를 이용하여 데이터를 가져오는 방법에 대해 알아보겠습니다.</p>
+
+<p><br /></p>
+
+<h4 id="1-riot-developer-api-창">1. Riot Developer API 창</h4>
+
+<p><br /></p>
+
+<p><img src="../../images/2022-02-04-tft2/image-20220207223707727.png" alt="image-20220207223707727" style="zoom: 67%;" /></p>
+
+<p>Riot Games에서 제공하는 데이터를 게임 종류와 구성요소에 다라 분류해놓은 사이트입니다. Riot developer site에서</p>]]></content><author><name>Twolions</name><email>twa02189@g.skku.edu</email></author><category term="Side project-TFT" /><category term="Side project" /><category term="TFT" /><summary type="html"><![CDATA[이번 포스트에서는 api를 이용하여 데이터를 가져오는 방법에 대해 알아보겠습니다.]]></summary></entry><entry><title type="html">3.3 Cramer’s Rule</title><link href="http://localhost:4000/linear%20algebra/linearalgebra3-3/" rel="alternate" type="text/html" title="3.3 Cramer’s Rule" /><published>2022-02-04T00:00:00+09:00</published><updated>2022-02-04T00:00:00+09:00</updated><id>http://localhost:4000/linear%20algebra/linearalgebra3-3</id><content type="html" xml:base="http://localhost:4000/linear%20algebra/linearalgebra3-3/"><![CDATA[<p>이번 포스트에서는 Cramer’s rule에 대해서 알아보겠습니다.</p>
+
+<p><br /></p>
+
+<h3 id="1-cramers-rule">1) Cramer’s Rule</h3>
+
+<p><br /></p>
+
+<p>Cramer’s rule을 정의하기 위해서는 하나의 notation 정의가 필요합니다.</p>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>Definition</strong></li>
+</ul>
+
+<p>for any $n \times n$ matrix $A$ and any $\boldsymbol{b}$ in $\mathbb R^n$, let $A_i(\boldsymbol b)$ be the matrix obtained from $A$ by replaceing column $i$ by the vector $\boldsymbol{b}$</p>
+
+\[A_i(\boldsymbol{b})=\begin{bmatrix}\boldsymbol{a_1} &amp; \boldsymbol{a_2} &amp; ...&amp; \boldsymbol{a_{i-1}} &amp; \boldsymbol{b} &amp; \boldsymbol{a_{i+1}} &amp; ... &amp; \boldsymbol{a_n}  \end{bmatrix}\]
+
+<p>즉  $A_i(\boldsymbol b)$ 는 matrix $A$의 $i$ 번째 column 대신 $\boldsymbol{b}$를 넣은 새로운 matrix입니다.</p>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>Theorem : Cramer’s Rule</strong></li>
+</ul>
+
+<p>Let $A$ be an invertible $n \times n$ matrix. For any $\boldsymbol{b}$ in $\mathbb R ^n$, the unique solution $\boldsymbol{x}$ of $A\boldsymbol{x}=\boldsymbol{b}$ has entries given by</p>
+
+\[x_i = \frac{detA_i(\boldsymbol{b})}{detA}, \ \ i=1, 2, ..., n\]
+
+<p>Cramer’s rule을 이용하면, determinant를 이용하여 linear system의 solution을 구할 수 있습니다.</p>
+
+<p>(증명은 appendix 참고)</p>
+
+<p><br /></p>
+
+<p><em>example</em></p>
+
+\[\begin{aligned}
+3x_1-2x_2 &amp;= 6 \\
+-5x_1+4x_2 &amp;= 8
+\end{aligned}\]
+
+<p>위 linear system을 matrix equation으로 바꾸면</p>
+
+\[\begin{bmatrix} 3 &amp; -2 \\ -5 &amp; 4 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 6 \\ 8 \end{bmatrix}\]
+
+<p>Cramer’s rule을 적용하기 위해 $detA_i(\boldsymbol{b})$와 $detA$를 게산하면</p>
+
+\[detA_1(\boldsymbol{b}) =\begin{vmatrix}6 &amp; -2 \\ 8 &amp; 4 \end{vmatrix} =40 \\
+detA_2(\boldsymbol{b}) =\begin{vmatrix}3 &amp; 6 \\ -5 &amp; 8 \end{vmatrix} = 54 \\
+detA = \begin{vmatrix}3 &amp; -2 \\ -5 &amp; 4 \end{vmatrix} = 2\]
+
+<p>Cramer’s rule을 적용하면</p>
+
+\[x_1 = \frac{detA_1(\boldsymbol{b})}{detA} = 20 \\
+x_2 = \frac{detA_2(\boldsymbol{b})}{detA}=27\]
+
+<p>따라서 위 linear system의 solution은</p>
+
+\[\boldsymbol{x} = \begin{bmatrix} 20 \\ 27\end{bmatrix}\]
+
+<p>입니다.</p>
+
+<p><br /></p>
+
+<h3 id="2-a-formula-for-a-1">2) A formula for $A^{-1}$</h3>
+
+<p><br /></p>
+
+<p>Cramer’s rule을 적용하여 $A^{-1}$를 찾을 수 있습니다.</p>
+
+<p><br /></p>
+
+<h4 id="1-finding-a-1">1) FInding $A^{-1}$</h4>
+
+<p><br /></p>
+
+<p>Let $A$ be an invertible $n\times n$ matrix. Then, the $j$th column of $A^{-1}$ is a vector $\boldsymbol{x}$ that satisfies</p>
+
+\[A\boldsymbol{x} = \boldsymbol{e_j}\]
+
+<p>where $\boldsymbol{e_j}$ is the $j$th column of identity matrix.</p>
+
+<p>Inverse의 정의에 의해</p>
+
+\[AA^{-1} = I\]
+
+<p>를 만족합니다. 따라서 위 matrix 식의 결과를 각 column별로 살펴보면
+\(A\boldsymbol{x} = \boldsymbol{e_j}\)
+을 만족하는 $\boldsymbol{x}$가 $A^{-1}$의 $j$th column이 되는 것을 알 수 있습니다.</p>
+
+<p>위 방정식의 solution을 구할 때, Cramer’s rule을 이용하면</p>
+
+<p>\(x_{ij} = \frac{detA_i({\boldsymbol{e_j})}}{detA}\)
+가 되고, $x_{ij}$는 $A^{-1}$의 $(i, j)$ entry가 됩니다.</p>
+
+<p>$A_i(\boldsymbol{e_j})$를 살펴보면</p>
+
+\[\begin{aligned}
+
+A_i(\boldsymbol{e_j}) &amp;= \begin{bmatrix}\boldsymbol{a_1} &amp; ... &amp; \boldsymbol{a_{i-1}} &amp; \boldsymbol{e_j} &amp; \boldsymbol{a_{i+1}} &amp; ... &amp; \boldsymbol{a_n} \end{bmatrix} \\ \\
+&amp;=\begin{bmatrix} &amp; &amp; &amp; 0 &amp; &amp; &amp; \\  &amp; &amp; &amp; 0 &amp; &amp; &amp; \\  &amp; &amp; &amp; \vdots &amp; &amp; &amp;  \\\boldsymbol{a_1} &amp; ... &amp; \boldsymbol{a_{i-1}} &amp; 1 &amp; \boldsymbol{a_{i+1}} &amp; ... &amp; \boldsymbol{a_n} \\  &amp; &amp; &amp; \vdots &amp; &amp; &amp;  \\  &amp; &amp; &amp; 0 &amp; &amp; &amp;  \end{bmatrix}
+
+
+\end{aligned}\]
+
+<p>입니다. 따라서 $detA_i(\boldsymbol{e_j})$를 co-factor expansion을 이용하여 구할 때 $i$ 번째 column을 기준으로 구하게 됩니다. $A_i(\boldsymbol{e_j})$의 $(j, i)$ 위치에서의 co-factor는 $A_i(\boldsymbol{e_j})$에서 $j$ 번째 row, $i$ 번째 column을 제외한 matrix의 determinant입니다.</p>
+
+<p>해당 determinant는 $A$에서 $j$ 번째 row, $i$ 번째 column을 제외한 matrix의 determinant와 같습니다. 즉 $A_i(\boldsymbol{e_j})$의 $(i, j)$ 위치에 해당하는 cofactor는 $A$의 $(i, j)$ 위치에 해당하는 cofactor와 일치합니다. 따라서</p>
+
+<p>\(detA_i(\boldsymbol{e_j}) = C_{ji}\)
+입니다.</p>
+
+<p>$A^{-1}$의 $(i, j)$ entry에 해당하는 값을 알았으니, $A^{-1}$를 표현하면</p>
+
+\[A^{-1}= \frac{1}{detA}\begin{bmatrix}C_{11} &amp; C_{21} &amp; ... &amp; C_{n1} \\
+C_{12} &amp; C_{22} &amp; ... &amp; C_{n2} \\ 
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+C_{1n} &amp; C_{2n} &amp; ... &amp; C_{nn}\end{bmatrix}\]
+
+<p>이 됩니다. 여기서 $\frac{1}{detA}$를 제외한 matrix 부분</p>
+
+\[\begin{bmatrix}C_{11} &amp; C_{21} &amp; ... &amp; C_{n1} \\
+C_{12} &amp; C_{22} &amp; ... &amp; C_{n2} \\ 
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+C_{1n} &amp; C_{2n} &amp; ... &amp; C_{nn}\end{bmatrix}\]
+
+<p>를 <strong>adjugate of</strong> $A$라고 하고, $adjA$로 표시합니다.</p>
+
+\[A^{-1} = \frac{1}{detA}adjA\]
+
+<p><br /></p>
+
+<p><em>example</em></p>
+
+\[A = \begin{bmatrix} 2 &amp; 1 &amp; 3 \\ 1 &amp; -1 &amp; 1 \\ 1 &amp; 4 &amp; 2\end{bmatrix}\]
+
+<p>$A$의 determinant를 첫 번째 행을 기준으로 co-factor expansion을 이용하여 구해보면</p>
+
+\[detA = 2 \cdot(-1)^{1+1}\begin{vmatrix}-1 &amp; 1 \\ 4 &amp; 2\end{vmatrix} +(-1)^{1+2}\begin{vmatrix}1 &amp; 1 \\ 1 &amp; 2\end{vmatrix} + 3\cdot(-1)^{1+3} \begin{vmatrix}1 &amp; -1 \\ 1 &amp; 4\end{vmatrix} = 2\]
+
+<p>determinant가 0이 아니므로, $A$는 invertible matrix입니다. 각 entry에 해당하는 cofactor를 구해보면</p>
+
+\[C_{11}=3, C_{21}=-10, C_{31}=4 \\C_{12}=1, C_{22}=1, C_{32}=-1 \\C_{13}=5, C_{23}=7, C_{33}=-3\]
+
+<p>이를 이용하여 $A^{-1}$를 구하면</p>
+
+\[A^{-1}=\frac{1}{detA}adjA = \frac{1}{2}\begin{bmatrix}3 &amp; -10 &amp; 4 \\ 1 &amp; 1&amp; -1 \\ 5 &amp; 7 &amp; -3 \end{bmatrix}\]
+
+<p>가 됩니다.</p>
+
+<p><br /></p>
+
+<p>지금까지 Cramer’s rule에 대해서 알아보았습니다. 다음 포스트에서는 Vector space와 subspace에 대해서 알아보겠습니다. 질문이나 오류 있으면 댓글 남겨주세요! 감사합니다!</p>
+
+<p><br /></p>
+
+<h4 id="appendix--proof-of-theorem">Appendix : Proof of Theorem</h4>
+
+<p><br /></p>
+
+<p><strong>Theorem : Cramer’s Rule</strong></p>
+
+<p>Let $A$ be an invertible $n \times n$ matrix. For any $\boldsymbol{b}$ in $\mathbb R ^n$, the unique solution $\boldsymbol{x}$ of $A\boldsymbol{x}=\boldsymbol{b}$ has entries given by</p>
+
+\[x_i = \frac{detA_i(\boldsymbol{b})}{detA}, \ \ i=1, 2, ..., n\]
+
+<ul>
+  <li><strong>Proof</strong></li>
+</ul>
+
+<p>Let</p>
+
+\[A = \begin{bmatrix} a_{11} &amp; a_{12} &amp; ... &amp; a_{1n} \\ a_{21} &amp; a_{22} &amp; ... &amp; a_{2n} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ a_{n1} &amp; a_{n2} &amp; \cdots &amp; a_{nn} \end{bmatrix} = \begin{bmatrix}\boldsymbol{a_1} &amp; \boldsymbol{a_2} &amp; ... &amp; \boldsymbol{a_n} \end{bmatrix}, \ \ \boldsymbol{b}=\begin{bmatrix}b_1 \\ b_2 \\ \vdots \\ b_n\end{bmatrix}\]
+
+<p>$A\boldsymbol{x}=\boldsymbol{b}$를 linear system으로 표현하면 다음과 같이 표현됩니다.</p>
+
+\[\begin{aligned}
+a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n&amp;=b_1 \cdots 1. \\
+a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n&amp;=b_2 \cdots 2. \\
+\vdots \\
+
+a_{n1}x_1 + a_{n2}x_2 + \cdots + a_{nn}x_n&amp;=b_n \cdots n. 
+
+
+\end{aligned}\]
+
+<p>첫 번째 식부터 n 번째 식까지 오른쪽에 번호를 통하여 나타내었습니다.</p>
+
+<p>여기서 $i$번 째 식의 양변에 $C_{ij}$를 곱해주겠습니다. ($i=1, 2, … ,n$)</p>
+
+\[\begin{aligned}
+
+a_{11}C_{1j}x_1 + a_{12}C_{1j}x_2 + \cdots + a_{1n}C_{1j}x_n&amp;=C_{1j}b_1 \cdots 1. \\
+a_{21}C_{2j}x_1 + a_{22}C_{2j}x_2 + \cdots + a_{2n}C_{2j}x_n&amp;=C_{2j}b_2 \cdots 2. \\
+\vdots \\
+
+a_{n1}C_{nj}x_1 + a_{n2}C_{nj}x_2 + \cdots + a_{nn}C_{nj}x_n&amp;=C_{nj}b_n \cdots n.
+
+\end{aligned}\]
+
+<p>이 후, 1번 식부터 n번 식 모두를 더하고 $x_1, x_2, …, x_n$에 대해서 정리를 하면</p>
+
+<p>\(p_1x_1+p_2x_2+\cdots+p_nx_n = b'\)
+where</p>
+
+\[p_i = a_{1i}C_{1j}+a_{2i}C_{2j}+\cdots+a_{ni}C_{nj} \ \ (i=1, 2, ..., n) \\
+b' =b_1C_{1j}+b_2C_{2j}+...b_nC_{nj}\]
+
+<p>가 됩니다.</p>
+
+<p>$p_i$에 대해서 살펴보겠습니다.</p>
+
+<p>만약 $i= j$라면</p>
+
+\[p_i = a_{1i}C_{1i}+a_{2i}C_{2i}+\cdots+a_{ni}C_{ni} = detA\]
+
+<p>가 됩니다. $i$ 번째 column을 기준으로 co-factor expansion을 한 determinant입니다.</p>
+
+<p>만약 $i\neq j$라면</p>
+
+\[p_i = a_{1i}C_{1j}+a_{2i}C_{2j}+\cdots+a_{ni}C_{nj} = detA_{j}(\boldsymbol{a_i})\]
+
+<p>가 됩니다. A의 $j$ 번째 column을 $\boldsymbol{a_i}$로 바꾼 matrix의 $j$ 번째 column을 기준으로 co-factor expansion을 한 결과가 됩니다.</p>
+
+<p>여기서, $j\neq i$이므로, $A_{j}(\boldsymbol{a_i})$에서 $i$ 번째, $j$ 번째 column이 $\boldsymbol{a_i}$입니다.</p>
+
+<p>$A_{j}(\boldsymbol{a_i})$에서 똑같은 column이 존재하기 때문에, $A_{j}(\boldsymbol{a_i})$의 determinant가 0입니다.</p>
+
+<p>\(detA_{j}(\boldsymbol{a_i})=0\)
+마지막으로 $\boldsymbol{b}’$을 살펴보면</p>
+
+\[b' =b_1C_{1j}+b_2C_{2j}+...b_nC_{nj} = detA_j(\boldsymbol{b})\]
+
+<p>인 것을 알 수 있습니다.</p>
+
+<p>이를 이용하여 식을 정리하면</p>
+
+\[p_1x_1+p_2x_2+\cdots+p_nx_n = b' \\
+\Rightarrow p_jx_j= b' \\
+\Rightarrow (detA) x_j = detA_j(\boldsymbol{b})\]
+
+<p>이 성립하고, $A$가 invertible하므로</p>
+
+\[x_j = \frac{ detA_j(\boldsymbol{b})}{detA}\]
+
+<p>결과를 얻을 수 있습니다.</p>]]></content><author><name>Twolions</name><email>twa02189@g.skku.edu</email></author><category term="Linear Algebra" /><category term="Linear Algebra" /><category term="Determinant" /><category term="Cramer&apos;s rule" /><summary type="html"><![CDATA[이번 포스트에서는 Cramer’s rule에 대해서 알아보겠습니다.]]></summary></entry></feed>
