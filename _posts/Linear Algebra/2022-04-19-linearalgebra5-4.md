@@ -69,10 +69,13 @@ $$
 \lambda=i \\
 
 A\boldsymbol x = i\boldsymbol{x} \\
-
 -x_2 = ix_1 \\
 x_1 = ix_2
 $$
+
+
+
+
 가 되어
 
 
