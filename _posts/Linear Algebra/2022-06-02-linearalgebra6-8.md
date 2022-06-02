@@ -221,7 +221,7 @@ f(t) = \frac{a_0}{2} + \sum_{m=1}^\infty(a_m\cos mt + b_m \sin mt)
 $$
  
 
-$f(t)$를 다음의 series로 표현하는 방법을 **Fourier series** for $f$ on $[0, 2\pi]$라고 합니다. 여기서, $a_m \cos mt$는 $f$를 $Span \{ \cos mt \}$로의 projection, $b_m \sin mt$는 $f$를 $Span\{ \sin mt \}$로의 projection으로 해석할 수 있습니다.
+$f(t)$를 다음의 series로 표현하는 방법을 **Fourier series** for $f$ on $[0, 2\pi]$라고 합니다.
 
 
 
